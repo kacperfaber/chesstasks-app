@@ -1,0 +1,13 @@
+# vim files
+*.swp
+*.un
+*.*un
+
+# idea files
+.idea/
+
+# node
+node_modules/
+
+# compilation
+www/dist/compile-js/*.*
