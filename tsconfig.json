@@ -109,5 +109,6 @@
     "outDir": "./www/dist/compile-js",
     "jsx": "react-jsx"
   },
-  "exclude": ["capacitor.config.ts"]
+  "exclude": ["capacitor.config.ts"],
+  "include": ["./src", "./test"]
 }
