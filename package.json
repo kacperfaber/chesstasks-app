@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose",
-    "build-dev": "npx webpack --config webpack.config.dev.js",
+    "build-dev": "tsc && npx webpack --config webpack.config.dev.js",
     "run-dev": "npm run build-dev && serve www",
     "fontello-cli-install": "fontello-cli --config www/dist/fontello-icons/config.json --css www/dist/fontello-icons/css --font www/dist/fontello-icons/font",
     "fontello-cli-open": "fontello-cli --config www/dist/fontello-icons/config.json open"
