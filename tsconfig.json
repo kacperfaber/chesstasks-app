@@ -105,8 +105,7 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */,
-    "rootDir": "./src",
-    "outDir": "./www/dist/compile-js",
+    "outDir": "./dist",
     "jsx": "react-jsx"
   },
   "exclude": ["capacitor.config.ts"],

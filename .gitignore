@@ -9,8 +9,9 @@
 # node
 node_modules/
 
-# compilation
+# compilations [webpack + ts]
 www/dist/compile-js/*.*
+dist/
 
 # fontello-cli
 **/.fontello-session
