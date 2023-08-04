@@ -2,11 +2,11 @@ import {Friendship} from "../../api/friends/friendship";
 import {FriendApi} from "../../api/friends/friendApi";
 import {FriendStore} from "../../store/friends/friendStore";
 import {FriendRequest} from "../../api/friends/friendRequest";
-
-// TODO: there's no token storage.
-const token = "";
+import {TokenStorage} from "../../storage/token/tokenStorage";
 
 export class FriendService {
+    // TODO: What if error?
+
     /**
      * @remember Always in then, refresh your context.
      */
@@ -19,7 +19,7 @@ export class FriendService {
     }
 
     public static async fetchAllFriends(): Promise<Array<Friendship>> {
-        const friends = await FriendApi.getAllFriends(token);
+        const friends = await FriendApi.getAllFriends(TokenStorage.getToken() !!);
         FriendStore.setAllFriends(friends);
         return friends;
     }
@@ -33,7 +33,7 @@ export class FriendService {
     }
 
     public static async fetchSentRequests(): Promise<Array<FriendRequest>> {
-        const sentRequests = await FriendApi.getSentFriendRequests(token);
+        const sentRequests = await FriendApi.getSentFriendRequests(TokenStorage.getToken() !!);
         FriendStore.setSentRequests(sentRequests);
         return sentRequests;
     }
@@ -47,7 +47,7 @@ export class FriendService {
     }
 
     public static async fetchReceivedRequests(): Promise<Array<FriendRequest>> {
-        const receivedRequests = await FriendApi.getReceivedFriendRequests(token);
+        const receivedRequests = await FriendApi.getReceivedFriendRequests(TokenStorage.getToken() !!);
         FriendStore.setReceivedRequests(receivedRequests);
         return receivedRequests;
     }
