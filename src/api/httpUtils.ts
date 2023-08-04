@@ -32,4 +32,13 @@ export class HttpUtils{
                 .catch(() => reject());
         });
     }
+
+    public static getWithBodyAsync<T>(url: string, body: any, token: string | undefined): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {body: body, headers: token ? this.headers(token) : new Headers(), method: "GET"})
+                .then(resp => resp.json() as T)
+                .then(resp => resolve(resp))
+                .catch(() => reject());
+        });
+    }
 }
