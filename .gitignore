@@ -11,3 +11,9 @@ node_modules/
 
 # compilation
 www/dist/compile-js/*.*
+
+# fontello-cli
+**/.fontello-session
+.fontello-session
+www/dist/fontello-icons/css/
+www/dist/fontello-icons/font/
