@@ -41,4 +41,22 @@ export class HttpUtils{
                 .catch(() => reject());
         });
     }
+
+    public static postWithoutTokenAsync<T>(url: string, body: any): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {body: body, method: "POST"})
+                .then(resp => resp.json() as T)
+                .then(resp => resolve(resp))
+                .catch(() => reject());
+        });
+    }
+
+    public static postWithoutBodyAsync<T>(url: string, token: string): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {headers: token ? this.headers(token) : new Headers(), method: "POST"})
+                .then(resp => resp.json() as T)
+                .then(resp => resolve(resp))
+                .catch(() => reject());
+        });
+    }
 }
