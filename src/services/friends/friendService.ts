@@ -5,8 +5,6 @@ import {FriendRequest} from "../../api/friends/friendRequest";
 import {TokenStorage} from "../../storage/token/tokenStorage";
 
 export class FriendService {
-    // TODO: What if error?
-
     /**
      * @remember Always in then, refresh your context.
      */
