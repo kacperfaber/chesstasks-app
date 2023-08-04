@@ -12,6 +12,14 @@ export class FriendStore {
         FriendStore.allFriends = friends;
     }
 
+    public static resetAllFriends() {
+        FriendStore.allFriends = undefined;
+    }
+
+    public static resetSentRequests() {
+        FriendStore.sentRequests = undefined;
+    }
+
     public static setSentRequests(sentRequests: Array<FriendRequest> | undefined) {
         FriendStore.sentRequests = sentRequests;
     }

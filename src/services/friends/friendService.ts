@@ -49,4 +49,17 @@ export class FriendService {
         FriendStore.setReceivedRequests(receivedRequests);
         return receivedRequests;
     }
+
+    public static async deleteFriend(friendshipId: number): Promise<void> {
+        await FriendApi.deleteFriend(friendshipId, TokenStorage.getToken() !!);
+        FriendStore.resetAllFriends();
+    }
+
+    public static async sendFriendRequest(userId: number): Promise<FriendRequest> {
+        const req = await FriendApi.sendFriendRequest(userId, TokenStorage.getToken() !!);
+        FriendStore.resetSentRequests();
+        return req;
+    }
+
+    // TODO: In API there's no way to accept friend request.
 }
