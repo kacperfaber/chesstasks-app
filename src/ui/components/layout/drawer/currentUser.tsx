@@ -31,7 +31,7 @@ export const AppDrawer_CurrentUser = (args: AppDrawer_CurrentUserArgs) => {
                     <InlineBlock>
                         <h3>{args.username}</h3>
                     </InlineBlock>
-                    : <Button variant={'contained'}>Login In</Button>
+                    : <Button onClick={args.login} variant={'contained'} sx={{ my: "20px" }}>Login In</Button>
             }
         </InlineBlock>
     </Block>);
