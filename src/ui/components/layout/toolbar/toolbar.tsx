@@ -1,11 +1,17 @@
 import {AppBar, Toolbar} from "@mui/material";
 import {MenuButton} from "./menuButton";
 
-export const AppToolbar = () => {
+interface AppToolbarArgs {
+    menuButton: {
+        onClick: () => void
+    }
+}
+
+export const AppToolbar = (args: AppToolbarArgs) => {
     return (
         <AppBar position={'static'}>
             <Toolbar variant={'dense'}>
-                <MenuButton onClick={ () => { /* TODO: MenuButton click not implemented yet.  */} }></MenuButton>
+                <MenuButton onClick={ args.menuButton.onClick }></MenuButton>
             </Toolbar>
         </AppBar>
     )
