@@ -11,6 +11,18 @@ export const AppTheme = createTheme(
                         fontSize: '2rem'
                     }
                 }
+            },
+            MuiDrawer: {
+                defaultProps: {
+                    PaperProps: {
+                        sx: {
+                            width: '50%',
+                            '@media (min-width: 600px)': {
+                                width: '30%'
+                            }
+                        }
+                    }
+                }
             }
         },
     }
