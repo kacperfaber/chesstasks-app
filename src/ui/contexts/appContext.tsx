@@ -3,7 +3,10 @@ import {AllFriendContext} from "./friends/allFriendContext";
 import {ReceivedFriendRequestsContext} from "./friends/receivedFriendRequestsContext";
 import {SentFriendRequestsContext} from "./friends/sentFriendRequestsContext";
 import {AllThemeContext} from "./theme/allThemeContext";
-import React, {ReactNode} from "react";
+import React, {ReactNode, useState} from "react";
+import {User} from "../../api/user";
+import {Friendship} from "../../api/friends/friendship";
+import {FriendRequest} from "../../api/friends/friendRequest";
 
 // TODO: Is it really needs to look like this?
 
@@ -12,10 +15,18 @@ export interface AppContextAttrs {
 }
 
 export const AppContext: React.FC<AppContextAttrs> = (props) => {
-    return (<CurrentUserContext.Provider value={undefined}>
-        <AllFriendContext.Provider value={undefined}>
-            <ReceivedFriendRequestsContext.Provider value={undefined}>
-                <SentFriendRequestsContext.Provider value={undefined}>
+    const [user, setUser] = useState<User | undefined>(undefined);
+
+    const [allFriends, setAllFriends] = useState<Array<Friendship> | undefined>(undefined);
+
+    const [receivedFriendRequests, setReceivedFriendRequests] = useState<Array<FriendRequest> | undefined>(undefined);
+
+    const [friendRequests, setSentFriendRequest] = useState<Array<FriendRequest> | undefined>(undefined);
+
+    return (<CurrentUserContext.Provider value={{value: user, setValue: setUser}}>
+        <AllFriendContext.Provider value={{value: allFriends, setValue: setAllFriends}}>
+            <ReceivedFriendRequestsContext.Provider value={{value: receivedFriendRequests, setValue: setReceivedFriendRequests}}>
+                <SentFriendRequestsContext.Provider value={{value: friendRequests, setValue: setSentFriendRequest}}>
                     <AllThemeContext.Provider value={undefined}>
 
                         {props.children}
