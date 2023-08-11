@@ -6,6 +6,7 @@ import {AppThemeProvider} from "../../themes/appTheme";
 
 interface AppLayoutArgs {
     children: ReactNode;
+    title: string;
 }
 
 export const AppLayout = (args: AppLayoutArgs) => {
@@ -21,7 +22,7 @@ export const AppLayout = (args: AppLayoutArgs) => {
         <>
             <AppContext>
                 <AppThemeProvider>
-                    <AppToolbar menuButton={{onClick: () => setIsOpen(true)}}></AppToolbar>
+                    <AppToolbar title={args.title}  menuButton={{onClick: () => setIsOpen(true)}}></AppToolbar>
 
                     <AppDrawer isOpen={isOpen} onClose={onClose}></AppDrawer>
 
