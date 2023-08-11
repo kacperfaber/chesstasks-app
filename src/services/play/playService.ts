@@ -6,8 +6,8 @@ import {Puzzle} from "../../api/puzzles/puzzle";
 import {PlayStore} from "../../store/play/playStore";
 
 export class PlayService {
-    public static submitPuzzle(puzzleId: number, success: boolean): Promise<SubmitResponse> {
-        return PlayApi.submitPuzzle(puzzleId, success, TokenStorage.getToken()!!);
+    public static submitPuzzle(puzzleId: number, success: boolean, moves: string[]): Promise<SubmitResponse> {
+        return PlayApi.submitPuzzle(puzzleId, moves.join(" "), success, TokenStorage.getToken()!!);
     }
 
     public static async getPuzzles(rankingOffset: number | undefined, themeId: number | undefined, database: PuzzleDatabase | undefined): Promise<Array<Puzzle>> {

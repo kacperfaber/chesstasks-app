@@ -5,9 +5,9 @@ import {PuzzleDatabase} from "../puzzles/puzzleDatabase";
 import {Puzzle} from "../puzzles/puzzle";
 
 export class PlayApi {
-    public static submitPuzzle(puzzleId: number, success: boolean, token: string): Promise<SubmitResponse> {
+    public static submitPuzzle(puzzleId: number, moves: string, success: boolean, token: string): Promise<SubmitResponse> {
         const url = `${Config.apiUrl}/api/play/training/${puzzleId}/submit`;
-        return HttpUtils.putAsync<SubmitResponse>(url, {success}, token);
+        return HttpUtils.putAsync<SubmitResponse>(url, {success, moves}, token);
     }
 
     public static getPuzzles(rankingOffset: number | undefined, themeId: number | undefined, database: PuzzleDatabase | undefined, token: string): Promise<Array<Puzzle>> {
