@@ -31,4 +31,14 @@ export class FriendApi {
         const url = `${Config.apiUrl}/api/friend/requests/sent?skip=${skip}`;
         return HttpUtils.getAsync(url, token);
     }
+
+    public static acceptFriendRequest(token: string, senderId: number): Promise<Friendship> {
+        const url = `${Config.apiUrl}/api/friend/requests/by-sender-id/${senderId}/accept`;
+        return HttpUtils.postWithoutBodyAsync(url, token);
+    }
+
+    public static rejectFriendRequest(token: string, senderId: number): Promise<void> {
+        const url = `${Config.apiUrl}/api/friend/requests/by-sender-id/${senderId}/reject`;
+        return HttpUtils.postWithoutBodyAsync(url, token);
+    }
 }

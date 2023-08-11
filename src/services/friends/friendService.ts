@@ -61,5 +61,15 @@ export class FriendService {
         return req;
     }
 
-    // TODO: In API there's no way to accept friend request.
+    public static acceptFriendRequest(senderId: number): Promise<Friendship> {
+        FriendStore.resetAllFriends();
+        FriendStore.resetSentRequests();
+        return FriendApi.acceptFriendRequest(TokenStorage.getToken()!!, senderId)
+    }
+
+    public static rejectFriendRequest(senderId: number): Promise<void> {
+        FriendStore.resetAllFriends();
+        FriendStore.resetSentRequests();
+        return FriendApi.rejectFriendRequest(TokenStorage.getToken()!!, senderId);
+    }
 }
