@@ -113,6 +113,7 @@
     /* Skip type checking all .d.ts files. */,
     "outDir": "./dist",
     "jsx": "react-jsx",
+    "resolveJsonModule": true,
     "paths": {
       "@mui/styled-engine": [
         "./node_modules/@mui/styled-engine-sc"
