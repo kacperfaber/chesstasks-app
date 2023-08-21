@@ -24,6 +24,8 @@
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
     "@mui/styled-engine-sc": "npm:@mui/styled-engine-sc@latest",
+    "chessground": "^9.0.2",
+    "chlss": "^1.0.0-beta.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.13.0",
