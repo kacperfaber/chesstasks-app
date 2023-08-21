@@ -20,15 +20,11 @@ export const AppLayout = (args: AppLayoutArgs) => {
 
     return (
         <>
-            <AppContext>
-                <AppThemeProvider>
-                    <AppToolbar title={args.title}  menuButton={{onClick: () => setIsOpen(true)}}></AppToolbar>
+            <AppToolbar title={args.title}  menuButton={{onClick: () => setIsOpen(true)}}></AppToolbar>
 
-                    <AppDrawer isOpen={isOpen} onClose={onClose}></AppDrawer>
+            <AppDrawer isOpen={isOpen} onClose={onClose}></AppDrawer>
 
-                    {args.children}
-                </AppThemeProvider>
-            </AppContext>
+            {args.children}
         </>
     );
 }

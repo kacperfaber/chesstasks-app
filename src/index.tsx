@@ -2,6 +2,8 @@ import React from 'react';
 import {createRoot} from "react-dom/client";
 import {RouterProvider} from "react-router-dom";
 import {Router} from "./router";
+import {AppContext} from "./ui/contexts/appContext";
+import {AppThemeProvider} from "./ui/themes/appTheme";
 
 // TODO: In API there's no themes, or I don't see it in docs.
 
@@ -13,7 +15,11 @@ function getRootElement(): HTMLElement {
 
 function getRouterElement(): JSX.Element {
     return (<React.StrictMode>
-        <RouterProvider router={Router}></RouterProvider>
+        <AppContext>
+            <AppThemeProvider>
+                <RouterProvider router={Router}></RouterProvider>
+            </AppThemeProvider>
+        </AppContext>
     </React.StrictMode>);
 }
 
