@@ -24,7 +24,9 @@ export const AppLayout = (args: AppLayoutArgs) => {
 
             <AppDrawer isOpen={isOpen} onClose={onClose}></AppDrawer>
 
-            {args.children}
+            <div style={{padding: '25px'}}>
+                {args.children}
+            </div>
         </>
     );
 }
