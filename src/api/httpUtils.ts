@@ -24,12 +24,12 @@ export class HttpUtils{
         });
     }
 
-    public static deleteAsync<T>(url: string, token: Token | undefined = undefined): Promise<T> {
-        return new Promise<T>((resolve, reject) => {
+    public static deleteAsync<T>(url: string, token: Token | undefined = undefined): Promise<T | undefined> {
+        return new Promise<T | undefined>((resolve, reject) => {
             fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "DELETE"})
-                .then(resp => resp.json() as T)
+                .then(resp => resp.status != 204 ? resp.json() as T : undefined)
                 .then(resp => resolve(resp))
-                .catch(() => reject());
+                .catch((err) => reject(err));
         });
     }
 
