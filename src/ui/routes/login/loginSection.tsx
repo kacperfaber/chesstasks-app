@@ -1,27 +1,36 @@
 import {Button, Grid, Paper, Snackbar, TextField, Typography} from "@mui/material";
 import {t} from "i18next";
-import {useRef, useState} from "react";
+import {useContext, useState} from "react";
 import {AuthenticationService} from "../../../services/authentication/authenticationService";
+import {useNavigate} from "react-router-dom";
+import {Links} from "../../../links";
+import {CurrentUserContext} from "../../contexts/authentication/currentUserContext";
 
 export const LoginSection = () => {
     const [isError, setIsError] = useState(false);
 
+    const currentUserCtx = useContext(CurrentUserContext);
+
     const [login, setLogin] = useState("");
     const [pass, setPass] = useState("");
 
-    const onSuccess = () => {
+    const nav = useNavigate();
 
+    const onSuccess = () => {
+        nav(Links.Index);
     }
 
     const performAuth = () => {
-        return AuthenticationService.authenticate(
+        return AuthenticationService.auth(
             login,
             pass
         );
     }
 
     const submit = () => {
-        performAuth().then(onSuccess).catch(() => setIsError(true));
+        performAuth()
+            .then((user) => currentUserCtx.setValue(user))
+            .then(onSuccess).catch(() => setIsError(true));
     }
 
     return <>
@@ -31,11 +40,13 @@ export const LoginSection = () => {
         <Paper elevation={1} style={{padding: '10px', marginTop: '10px'}}>
             <Grid container>
                 <Grid item xs={12}>
-                    <TextField onChange={(v) => setLogin(v.target.value)} sx={{my: '5px'}} label={t('login.login-label')} variant={'outlined'}></TextField>
+                    <TextField onChange={(v) => setLogin(v.target.value)} sx={{my: '5px'}}
+                               label={t('login.login-label')} variant={'outlined'}></TextField>
                 </Grid>
 
                 <Grid item xs={12}>
-                    <TextField onChange={(v) => setPass(v.target.value)} sx={{my: '5px'}} type={'password'} label={t('login.password-label')}
+                    <TextField onChange={(v) => setPass(v.target.value)} sx={{my: '5px'}} type={'password'}
+                               label={t('login.password-label')}
                                variant={'outlined'}></TextField>
                 </Grid>
             </Grid>
