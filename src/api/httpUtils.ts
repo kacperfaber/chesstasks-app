@@ -1,8 +1,10 @@
+import {Token} from "../storage/token/tokenStorage";
+
 export class HttpUtils{
-    private static tokenHeaders(token: string): Headers {
+    private static tokenHeaders(token: Token): Headers {
         // TODO: Check if authorization header is good, maybe Bearer is needed?
         let headers = new Headers();
-        headers.set("Authorization", token);
+        headers.set("Authorization", JSON.stringify(token));
         headers.set("Content-Type", "application/json");
         return headers;
     }
@@ -13,7 +15,7 @@ export class HttpUtils{
         return headers;
     }
 
-    public static getAsync<T>(url: string, token: string | undefined = undefined): Promise<T> {
+    public static getAsync<T>(url: string, token: Token | undefined = undefined): Promise<T> {
         return new Promise<T>((resolve, reject) => {
             fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "GET"})
                 .then(resp => resp.json() as T)
@@ -22,7 +24,7 @@ export class HttpUtils{
         });
     }
 
-    public static deleteAsync<T>(url: string, token: string | undefined = undefined): Promise<T> {
+    public static deleteAsync<T>(url: string, token: Token | undefined = undefined): Promise<T> {
         return new Promise<T>((resolve, reject) => {
             fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "DELETE"})
                 .then(resp => resp.json() as T)
@@ -31,7 +33,7 @@ export class HttpUtils{
         });
     }
 
-    public static putAsync<T>(url: string, body: any, token: string | undefined = undefined): Promise<T> {
+    public static putAsync<T>(url: string, body: any, token: Token | undefined = undefined): Promise<T> {
         return new Promise<T>((resolve, reject) => {
             fetch(url, {body: body, headers: token ? this.tokenHeaders(token) : this.headers(), method: "PUT"})
                 .then(resp => resp.json() as T)
@@ -40,7 +42,7 @@ export class HttpUtils{
         });
     }
 
-    public static getWithBodyAsync<T>(url: string, body: any, token: string | undefined): Promise<T> {
+    public static getWithBodyAsync<T>(url: string, body: any, token: Token| undefined): Promise<T> {
         return new Promise<T>((resolve, reject) => {
             fetch(url, {body: body, headers: token ? this.tokenHeaders(token) : this.headers(), method: "GET"})
                 .then(resp => resp.json() as T)
@@ -58,7 +60,7 @@ export class HttpUtils{
         });
     }
 
-    public static postWithoutBodyAsync<T>(url: string, token: string): Promise<T> {
+    public static postWithoutBodyAsync<T>(url: string, token: Token): Promise<T> {
         return new Promise<T>((resolve, reject) => {
             fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "POST"})
                 .then(resp => resp.json() as T)

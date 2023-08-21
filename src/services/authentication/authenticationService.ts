@@ -11,6 +11,11 @@ export class AuthenticationService {
         TokenStorage.setToken(token);
     }
 
+    public static async auth(login: string, password: string): Promise<User> {
+        await this.authenticate(login, password);
+        return (await this.fetchCurrent())!!;
+    }
+
     public static async logout(): Promise<void> {
         AuthenticationStore.setCurrentUser(undefined);
         TokenStorage.setToken(undefined);
