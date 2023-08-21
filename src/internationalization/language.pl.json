@@ -3,6 +3,19 @@
     "register-in": "Zarejestruj się"
   },
 
+  "drawer": {
+    "puzzle-title": "Zadania",
+    "random-puzzle": "Losowe zadania",
+    "puzzle-by-theme": "Zadania według motywu",
+
+    "history-title": "Historia zadań",
+    "history": "Historia",
+
+    "friends-title": "Przyjaciele",
+    "friends": "Przyjaciele",
+    "search-user": "Wyszukaj użytkownika"
+  },
+
   "login": {
     "navbar-title": "Zaloguj się",
 
@@ -22,6 +35,23 @@
     "login-failed": {
       "title": "Logowanie nie udało się",
       "content": "Sprawdź dane i spróbuj ponownie"
+    }
+  },
+
+  "all-friends": {
+    "navbar-title": "Wszyscy twoi przyjaciele",
+    "click-to-see-user-profile": "Kliknij by wyświetlić profil użytkownika",
+    "delete-friend": "Usuń przyjaciela",
+    "see-friend-profile": "Odwiedź profil przyjaciela",
+    "you-can-now-manage-friendship": "Możesz tu zarządzać przyjąźnią"
+  },
+
+  "delete-friend-confirm-dialog": {
+    "title": "Czy napewno chcesz usunąć te przyjaźń",
+    "text": "Nie będzie można tego cofnać",
+    "actions": {
+      "cancel": "Anuluj",
+      "confirm": "Potwierdź"
     }
   }
 }

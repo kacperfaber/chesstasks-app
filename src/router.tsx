@@ -2,6 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 import {Home} from "./ui/routes/home/home";
 import {Login} from "./ui/routes/login/login";
 import {Links} from "./links";
+import {AllFriends} from "./ui/routes/friends/all/allFriends";
 
 export const Router = createBrowserRouter([
     {
@@ -11,5 +12,10 @@ export const Router = createBrowserRouter([
     {
         path: Links.Login,
         element: <Login/>
+    },
+
+    {
+        path: Links.AllFriends,
+        element: <AllFriends/>
     }
 ])
