@@ -1,5 +1,27 @@
 {
+  "all": {
+    "register-in": "Zarejestruj się"
+  },
+
   "login": {
-    "navbar-title": "Zaloguj się"
+    "navbar-title": "Zaloguj się",
+
+    "login-section": {
+      "title": "Zaloguj się",
+      "body": "Jeśli posiadasz konto, możesz łatwo zalogować się używając poniższego formularza."
+    },
+
+    "register-section": {
+      "title": "Nie masz jeszcze konta?",
+      "body": "Tu możesz zarejestrować się w serwisie, jeśli nie posiadasz jeszcze konta."
+    },
+    "login-label": "Nazwa użytkownika lub email",
+    "password-label": "Hasło",
+    "submit": "Zaloguj się",
+
+    "login-failed": {
+      "title": "Logowanie nie udało się",
+      "content": "Sprawdź dane i spróbuj ponownie"
+    }
   }
 }
