@@ -72,4 +72,12 @@ export class FriendService {
         FriendStore.resetSentRequests();
         return FriendApi.rejectFriendRequest(TokenStorage.getToken()!!, senderId);
     }
+
+    public static getFriendName(currentUserId: number, friendship: Friendship): string {
+        if (currentUserId == friendship.userId) {
+            return friendship.secondUserName;
+        }
+
+        return friendship.userName;
+    }
 }

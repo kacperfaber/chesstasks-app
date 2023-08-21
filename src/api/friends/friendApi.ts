@@ -9,7 +9,7 @@ import {Token} from "../../storage/token/tokenStorage";
 export class FriendApi {
     // TODO: In the documentation there's no skip parameter, but I need to check it in server project.
     public static getAllFriends(token: Token): Promise<Array<Friendship>> {
-        const url = `${Config.apiUrl}/api/friend/all`;
+        const url = `${Config.apiUrl}/api/friend/all/include-user`;
         return HttpUtils.getAsync<Array<Friendship>>(url, token);
     }
 
@@ -24,12 +24,12 @@ export class FriendApi {
     }
 
     public static getReceivedFriendRequests(token: Token, skip: number = 0): Promise<Array<FriendRequest>> {
-        const url = `${Config.apiUrl}/api/friend/requests/received?skip=${skip}`;
+        const url = `${Config.apiUrl}/api/friend/requests/received/include-user?skip=${skip}`;
         return HttpUtils.getAsync(url, token);
     }
 
     public static getSentFriendRequests(token: Token, skip: number = 0): Promise<Array<FriendRequest>> {
-        const url = `${Config.apiUrl}/api/friend/requests/sent?skip=${skip}`;
+        const url = `${Config.apiUrl}/api/friend/requests/sent/include-user?skip=${skip}`;
         return HttpUtils.getAsync(url, token);
     }
 
