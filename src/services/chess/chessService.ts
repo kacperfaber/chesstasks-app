@@ -1,6 +1,6 @@
 import {Dests, Key} from "chessground/types";
 import {BoardObj} from "chlss";
-import {groupByMapped} from "./groupBy";
+import {groupByMapped} from "../../commons/groupBy";
 
 export class ChessService {
     public static getDests(fen: string): Dests {

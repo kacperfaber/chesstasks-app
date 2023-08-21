@@ -1,4 +1,4 @@
-import {groupBy} from "../../src/services/chess/groupBy";
+import {groupBy} from "../../src/commons/groupBy";
 
 describe('groupBy.ts', function () {
     describe("groupBy", function () {
