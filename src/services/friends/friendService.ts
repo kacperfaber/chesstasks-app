@@ -63,13 +63,13 @@ export class FriendService {
 
     public static acceptFriendRequest(senderId: number): Promise<Friendship> {
         FriendStore.resetAllFriends();
-        FriendStore.resetSentRequests();
+        FriendStore.setReceivedRequests(undefined)
         return FriendApi.acceptFriendRequest(TokenStorage.getToken()!!, senderId)
     }
 
     public static rejectFriendRequest(senderId: number): Promise<void> {
         FriendStore.resetAllFriends();
-        FriendStore.resetSentRequests();
+        FriendStore.setReceivedRequests(undefined);
         return FriendApi.rejectFriendRequest(TokenStorage.getToken()!!, senderId);
     }
 

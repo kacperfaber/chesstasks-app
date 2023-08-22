@@ -18,12 +18,9 @@ export const AllFriends = () => {
     const [selectedFriend, setSelectedFriend] = useState<Friendship | null>(null);
 
     useEffect(() => {
-        console.log("useEffect hook called.");
-
         FriendService.getAllFriends()
             .then((friends) => {
                 allFriends.setValue(friends);
-                console.log(friends)
             })
             .catch(); // TODO
     });
@@ -49,6 +46,7 @@ export const AllFriends = () => {
                                     {
                                         allFriends.value.map(friend =>
                                             <AllFriends_ListItem currentUserId={userCtx.value!!.id}
+                                                                 key={`friend-${friend.id}`}
                                                                  friend={friend} itemClicked={itemClicked}
                                                                  moreClicked={moreClicked}/>)
                                     }

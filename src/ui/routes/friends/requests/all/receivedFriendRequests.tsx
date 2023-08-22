@@ -6,22 +6,21 @@ import {Close, Done, MoreVert} from "@mui/icons-material";
 import {FriendRequest} from "../../../../../api/friends/friendRequest";
 import {getDate} from "../../../../../commons/getDate";
 import {t} from "i18next";
+import {AllFriendContext} from "../../../../contexts/friends/allFriendContext";
 
-const AllFriendRequests_ReceivedListItem = ({req}: { req: FriendRequest }) => {
+const AllFriendRequests_ReceivedListItem = ({req, resetCtx}: { req: FriendRequest; resetCtx: () => void }) => {
     const [menuAnchor, setMenuAnchor] = useState<Element | undefined>(undefined);
-
-    const receivedCtx = useContext(ReceivedFriendRequestsContext);
 
     const performAccept = () => {
         FriendService.acceptFriendRequest(req.senderId)
-            .then(() => receivedCtx.setValue(undefined))
+            .then(() => resetCtx())
             .catch(() => {
             }) // TODO
     }
 
     const performReject = () => {
         FriendService.rejectFriendRequest(req.senderId)
-            .then(() => receivedCtx.setValue(undefined))
+            .then(() => resetCtx())
             .catch(() => {
             }) // TODO
     }
@@ -73,8 +72,16 @@ const AllFriendRequests_ReceivedListItem = ({req}: { req: FriendRequest }) => {
 
 export const AllFriendRequests_ReceivedRequestList = () => {
     const receivedCtx = useContext(ReceivedFriendRequestsContext);
+    const allFriendCtx = useContext(AllFriendContext);
+
+    const resetCtx = () => {
+        receivedCtx.setValue(undefined);
+        allFriendCtx.setValue(undefined)
+    }
 
     useEffect(() => {
+        console.log("useEffect called");
+
         FriendService.getReceivedRequests()
             .then(receivedCtx.setValue)
             .catch(() => {
@@ -84,7 +91,8 @@ export const AllFriendRequests_ReceivedRequestList = () => {
     return (
         <>
             {
-                receivedCtx.value?.map(req => <AllFriendRequests_ReceivedListItem req={req}/>)
+                receivedCtx.value?.map(req => <AllFriendRequests_ReceivedListItem resetCtx={resetCtx} key={req.id}
+                                                                                  req={req}/>)
             }
         </>
     )
