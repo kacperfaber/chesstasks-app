@@ -64,5 +64,10 @@
     "navbar-title": "Zaproszenia do znajomych",
     "request-sent-at": "Zaproszenie wysłane {{at}}",
     "request-received-at": "Zaproszenie otrzymano {{at}}"
+  },
+
+  "public-user-by-id": {
+    "navbar-title": "Profil publiczny",
+    "body": "To jest profil publiczny użytkownika {{username}}, treści jakie widzisz są zależne od ustawień tego"
   }
 }

@@ -9,9 +9,14 @@ import {CurrentUserContext} from "../../../contexts/authentication/currentUserCo
 import {AllFriends_ListItem} from "./friendItem";
 import {AllFriends_Menu} from "./allFriendsMenu";
 import {screenNotImplemented} from "../../../../commons/notImplemented";
+import {getFriendId} from "../../../../commons/getFriendId";
+import {useNavigate} from "react-router-dom";
+import {Links} from "../../../../links";
 
 export const AllFriends = () => {
     const allFriends = useContext(AllFriendContext);
+
+    const nav = useNavigate();
 
     const userCtx = useContext(CurrentUserContext);
 
@@ -30,7 +35,8 @@ export const AllFriends = () => {
     };
 
     const itemClicked = (friend: Friendship) => {
-        screenNotImplemented("user profile using user.id")();
+        const friendId = getFriendId(userCtx.value!!.id, friend);
+        nav(Links.publicUserById(friendId));
     };
 
     // TODO: If the allFriends is empty, show the Layout-Center text and button.
