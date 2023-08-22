@@ -3,10 +3,11 @@ import {AllFriendContext} from "./friends/allFriendContext";
 import {ReceivedFriendRequestsContext} from "./friends/receivedFriendRequestsContext";
 import {SentFriendRequestsContext} from "./friends/sentFriendRequestsContext";
 import {AllThemeContext} from "./theme/allThemeContext";
-import React, {ReactNode, useState} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import {User} from "../../api/user";
 import {Friendship} from "../../api/friends/friendship";
 import {FriendRequest} from "../../api/friends/friendRequest";
+import {AuthenticationService} from "../../services/authentication/authenticationService";
 
 // TODO: Is it really needs to look like this?
 
@@ -22,6 +23,12 @@ export const AppContext: React.FC<AppContextAttrs> = (props) => {
     const [receivedFriendRequests, setReceivedFriendRequests] = useState<Array<FriendRequest> | undefined>(undefined);
 
     const [friendRequests, setSentFriendRequest] = useState<Array<FriendRequest> | undefined>(undefined);
+
+    useEffect(() => {
+        AuthenticationService.getCurrentOrNull()
+            .then(setUser)
+            .catch(() => {}) // TODO
+    });
 
     return (<CurrentUserContext.Provider value={{value: user, setValue: setUser}}>
         <AllFriendContext.Provider value={{value: allFriends, setValue: setAllFriends}}>
