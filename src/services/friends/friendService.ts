@@ -4,6 +4,8 @@ import {FriendStore} from "../../store/friends/friendStore";
 import {FriendRequest} from "../../api/friends/friendRequest";
 import {TokenStorage} from "../../storage/token/tokenStorage";
 
+export type FriendRelation = "request_received" | "request_sent" | "friends" | undefined;
+
 export class FriendService {
     /**
      * @remember Always in then, refresh your context.
@@ -79,5 +81,21 @@ export class FriendService {
         }
 
         return friendship.userName;
+    }
+
+    public static async getFriendRelation(userId: number): Promise<FriendRelation> {
+        const friends = await FriendService.getAllFriends();
+        const sentRequests = await FriendService.getSentRequests();
+        const receivedRequests = await FriendService.getReceivedRequests();
+
+        const getRequest: () => FriendRelation = () => {
+            if (friends.some(fr => fr.userId == userId || fr.secondUserId == userId)) return "friends"
+
+            else if (sentRequests.some(x => x.targetId == userId)) return "request_sent";
+
+            else if (receivedRequests.some(x => x.senderId == userId)) return "request_received";
+        };
+
+        return getRequest();
     }
 }
