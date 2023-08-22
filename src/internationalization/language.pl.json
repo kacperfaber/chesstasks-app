@@ -1,6 +1,10 @@
 {
   "all": {
-    "register-in": "Zarejestruj się"
+    "register-in": "Zarejestruj się",
+    "sent-friend-requests": "Wysłane zaproszenia",
+    "received-friend-requests": "Otrzymane zaproszenia",
+    "friend-request-accept": "Zaakceptuj zaproszenie",
+    "friend-request-reject": "Odrzuć zaproszenie"
   },
 
   "drawer": {
@@ -13,6 +17,7 @@
 
     "friends-title": "Przyjaciele",
     "friends": "Przyjaciele",
+    "friend-requests": "Zaproszenia do przyjaciół",
     "search-user": "Wyszukaj użytkownika"
   },
 
@@ -53,5 +58,11 @@
       "cancel": "Anuluj",
       "confirm": "Potwierdź"
     }
+  },
+
+  "all-friend-requests": {
+    "navbar-title": "Zaproszenia do znajomych",
+    "request-sent-at": "Zaproszenie wysłane {{at}}",
+    "request-received-at": "Zaproszenie otrzymano {{at}}"
   }
 }

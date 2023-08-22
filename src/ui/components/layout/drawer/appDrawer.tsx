@@ -78,6 +78,13 @@ export const AppDrawer = (args: AppDrawerArgs) => {
                     {t("drawer.friends")}
                 </ListItemButton>
 
+                <ListItemButton onClick={() => nav(Links.AllFriendRequests)}>
+                    <ListItemIcon>
+                        <People/>
+                    </ListItemIcon>
+                    {t("drawer.friend-requests")}
+                </ListItemButton>
+
                 <ListItemButton>
                     <ListItemIcon>
                         <Search/>

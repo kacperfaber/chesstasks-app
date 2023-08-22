@@ -3,6 +3,7 @@ import {Home} from "./ui/routes/home/home";
 import {Login} from "./ui/routes/login/login";
 import {Links} from "./links";
 import {AllFriends} from "./ui/routes/friends/all/allFriends";
+import {AllFriendRequests} from "./ui/routes/friends/requests/all/allFriendRequests";
 
 export const Router = createBrowserRouter([
     {
@@ -17,5 +18,10 @@ export const Router = createBrowserRouter([
     {
         path: Links.AllFriends,
         element: <AllFriends/>
+    },
+
+    {
+        path: Links.AllFriendRequests,
+        element: <AllFriendRequests/>
     }
 ])
