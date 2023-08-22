@@ -7,5 +7,7 @@ export const Links = {
 
     publicUserById(id: number): string {
         return Links.PublicUserById.replace(":userId", id.toString());
-    }
+    },
+
+    SearchUser: "/search-user"
 }

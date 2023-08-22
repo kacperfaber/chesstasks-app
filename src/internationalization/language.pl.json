@@ -69,5 +69,16 @@
   "public-user-by-id": {
     "navbar-title": "Profil publiczny",
     "body": "To jest profil publiczny użytkownika {{username}}, treści jakie widzisz są zależne od ustawień tego"
+  },
+
+  "search-user": {
+    "search": "Wyszukaj",
+    "query": "Szukana treść",
+    "title": "Wyszukaj użytkownika",
+    "body": "Przy użyciu tego formularza",
+    "navbar-title": "Wyszukiwanie użytkowników",
+    "click-to-see-profile": "Kliknij, by przejść do profilu użytkownika",
+    "search-results": "Wyniki wyszukiwania",
+    "error-message": "Błąd podczas wyszukiwania"
   }
 }

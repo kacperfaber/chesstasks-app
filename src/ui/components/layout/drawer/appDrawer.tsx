@@ -85,7 +85,7 @@ export const AppDrawer = (args: AppDrawerArgs) => {
                     {t("drawer.friend-requests")}
                 </ListItemButton>
 
-                <ListItemButton>
+                <ListItemButton onClick={() => nav(Links.SearchUser)}>
                     <ListItemIcon>
                         <Search/>
                     </ListItemIcon>
