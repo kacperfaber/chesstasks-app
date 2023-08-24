@@ -7,6 +7,7 @@ import {AllFriendRequests} from "./ui/routes/friends/requests/all/allFriendReque
 import {PublicUserById} from "./ui/routes/user/public/publicUserById";
 import {userIdLoader} from "./ui/routes/loaders";
 import {SearchUser} from "./ui/routes/user/search/searchUser";
+import {PuzzleHistoryByUserId} from "./ui/routes/puzzle/history/byUserId/puzzleHistoryByUserId";
 
 export const Router = createBrowserRouter([
     {
@@ -37,5 +38,11 @@ export const Router = createBrowserRouter([
     {
         path: Links.SearchUser,
         element: <SearchUser/>
+    },
+
+    {
+        path: Links.PuzzleHistoryByUserId,
+        loader: userIdLoader,
+        element: <PuzzleHistoryByUserId/>
     }
 ])

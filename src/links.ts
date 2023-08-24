@@ -9,5 +9,11 @@ export const Links = {
         return Links.PublicUserById.replace(":userId", id.toString());
     },
 
-    SearchUser: "/search-user"
+    SearchUser: "/search-user",
+
+    PuzzleHistoryByUserId: "/public-user/puzzle-history/:userId",
+
+    puzzleHistoryByUserId(userId: number): string {
+        return Links.PuzzleHistoryByUserId.replace(":userId", userId.toString());
+    }
 }
