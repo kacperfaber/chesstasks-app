@@ -1,21 +1,12 @@
 import {useEffect, useState} from "react";
 import {Friendship} from "../../../../../api/friends/friendship";
 import {FriendService} from "../../../../../services/friends/friendService";
-import {
-    Button,
-    Card,
-    CardActionArea,
-    CardContent,
-    Dialog, DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-    Typography
-} from "@mui/material";
+import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
 import {t} from "i18next";
 import {getDate} from "../../../../../commons/getDate";
+import {ConfirmDialog, ConfirmDialogResult} from "../../../../base/dialogs/confirmDialog";
 
-export const FriendsCard = ({userId, resetRelation}: {userId: number, resetRelation: () => void}) => {
+export const FriendsCard = ({userId, resetRelation}: { userId: number, resetRelation: () => void }) => {
     const [friendship, setFriendship] = useState<Friendship>();
     const [dial, setDial] = useState(false);
 
@@ -23,7 +14,8 @@ export const FriendsCard = ({userId, resetRelation}: {userId: number, resetRelat
         FriendService.getAllFriends()
             .then(friends => friends.find(f => f.userId == userId || f.secondUserId == userId))
             .then(setFriendship)
-            .catch(() => {}) //TODO
+            .catch(() => {
+            }) //TODO
     });
 
     const onCardClick = () => {
@@ -37,10 +29,19 @@ export const FriendsCard = ({userId, resetRelation}: {userId: number, resetRelat
 
         FriendService.deleteFriend(friendship!!.id)
             .then(resetRelation)
-            .catch(() => {}) // TODO
+            .catch(() => {
+            }) // TODO
     };
 
-    return <>
+    const onDialogClose = (res: ConfirmDialogResult) => {
+        if (res == "confirmed") {
+            performDeleteFriend();
+        }
+
+        setDial(false);
+    }
+
+    return (<>
         <Card>
             <CardActionArea onClick={onCardClick}>
                 <CardContent>
@@ -55,21 +56,12 @@ export const FriendsCard = ({userId, resetRelation}: {userId: number, resetRelat
             </CardActionArea>
         </Card>
 
-        <Dialog open={dial} onClose={() => setDial(false)}>
-            <DialogTitle>
-                {t("public-user-by-id.want-you-to-delete-this-friend")}
-            </DialogTitle>
-
-            <DialogContent>
-                <DialogContentText>
-                    {t("all.this-operation-cannot-be-undo")}
-                </DialogContentText>
-
-                <DialogActions>
-                    <Button autoFocus onClick={() => setDial(false)}>{t("all.cancel")}</Button>
-                    <Button onClick={() => { performDeleteFriend(); setDial(false); }}>{t("all.delete-friend")}</Button>
-                </DialogActions>
-            </DialogContent>
-        </Dialog>
-    </>;
+        <ConfirmDialog
+            title={t("public-user-by-id.want-you-to-delete-this-friend")}
+            body={t("all.this-operation-cannot-be-undo")}
+            confirmText={t("all.delete-friend")}
+            cancelText={t("all.cancel")}
+            onClose={onDialogClose}
+            open={dial}/>
+    </>)
 }
