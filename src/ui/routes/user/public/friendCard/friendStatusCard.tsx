@@ -23,7 +23,9 @@ import {NoRelationCard} from "./noRelationCard";
 export const FriendStatusCard = ({userId}: {userId: number}) => {
     const [relation, setRelation] = useState<FriendRelation>();
 
-    const resetRel = () => setRelation(undefined);
+    // TODO: When relation is updated to undefined, nothing is updated.
+
+    const resetRel = () => { setRelation(undefined); };
 
     useEffect(() => {
        FriendService.getFriendRelation(userId)
@@ -43,7 +45,7 @@ export const FriendStatusCard = ({userId}: {userId: number}) => {
         return <FriendRequestSentCard userId={userId}/>
     }
 
-    else {
+    else if (relation == undefined) {
         return <NoRelationCard userId={userId} resetRelation={resetRel}/>
     }
 

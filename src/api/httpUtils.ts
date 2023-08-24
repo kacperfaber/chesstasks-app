@@ -35,7 +35,7 @@ export class HttpUtils{
 
     public static putAsync<T>(url: string, body: any, token: Token | undefined = undefined): Promise<T> {
         return new Promise<T>((resolve, reject) => {
-            fetch(url, {body: body, headers: token ? this.tokenHeaders(token) : this.headers(), method: "PUT"})
+            fetch(url, {body: JSON.stringify(body), headers: token ? this.tokenHeaders(token) : this.headers(), method: "PUT"})
                 .then(resp => resp.json() as T)
                 .then(resp => resolve(resp))
                 .catch(() => reject());
