@@ -6,6 +6,8 @@ import {Puzzle} from "../../../../../api/puzzles/puzzle";
 import {PuzzleService} from "../../../../../services/puzzle/puzzleService";
 import {ViewOnlyBoard} from "../../../../components/chess/board/viewOnlyBoard";
 import {getDate} from "../../../../../commons/getDate";
+import {useNavigate} from "react-router-dom";
+import {Links} from "../../../../../links";
 
 export const ExpandablePuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistory: PuzzleHistory }) => {
     const [puzzle, setPuzzle] = useState<Puzzle>();
@@ -20,7 +22,7 @@ export const ExpandablePuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistor
         t("public-user-by-id.puzzle-history.item.solved") :
         t("public-user-by-id.puzzle-history.item.not-solved")
 
-    // TODO: PuzzleHistoryItem - click does nothing
+    const nav = useNavigate();
 
     return (
         puzzle ?
@@ -29,7 +31,7 @@ export const ExpandablePuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistor
                     <ViewOnlyBoard fen={puzzle.fen}/>
                 </ListItemAvatar>
 
-                <ListItemButton>
+                <ListItemButton onClick={() => nav(Links.puzzleById(puzzleHistory.puzzleId))}>
                     <ListItemText primary={itemPrimaryText}
                                   secondary={getDate(puzzleHistory.createdAt)}/>
                 </ListItemButton>

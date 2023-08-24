@@ -15,5 +15,11 @@ export const Links = {
 
     puzzleHistoryByUserId(userId: number): string {
         return Links.PuzzleHistoryByUserId.replace(":userId", userId.toString());
+    },
+
+    PuzzleById: "/puzzle/:puzzleId",
+
+    puzzleById(puzzleId: number): string {
+        return Links.PuzzleById.replace(":puzzleId", puzzleId.toString());
     }
 }

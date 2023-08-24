@@ -7,6 +7,8 @@ import {ViewOnlyBoard} from "../../../../components/chess/board/viewOnlyBoard";
 import {getDate} from "../../../../../commons/getDate";
 import {Puzzle} from "../../../../../api/puzzles/puzzle";
 import {PuzzleService} from "../../../../../services/puzzle/puzzleService";
+import {useNavigate} from "react-router-dom";
+import {Links} from "../../../../../links";
 
 const PuzzleHistoryByUserId_PuzzleHistoryList_RenderError = () => {
     return (<Typography>{t("puzzle-history-by-user-id.probably-hidden")}</Typography>);
@@ -14,6 +16,7 @@ const PuzzleHistoryByUserId_PuzzleHistoryList_RenderError = () => {
 
 const PuzzleHistoryByUserId_PuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistory: PuzzleHistory }) => {
     const [puzzle, setPuzzle] = useState<Puzzle>();
+    const nav = useNavigate();
 
     useEffect(() => {
         PuzzleService.getPuzzle(puzzleHistory.puzzleId)
@@ -33,8 +36,7 @@ const PuzzleHistoryByUserId_PuzzleHistoryList_Item = ({puzzleHistory}: { puzzleH
                     <ViewOnlyBoard fen={puzzle.fen}/>
                 </ListItemAvatar>
 
-                <ListItemButton onClick={() => { /* TODO: Nav to puzzle page */
-                }}>
+                <ListItemButton onClick={() => { nav(Links.puzzleById(puzzle.id)) }}>
                     <ListItemText secondary={getDate(puzzleHistory.createdAt)}
                                   primary={primaryText()}/>
                 </ListItemButton>
