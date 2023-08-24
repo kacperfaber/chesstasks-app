@@ -7,6 +7,8 @@ import {t} from "i18next";
 import {Card, CardActionArea, Grid, Paper, Typography} from "@mui/material";
 import {FriendRelation, FriendService} from "../../../../services/friends/friendService";
 import {FriendStatusCard} from "./friendCard/friendStatusCard";
+import {UserPuzzleHistorySection} from "./puzzleHistoryList/userPuzzleHistorySection";
+import {PublicProfile_BasePaper} from "./publicProfileBasePaper";
 
 export const PublicUserById = () => {
     const loaderData = useLoaderData() as {userId: number};
@@ -25,14 +27,18 @@ export const PublicUserById = () => {
         <AppLayout title={t('public-user-by-id.navbar-title') + ": " + loaderData.userId.toString()}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Paper sx={{padding: '25px', my: '10px'}}>
+                    <PublicProfile_BasePaper>
                         <Typography variant={'h4'}>{user?.username}</Typography>
                         <Typography color={'text.secondary'} variant={'body2'}>{t("public-user-by-id.body", {username: user?.username ?? "undefined"})}</Typography>
-                    </Paper>
+                    </PublicProfile_BasePaper>
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid item xs={12} md={6}>
                     <FriendStatusCard userId={loaderData.userId}/>
+                </Grid>
+
+                <Grid item xs={12} md={6}>
+                    <UserPuzzleHistorySection userId={loaderData.userId}/>
                 </Grid>
             </Grid>
         </AppLayout>
