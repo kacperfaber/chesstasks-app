@@ -16,7 +16,7 @@ const PuzzleHistoryByUserId_PuzzleHistoryList_Item = ({puzzleHistory}: { puzzleH
     const [puzzle, setPuzzle] = useState<Puzzle>();
 
     useEffect(() => {
-        PuzzleService.getPuzzle(puzzleHistory.id)
+        PuzzleService.getPuzzle(puzzleHistory.puzzleId)
             .then(setPuzzle)
             .catch(() => {
             }) // TODO
@@ -62,6 +62,7 @@ export const PuzzleHistoryByUserId_PuzzleHistoryList = ({userId}: { userId: numb
     useEffect(() => {
         PuzzleHistoryService.getPuzzleHistory(userId)
             .then(setHist)
+            .then(() => setFetch("ok"))
             .catch(() => {
                 setFetch("err")
             })

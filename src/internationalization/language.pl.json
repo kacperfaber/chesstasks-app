@@ -72,6 +72,17 @@
     "navbar-title": "Profil publiczny",
     "body": "To jest profil publiczny użytkownika {{username}}, treści jakie widzisz są zależne od ustawień tego",
 
+    "puzzle-history": {
+      "navbar-title": "Historia zadań użytkownika",
+      "title": "Historia zadań",
+      "item": {
+        "solved": "Rozwiązane poprawnie",
+        "not-solved": "Rozwiązane błędnie"
+      },
+      "more": "Więcej",
+      "probably-hidden": "Nie masz dostępu do histori zadąń tego użytkownika"
+    },
+
     "cards": {
       "no-relation": {
         "title": "Nie jesteście przyjaciółmi",
@@ -122,5 +133,17 @@
     "click-to-see-profile": "Kliknij, by przejść do profilu użytkownika",
     "search-results": "Wyniki wyszukiwania",
     "error-message": "Błąd podczas wyszukiwania"
+  },
+
+  "puzzle-history-by-user-id": {
+    "title": "Historia zadań",
+    "body": "Użytkownika {{username}}, może być niewidoczna jeśli użytkownik nie zezwala na to",
+    "probably-hidden": "Nie masz teraz dostępu do histori zadań tego użytkownika, prawdopobnie nie zezwolił na to.",
+    "list": {
+      "item": {
+        "success-title": "Zadanie rozwiązane poprawnie",
+        "failed-title": "Zadanie rozwiązane błędnie"
+      }
+    }
   }
 }

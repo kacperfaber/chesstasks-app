@@ -11,14 +11,14 @@ export const ExpandablePuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistor
     const [puzzle, setPuzzle] = useState<Puzzle>();
 
     useEffect(() => {
-        PuzzleService.getPuzzle(puzzleHistory.id)
+        PuzzleService.getPuzzle(puzzleHistory.puzzleId)
             .then(setPuzzle)
             .catch(() => {})
-    });
+    }, []);
 
     const itemPrimaryText = puzzleHistory.success ?
-        t("profile-by-id.puzzle-history.item.solved") :
-        t("profile-by-id.puzzle-history.item.not-solved")
+        t("public-user-by-id.puzzle-history.item.solved") :
+        t("public-user-by-id.puzzle-history.item.not-solved")
 
     // TODO: PuzzleHistoryItem - click does nothing
 
@@ -45,7 +45,7 @@ export interface ExpandablePuzzleHistoryListAttrs {
     moreClicked: () => void;
 }
 
-export const ExpandableUserPuzzleHistoryList = ({puzzleHistory, limit}: ExpandablePuzzleHistoryListAttrs) => {
+export const ExpandableUserPuzzleHistoryList = ({puzzleHistory, limit, moreClicked}: ExpandablePuzzleHistoryListAttrs) => {
     return (
         <>
             {
@@ -54,7 +54,7 @@ export const ExpandableUserPuzzleHistoryList = ({puzzleHistory, limit}: Expandab
                 )
             }
 
-            <Button sx={{mt: '20px'}}>{t("public-user-by-id.puzzle-history.more")}</Button>
+            <Button onClick={moreClicked} sx={{mt: '20px'}}>{t("public-user-by-id.puzzle-history.more")}</Button>
         </>
     )
 }

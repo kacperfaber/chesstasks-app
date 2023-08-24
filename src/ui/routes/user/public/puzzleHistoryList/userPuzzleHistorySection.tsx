@@ -5,9 +5,14 @@ import {t} from "i18next";
 import {PuzzleHistoryService} from "../../../../../services/puzzleHistory/puzzleHistoryService";
 import {ExpandableUserPuzzleHistoryList} from "./expandableUserPuzzleHistoryList";
 import {PublicProfile_BasePaper} from "../publicProfileBasePaper";
+import {useNavigate} from "react-router-dom";
+import {Links} from "../../../../../links";
 
-const RenderPuzzleHistoryList = ({puzzleHistory}: { puzzleHistory: PuzzleHistory[] }) => {
+const RenderPuzzleHistoryList = ({puzzleHistory, userId}: { puzzleHistory: PuzzleHistory[]; userId: number }) => {
+    const nav = useNavigate();
+
     const onMoreClicked = () => {
+        nav(Links.puzzleHistoryByUserId(userId))
     };
 
     return (<ExpandableUserPuzzleHistoryList limit={5} puzzleHistory={puzzleHistory} moreClicked={onMoreClicked}/>)
@@ -44,7 +49,7 @@ export const UserPuzzleHistorySection = ({userId}: { userId: number }) => {
                 }
 
                 {
-                    (fetch == "ok" && history) ? <RenderPuzzleHistoryList puzzleHistory={history}/> : <RenderInfo/>
+                    (fetch == "ok" && history) ? <RenderPuzzleHistoryList userId={userId} puzzleHistory={history}/> : <RenderInfo/>
                 }
             </PublicProfile_BasePaper>
         </>
