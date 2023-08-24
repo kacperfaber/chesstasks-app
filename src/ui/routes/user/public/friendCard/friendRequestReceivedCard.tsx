@@ -46,11 +46,11 @@ export const FriendRequestReceivedCard = ({resetRelation, userId}: {userId: numb
                 <CardActionArea onClick={onCardClick}>
                     <CardContent>
                         <Typography variant={'h5'}>
-                            {t("public-user-by-id.this-user-sent-friend-request")}
+                            {t("public-user-by-id.cards.request-received.title")}
                         </Typography>
 
                         <Typography variant={'body2'} color={'text.secondary'}>
-                            {t("public-user-by-id.click-to-accept-or-reject")}
+                            {t("public-user-by-id.cards.request-received.body")}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -58,18 +58,18 @@ export const FriendRequestReceivedCard = ({resetRelation, userId}: {userId: numb
 
             <Dialog open={dial} onClose={() => setDial(false)}>
                 <DialogTitle>
-                    {t("public-user-by-id.received-friend-request")}
+                    {t("public-user-by-id.cards.request-received.accept-or-reject-dialog.title")}
                 </DialogTitle>
 
                 <DialogContent>
                     <DialogContentText>
-                        {t("public-user-by-id.decide-what-will-you-do-with-this-request")}
+                        {t("public-user-by-id.cards.request-received.accept-or-reject-dialog.body")}
                     </DialogContentText>
 
                     <DialogActions>
                         <Button autoFocus onClick={() => setDial(false)}>{t("all.cancel")}</Button>
-                        <Button onClick={() => { performReject(); setDial(false)}}>{t("public-user-by-id.reject-friend-request")}</Button>
-                        <Button onClick={() => { performAccept(); setDial(false); }}>{t("public-user-by-id.accept-friend-request")}</Button>
+                        <Button onClick={() => { performReject(); setDial(false)}}>{t("public-user-by-id.cards.request-received.accept-or-reject-dialog.reject")}</Button>
+                        <Button onClick={() => { performAccept(); setDial(false); }}>{t("public-user-by-id.cards.request-received.accept-or-reject-dialog.accept")}</Button>
                     </DialogActions>
                 </DialogContent>
             </Dialog>

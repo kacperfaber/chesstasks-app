@@ -46,19 +46,19 @@ export const FriendsCard = ({userId, resetRelation}: { userId: number, resetRela
             <CardActionArea onClick={onCardClick}>
                 <CardContent>
                     <Typography variant={'h5'}>
-                        {t("public-user-by-id.you-are-friends")}
+                        {t("public-user-by-id.cards.friend.title")}
                     </Typography>
 
                     <Typography variant={'body2'} color={'text.secondary'}>
-                        {t("public-user-by-id.you-are-friends-from", {from: getDate(friendship?.createdAt ?? 0)})}
+                        {t("public-user-by-id.cards.friend.body", {from: getDate(friendship?.createdAt ?? 0)})}
                     </Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
 
         <ConfirmDialog
-            title={t("public-user-by-id.want-you-to-delete-this-friend")}
-            body={t("all.this-operation-cannot-be-undo")}
+            title={t("public-user-by-id.cards.friend.delete-friend-dialog.title")}
+            body={t("public-user-by-id.cards.friend.delete-friend-dialog.body")}
             confirmText={t("all.delete-friend")}
             cancelText={t("all.cancel")}
             onClose={onDialogClose}

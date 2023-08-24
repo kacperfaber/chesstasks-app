@@ -1,5 +1,7 @@
 {
   "all": {
+    "cancel": "Anuluj",
+    "delete-friend": "Usuń przyjaciela",
     "register-in": "Zarejestruj się",
     "sent-friend-requests": "Wysłane zaproszenia",
     "received-friend-requests": "Otrzymane zaproszenia",
@@ -68,7 +70,47 @@
 
   "public-user-by-id": {
     "navbar-title": "Profil publiczny",
-    "body": "To jest profil publiczny użytkownika {{username}}, treści jakie widzisz są zależne od ustawień tego"
+    "body": "To jest profil publiczny użytkownika {{username}}, treści jakie widzisz są zależne od ustawień tego",
+
+    "cards": {
+      "no-relation": {
+        "title": "Nie jesteście przyjaciółmi",
+        "body": "Jeśli chcesz zaprosić użytkownika - kliknij",
+        "send-request-dialog": {
+          "title": "Chcesz zaprosić użytkownika do przyjaciół?",
+          "body": "Spowoduje to wysłanie zaproszenia do użytkownika",
+          "send-request": "Wyślij zaproszenie"
+        }
+      },
+
+      "request-received": {
+        "title": "Ten użytkownik zaprosił cię do przyjaciół",
+        "body": "Kliknij i zdecyduj, czy chcesz go zaakceptować",
+
+        "accept-or-reject-dialog": {
+          "title": "Czy chcesz zaakceptować zaproszenie?",
+          "body": "Spowoduje to dodanie użytkownika do grona twoich przyjaciół",
+
+          "reject": "Odrzuć",
+          "accept": "Zaakceptuj"
+        }
+      },
+
+      "request-sent": {
+        "title": "Zaproszenie wysłano",
+        "body": "Jeśli ten użytkownik je zaakceptuje, to zostanie twoim przyjacielem"
+      },
+
+      "friend": {
+        "title": "Ten użytkownik jest twoim przyjacielem.",
+        "body": "Jeśli chcesz go usunąć - kliknij",
+
+        "delete-friend-dialog": {
+          "title": "Czy chcesz usunąć tego użytkownika z grona przyjaciół?",
+          "body": "Tej operacji nie można cofnąć"
+        }
+      }
+    }
   },
 
   "search-user": {

@@ -33,19 +33,19 @@ export const NoRelationCard = ({userId, resetRelation}: { userId: number, resetR
                 <CardActionArea onClick={onCardClick}>
                     <CardContent>
                         <Typography variant={'h5'}>
-                            {t("public-user-by-id.you-re-not-friends")}
+                            {t("public-user-by-id.cards.no-relation.title")}
                         </Typography>
 
                         <Typography variant={'body2'} color={'text.secondary'}>
-                            {t("public-user-by-id.click-to-send-friend-request")}
+                            {t("public-user-by-id.cards.no-relation.body")}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
             </Card>
 
-            <ConfirmDialog title={t("public-user-by-id.want-you-to-send-friend-request")}
-                           body={t("public-user-by-id.if-you-want-to-send")}
-                           confirmText={t("public-user-by-id.send-friend-request")}
+            <ConfirmDialog title={t("public-user-by-id.cards.no-relation.send-request-dialog.title")}
+                           body={t("public-user-by-id.cards.no-relation.send-request-dialog.body")}
+                           confirmText={t("public-user-by-id.cards.no-relation.send-request-dialog.send-request")}
                            cancelText={t("all.cancel")}
                            onClose={onDialogClose}
                            open={dial}/>

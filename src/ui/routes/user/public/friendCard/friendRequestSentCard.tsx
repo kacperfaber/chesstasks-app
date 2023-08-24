@@ -6,11 +6,11 @@ export const FriendRequestSentCard = ({userId}: { userId: number }) => {
             <CardActionArea>
                 <CardContent>
                     <Typography variant={'h5'}>
-                        {t("public-user-by-id.you-sent-friend-request")}
+                        {t("public-user-by-id.cards.request-sent.title")}
                     </Typography>
 
                     <Typography variant={'body2'} color={'text.secondary'}>
-                        {t("public-user-by-id.wait-for-user-to-respond")}
+                        {t("public-user-by-id.cards.request-sent.body")}
                     </Typography>
                 </CardContent>
             </CardActionArea>
