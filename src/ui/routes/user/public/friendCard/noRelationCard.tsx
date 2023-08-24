@@ -3,8 +3,9 @@ import {t} from "i18next";
 import {useState} from "react";
 import {FriendService} from "../../../../../services/friends/friendService";
 import {ConfirmDialog, ConfirmDialogResult} from "../../../../base/dialogs/confirmDialog";
+import {FriendCardAttrs} from "./friendCardAttrs";
 
-export const NoRelationCard = ({userId, resetRelation}: { userId: number, resetRelation: () => void }) => {
+export const NoRelationCard = ({userId, resetRelation}: FriendCardAttrs) => {
     const [dial, setDial] = useState(false);
 
     const onCardClick = () => {

@@ -5,8 +5,9 @@ import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
 import {t} from "i18next";
 import {getDate} from "../../../../../commons/getDate";
 import {ConfirmDialog, ConfirmDialogResult} from "../../../../base/dialogs/confirmDialog";
+import {FriendCardAttrs} from "./friendCardAttrs";
 
-export const FriendsCard = ({userId, resetRelation}: { userId: number, resetRelation: () => void }) => {
+export const FriendsCard = ({userId, resetRelation}: FriendCardAttrs) => {
     const [friendship, setFriendship] = useState<Friendship>();
     const [dial, setDial] = useState(false);
 

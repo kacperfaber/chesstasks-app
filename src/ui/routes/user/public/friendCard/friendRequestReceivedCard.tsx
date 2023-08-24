@@ -12,8 +12,9 @@ import {
     Typography
 } from "@mui/material";
 import {t} from "i18next";
+import {FriendCardAttrs} from "./friendCardAttrs";
 
-export const FriendRequestReceivedCard = ({resetRelation, userId}: {userId: number, resetRelation: () => void}) => {
+export const FriendRequestReceivedCard = ({resetRelation, userId}: FriendCardAttrs) => {
     const [friendship, setFriendship] = useState<Friendship>();
     const [dial, setDial] = useState(false);
 

@@ -1,7 +1,8 @@
 import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
 import {t} from "i18next";
+import {FriendCardAttrs} from "./friendCardAttrs";
 
-export const FriendRequestSentCard = ({userId}: { userId: number }) => {
+export const FriendRequestSentCard = ({userId}: FriendCardAttrs) => {
     return (<Card>
             <CardActionArea>
                 <CardContent>

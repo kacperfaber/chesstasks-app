@@ -42,7 +42,7 @@ export const FriendStatusCard = ({userId}: {userId: number}) => {
     }
 
     else if (relation == "request_sent") {
-        return <FriendRequestSentCard userId={userId}/>
+        return <FriendRequestSentCard userId={userId} resetRelation={resetRel}/>
     }
 
     else if (relation == undefined) {
