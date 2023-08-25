@@ -173,5 +173,26 @@
 
   "settings": {
     "navbar-title": "Ustawienia"
+  },
+
+  "puzzle-feedback": {
+    "find-best-move-for-white": "Znajdź najlepszy ruch dla białych",
+    "find-best-move-for-black": "Znajdź najlepszy ruch dla czarnych",
+    "your-move": "Twój ruch",
+
+    "solved": {
+      "title": "Sukces",
+      "body": "Dobra robota, oby tak dalej"
+    },
+
+    "good-move": {
+      "title": "Dobry ruch",
+      "body": "Kontynuuj..."
+    },
+
+    "bad-move": {
+      "title": "To nie to...",
+      "body": "Spróbuj coś innego"
+    }
   }
 }

@@ -8,9 +8,9 @@ import {PublicUserById} from "./ui/routes/user/public/publicUserById";
 import {puzzleIdLoader, userIdLoader} from "./ui/routes/loaders";
 import {SearchUser} from "./ui/routes/user/search/searchUser";
 import {PuzzleHistoryByUserId} from "./ui/routes/puzzle/history/byUserId/puzzleHistoryByUserId";
-import {PuzzleById} from "./puzzleById";
 import {MinePuzzleHistory} from "./ui/routes/puzzle/history/mine/minePuzzleHistory";
 import {Settings} from "./ui/routes/settings/settings";
+import {PuzzleById} from "./ui/routes/puzzle/byId/puzzleById";
 
 export const Router = createBrowserRouter([
     {

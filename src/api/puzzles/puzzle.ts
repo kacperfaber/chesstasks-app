@@ -3,7 +3,7 @@ import {PuzzleDatabase} from "./puzzleDatabase";
 export interface Puzzle {
     id: number;
     fen: string;
-    moves: Array<string>;
+    moves: string;
     database: PuzzleDatabase;
     themes: Array<string>;
     ranking: number;
