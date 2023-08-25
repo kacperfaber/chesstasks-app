@@ -60,7 +60,7 @@ export const AppDrawer = (args: AppDrawerArgs) => {
                     {t("drawer.history-title")}
                 </TransparentListSubheader>
 
-                <ListItemButton>
+                <ListItemButton onClick={() => nav(Links.PuzzleHistory)}>
                     <ListItemIcon>
                         <History/>
                     </ListItemIcon>

@@ -21,5 +21,7 @@ export const Links = {
 
     puzzleById(puzzleId: number): string {
         return Links.PuzzleById.replace(":puzzleId", puzzleId.toString());
-    }
+    },
+
+    PuzzleHistory: "/puzzle-history"
 }

@@ -145,5 +145,21 @@
         "failed-title": "Zadanie rozwiązane błędnie"
       }
     }
+  },
+
+  "mine-puzzle-history": {
+    "navbar-title": "Historia zadań",
+    "title": "Historia zadań",
+    "body": "Twoja historia zadań zawiera wszystkie zadanie jakie rozwiązałeś, poprawnie i błędnie.",
+
+    "list": {
+      "item": {
+        "title": "Zadanie {{p.id}}",
+        "body": {
+          "solved": "Zadanie rozwiązano poprawnie",
+          "failed": "Zadanie rozwiązano błędnie"
+        }
+      }
+    }
   }
 }
