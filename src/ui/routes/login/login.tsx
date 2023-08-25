@@ -1,10 +1,12 @@
 import {AppLayout} from "../../components/layout/appLayout";
-import {t} from "i18next";
 import {Button, Grid, Typography} from "@mui/material";
 import {LoginSection} from "./loginSection";
 import {screenNotImplemented} from "../../../commons/notImplemented";
+import {useTranslation} from "react-i18next";
 
 export const Login = () => {
+    const {t} = useTranslation();
+
     return (
         <AppLayout title={t("login.navbar-title")}>
             <Grid container spacing={4}>

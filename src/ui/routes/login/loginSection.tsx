@@ -1,13 +1,15 @@
 import {Button, Grid, Paper, Snackbar, TextField, Typography} from "@mui/material";
-import {t} from "i18next";
 import {useContext, useState} from "react";
 import {AuthenticationService} from "../../../services/authentication/authenticationService";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../links";
 import {CurrentUserContext} from "../../contexts/authentication/currentUserContext";
+import {useTranslation} from "react-i18next";
 
 export const LoginSection = () => {
     const [isError, setIsError] = useState(false);
+
+    const {t} = useTranslation();
 
     const currentUserCtx = useContext(CurrentUserContext);
 

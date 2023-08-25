@@ -1,6 +1,5 @@
 import React, {useContext, useState} from "react";
 import {Dialog, Drawer, List, ListItemButton, ListItemIcon, Typography} from "@mui/material";
-import {t} from "i18next";
 import {Delete, Visibility} from "@mui/icons-material";
 import {FriendService} from "../../../../services/friends/friendService";
 import {Friendship} from "../../../../api/friends/friendship";
@@ -8,8 +7,10 @@ import {CurrentUserContext} from "../../../contexts/authentication/currentUserCo
 import {screenNotImplemented} from "../../../../commons/notImplemented";
 import {DeleteFriendConfirmDialog} from "../../../components/friends/delete/deleteFriendConfirmDialog";
 import {AllFriendContext} from "../../../contexts/friends/allFriendContext";
+import {useTranslation} from "react-i18next";
 
 export const AllFriends_Menu = ({selectedFriend, onClose}: {selectedFriend: Friendship | null, onClose: () => void}) => {
+    const {t} = useTranslation();
     const userCtx = useContext(CurrentUserContext);
     const allFriendsCtx = useContext(AllFriendContext);
 

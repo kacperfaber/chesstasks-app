@@ -11,13 +11,13 @@ import {
     DialogTitle,
     Typography
 } from "@mui/material";
-import {t} from "i18next";
 import {FriendCardAttrs} from "./friendCardAttrs";
+import {useTranslation} from "react-i18next";
 
 export const FriendRequestReceivedCard = ({resetRelation, userId}: FriendCardAttrs) => {
     const [friendship, setFriendship] = useState<Friendship>();
     const [dial, setDial] = useState(false);
-
+    const {t} = useTranslation();
     const performReject = () => {
         FriendService.rejectFriendRequest(userId)
             .then(resetRelation)

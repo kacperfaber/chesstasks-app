@@ -10,18 +10,19 @@ import {
     DialogTitle,
     Typography
 } from "@mui/material";
-import {t} from "i18next";
 import {Friendship} from "../../../../../api/friends/friendship";
 import {getDate} from "../../../../../commons/getDate";
 import {FriendsCard} from "./friendCard";
 import {FriendRequestReceivedCard} from "./friendRequestReceivedCard";
 import {FriendRequestSentCard} from "./friendRequestSentCard";
 import {NoRelationCard} from "./noRelationCard";
+import {useTranslation} from "react-i18next";
 
 
 
 export const FriendStatusCard = ({userId}: {userId: number}) => {
     const [relation, setRelation] = useState<FriendRelation>();
+    const {t} = useTranslation();
 
     // TODO: When relation is updated to undefined, nothing is updated.
 

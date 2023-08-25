@@ -3,14 +3,15 @@ import {useEffect, useState} from "react";
 import {UserService} from "../../../../services/user/userService";
 import {PublicUser} from "../../../../api/user/publicUser";
 import {AppLayout} from "../../../components/layout/appLayout";
-import {t} from "i18next";
 import {Card, CardActionArea, Grid, Paper, Typography} from "@mui/material";
 import {FriendRelation, FriendService} from "../../../../services/friends/friendService";
 import {FriendStatusCard} from "./friendCard/friendStatusCard";
 import {UserPuzzleHistorySection} from "./puzzleHistoryList/userPuzzleHistorySection";
 import {PublicProfile_BasePaper} from "./publicProfileBasePaper";
+import {useTranslation} from "react-i18next";
 
 export const PublicUserById = () => {
+    const {t} = useTranslation();
     const loaderData = useLoaderData() as {userId: number};
 
     const [user, setUser] = useState<PublicUser | undefined>(undefined);

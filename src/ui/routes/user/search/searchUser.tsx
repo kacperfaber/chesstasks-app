@@ -1,5 +1,4 @@
 import {AppLayout} from "../../../components/layout/appLayout";
-import {t} from "i18next";
 import {
     Alert,
     Button,
@@ -19,9 +18,11 @@ import {SimpleUser} from "../../../../api/simpleUser";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../links";
 import styled from "styled-components";
+import {useTranslation} from "react-i18next";
 
 export const SearchUser_Item = ({simpleUser}: { simpleUser: SimpleUser }) => {
     const nav = useNavigate();
+    const {t} = useTranslation();
 
     return (
         <>
@@ -37,6 +38,7 @@ export const SearchUser_Item = ({simpleUser}: { simpleUser: SimpleUser }) => {
 }
 
 export const SearchUser_Results = ({data}: {data: SimpleUser[]}) => {
+    const {t} = useTranslation();
     return (<>
         <Grid item xs={12}>
             <Typography variant={'h5'}>
@@ -60,6 +62,7 @@ export const SearchUser = () => {
     const [query, setQuery] = useState("");
     const [err, setErr] = useState(false);
     const [data, setData] = useState<undefined | SimpleUser[]>(undefined);
+    const {t} = useTranslation();
 
     const searchByUsername = () => {
         if (query == "") {

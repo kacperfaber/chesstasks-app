@@ -3,12 +3,13 @@ import {SentFriendRequestsContext} from "../../../../contexts/friends/sentFriend
 import {FriendRequest} from "../../../../../api/friends/friendRequest";
 import {IconButton, ListItem, ListItemButton, ListItemText, Menu, MenuItem} from "@mui/material";
 import {MoreVert} from "@mui/icons-material";
-import {t} from "i18next";
 import {getDate} from "../../../../../commons/getDate";
 import {FriendService} from "../../../../../services/friends/friendService";
+import {useTranslation} from "react-i18next";
 
 export const AllFriendRequests_SentRequestItem = ({req}: { req: FriendRequest }) => {
     const [menuAnchor, setMenuAnchor] = useState<Element | undefined>(undefined);
+    const {t} = useTranslation();
 
     const moreClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
         setMenuAnchor(e.currentTarget);

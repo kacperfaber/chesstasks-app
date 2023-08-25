@@ -2,14 +2,15 @@ import {useEffect, useState} from "react";
 import {Friendship} from "../../../../../api/friends/friendship";
 import {FriendService} from "../../../../../services/friends/friendService";
 import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
-import {t} from "i18next";
 import {getDate} from "../../../../../commons/getDate";
 import {ConfirmDialog, ConfirmDialogResult} from "../../../../base/dialogs/confirmDialog";
 import {FriendCardAttrs} from "./friendCardAttrs";
+import {useTranslation} from "react-i18next";
 
 export const FriendsCard = ({userId, resetRelation}: FriendCardAttrs) => {
     const [friendship, setFriendship] = useState<Friendship>();
     const [dial, setDial] = useState(false);
+    const {t} = useTranslation();
 
     useEffect(() => {
         FriendService.getAllFriends()
