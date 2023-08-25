@@ -18,7 +18,7 @@ export const MinePuzzleHistory_PuzzleHistoryListItem = ({puzzleHistory}: {puzzle
         PuzzleService.getPuzzle(puzzleHistory.puzzleId)
             .then(setPuzzle)
             .catch(() => {}); // TODO
-    });
+    }, []);
 
     const itemClicked = () => {
         nav(Links.puzzleById(puzzleHistory.puzzleId));
