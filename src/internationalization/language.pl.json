@@ -163,5 +163,9 @@
         }
       }
     }
+  },
+
+  "settings": {
+    "navbar-title": "Ustawienia"
   }
 }
