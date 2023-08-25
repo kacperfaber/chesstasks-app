@@ -85,6 +85,12 @@
       "probably-hidden": "Nie masz dostępu do histori zadąń tego użytkownika"
     },
 
+    "statistics": {
+      "title": "Statystyki",
+      "total-solved": "Rozwiązano",
+      "total-fails": "Błędnie"
+    },
+
     "cards": {
       "no-relation": {
         "title": "Nie jesteście przyjaciółmi",

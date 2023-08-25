@@ -9,6 +9,7 @@ import {FriendStatusCard} from "./friendCard/friendStatusCard";
 import {UserPuzzleHistorySection} from "./puzzleHistoryList/userPuzzleHistorySection";
 import {PublicProfile_BasePaper} from "./publicProfileBasePaper";
 import {useTranslation} from "react-i18next";
+import {UserStatisticsSection} from "./userStats/userStatisticsSection";
 
 export const PublicUserById = () => {
     const {t} = useTranslation();
@@ -36,6 +37,10 @@ export const PublicUserById = () => {
 
                 <Grid item xs={12} md={6}>
                     <FriendStatusCard userId={loaderData.userId}/>
+                </Grid>
+
+                <Grid item xs={12} md={6}>
+                    <UserStatisticsSection userId={loaderData.userId}/>
                 </Grid>
 
                 <Grid item xs={12} md={6}>
