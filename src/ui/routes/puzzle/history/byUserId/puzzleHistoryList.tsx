@@ -2,20 +2,22 @@ import {List, ListItem, ListItemAvatar, ListItemButton, ListItemText, Typography
 import {useEffect, useState} from "react";
 import {PuzzleHistory} from "../../../../../api/puzzleHistory/puzzleHistory";
 import {PuzzleHistoryService} from "../../../../../services/puzzleHistory/puzzleHistoryService";
-import {t} from "i18next";
 import {ViewOnlyBoard} from "../../../../components/chess/board/viewOnlyBoard";
 import {getDate} from "../../../../../commons/getDate";
 import {Puzzle} from "../../../../../api/puzzles/puzzle";
 import {PuzzleService} from "../../../../../services/puzzle/puzzleService";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../../links";
+import {useTranslation} from "react-i18next";
 
 const PuzzleHistoryByUserId_PuzzleHistoryList_RenderError = () => {
+    const {t} = useTranslation();
     return (<Typography>{t("puzzle-history-by-user-id.probably-hidden")}</Typography>);
 }
 
 const PuzzleHistoryByUserId_PuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistory: PuzzleHistory }) => {
     const [puzzle, setPuzzle] = useState<Puzzle>();
+    const {t} = useTranslation();
     const nav = useNavigate();
 
     useEffect(() => {

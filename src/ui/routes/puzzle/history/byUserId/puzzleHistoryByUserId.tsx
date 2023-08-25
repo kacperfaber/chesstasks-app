@@ -1,14 +1,15 @@
 import {AppLayout} from "../../../../components/layout/appLayout";
-import {t} from "i18next";
 import {useLoaderData} from "react-router-dom";
 import {Grid, Typography} from "@mui/material";
 import {PuzzleHistoryByUserId_PuzzleHistoryList} from "./puzzleHistoryList";
 import {UserService} from "../../../../../services/user/userService";
 import {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
 
 export const PuzzleHistoryByUserId = () => {
     const loaderData = useLoaderData() as {userId: number};
     const [username, setUsername] = useState<string>();
+    const {t} = useTranslation();
 
     useEffect(() => {
         UserService.getById(loaderData.userId)

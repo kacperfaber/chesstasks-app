@@ -2,11 +2,11 @@ import {Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListSubhe
 import {AppDrawer_CurrentUser} from "./currentUser";
 import {useContext} from "react";
 import {CurrentUserContext} from "../../../contexts/authentication/currentUserContext";
-import {t} from "i18next";
 import styled from "styled-components";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../links";
 import {History, Home, LocalPizza, People, Person, Search, Style} from "@mui/icons-material";
+import {useTranslation} from "react-i18next";
 
 interface AppDrawerArgs {
     isOpen: boolean;
@@ -20,6 +20,8 @@ const TransparentListSubheader = ({children}: {children: string}) => {
 export const AppDrawer = (args: AppDrawerArgs) => {
     // TODO: Instead this use data from 'currentUserContext'
     const userContext = useContext(CurrentUserContext);
+
+    const {t} = useTranslation();
 
     const nav = useNavigate();
 

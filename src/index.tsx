@@ -24,10 +24,10 @@ function getRouterElement(): JSX.Element {
     </React.StrictMode>);
 }
 
+Internationalization.setup()
+startApp();
+
 function startApp() {
     const root = createRoot(getRootElement());
     root.render(getRouterElement());
 }
-
-Internationalization.setup()
-    .then(startApp);

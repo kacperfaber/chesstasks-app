@@ -1,9 +1,10 @@
 import {AppLayout} from "../../../../components/layout/appLayout";
 import {Grid, Typography} from "@mui/material";
 import {MinePuzzleHistory_PuzzleHistoryList} from "./puzzleHistoryList";
-import {t} from "i18next";
+import {useTranslation} from "react-i18next";
 
 export const MinePuzzleHistory = () => {
+    const {t} = useTranslation();
     return (
         <AppLayout title={t("mine-puzzle-history.navbar-title")}>
             <Grid container spacing={3}>

@@ -5,8 +5,8 @@ import {IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, 
 import {Close, Done, MoreVert} from "@mui/icons-material";
 import {FriendRequest} from "../../../../../api/friends/friendRequest";
 import {getDate} from "../../../../../commons/getDate";
-import {t} from "i18next";
 import {AllFriendContext} from "../../../../contexts/friends/allFriendContext";
+import {useTranslation} from "react-i18next";
 
 const AllFriendRequests_ReceivedListItem = ({req, resetCtx}: { req: FriendRequest; resetCtx: () => void }) => {
     const [menuAnchor, setMenuAnchor] = useState<Element | undefined>(undefined);
@@ -25,9 +25,10 @@ const AllFriendRequests_ReceivedListItem = ({req, resetCtx}: { req: FriendReques
             }) // TODO
     }
 
+    const {t} = useTranslation();
+
     return (
         <>
-
             <ListItem secondaryAction={
                 <IconButton onClick={(e) => setMenuAnchor(e.currentTarget)}>
                     <MoreVert/>

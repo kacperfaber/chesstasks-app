@@ -1,6 +1,5 @@
 import {PuzzleHistory} from "../../../../../api/puzzleHistory/puzzleHistory";
 import {Button, ListItem, ListItemAvatar, ListItemButton, ListItemText} from "@mui/material";
-import {t} from "i18next";
 import {useEffect, useState} from "react";
 import {Puzzle} from "../../../../../api/puzzles/puzzle";
 import {PuzzleService} from "../../../../../services/puzzle/puzzleService";
@@ -8,9 +7,11 @@ import {ViewOnlyBoard} from "../../../../components/chess/board/viewOnlyBoard";
 import {getDate} from "../../../../../commons/getDate";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../../links";
+import {useTranslation} from "react-i18next";
 
 export const ExpandablePuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistory: PuzzleHistory }) => {
     const [puzzle, setPuzzle] = useState<Puzzle>();
+    const {t} = useTranslation();
 
     useEffect(() => {
         PuzzleService.getPuzzle(puzzleHistory.puzzleId)
@@ -48,6 +49,7 @@ export interface ExpandablePuzzleHistoryListAttrs {
 }
 
 export const ExpandableUserPuzzleHistoryList = ({puzzleHistory, limit, moreClicked}: ExpandablePuzzleHistoryListAttrs) => {
+    const {t} = useTranslation();
     return (
         <>
             {

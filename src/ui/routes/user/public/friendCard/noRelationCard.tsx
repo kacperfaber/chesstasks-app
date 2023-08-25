@@ -1,12 +1,13 @@
 import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
-import {t} from "i18next";
 import {useState} from "react";
 import {FriendService} from "../../../../../services/friends/friendService";
 import {ConfirmDialog, ConfirmDialogResult} from "../../../../base/dialogs/confirmDialog";
 import {FriendCardAttrs} from "./friendCardAttrs";
+import {useTranslation} from "react-i18next";
 
 export const NoRelationCard = ({userId, resetRelation}: FriendCardAttrs) => {
     const [dial, setDial] = useState(false);
+    const {t} = useTranslation();
 
     const onCardClick = () => {
         setDial(true);

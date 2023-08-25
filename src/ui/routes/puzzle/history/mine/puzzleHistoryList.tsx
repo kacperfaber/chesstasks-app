@@ -7,11 +7,12 @@ import {Puzzle} from "../../../../../api/puzzles/puzzle";
 import {PuzzleService} from "../../../../../services/puzzle/puzzleService";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../../links";
-import {t} from "i18next";
+import {useTranslation} from "react-i18next";
 
 export const MinePuzzleHistory_PuzzleHistoryListItem = ({puzzleHistory}: {puzzleHistory: PuzzleHistory}) => {
     const [puzzle, setPuzzle] = useState<Puzzle>();
     const nav = useNavigate();
+    const {t} = useTranslation();
 
     useEffect(() => {
         PuzzleService.getPuzzle(puzzleHistory.puzzleId)

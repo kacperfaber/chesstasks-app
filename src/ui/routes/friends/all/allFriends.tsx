@@ -1,5 +1,4 @@
 import {AppLayout} from "../../../components/layout/appLayout";
-import {t} from "i18next";
 import React, {useContext, useEffect, useState} from "react";
 import {AllFriendContext} from "../../../contexts/friends/allFriendContext";
 import {Grid, List} from "@mui/material";
@@ -12,8 +11,10 @@ import {screenNotImplemented} from "../../../../commons/notImplemented";
 import {getFriendId} from "../../../../commons/getFriendId";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../links";
+import {useTranslation} from "react-i18next";
 
 export const AllFriends = () => {
+    const {t} = useTranslation();
     const allFriends = useContext(AllFriendContext);
 
     const nav = useNavigate();
