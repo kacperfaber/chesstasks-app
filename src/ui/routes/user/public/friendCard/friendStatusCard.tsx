@@ -49,5 +49,7 @@ export const FriendStatusCard = ({userId}: {userId: number}) => {
         return <NoRelationCard userId={userId} resetRelation={resetRel}/>
     }
 
-    return <><div>not impl</div></>
+    else if (relation == "yourself") {
+        return null;
+    }
 }

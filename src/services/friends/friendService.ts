@@ -3,8 +3,9 @@ import {FriendApi} from "../../api/friends/friendApi";
 import {FriendStore} from "../../store/friends/friendStore";
 import {FriendRequest} from "../../api/friends/friendRequest";
 import {TokenStorage} from "../../storage/token/tokenStorage";
+import {AuthenticationService} from "../authentication/authenticationService";
 
-export type FriendRelation = "request_received" | "request_sent" | "friends" | undefined;
+export type FriendRelation = "yourself" | "request_received" | "request_sent" | "friends" | undefined;
 
 export class FriendService {
     /**
@@ -84,6 +85,10 @@ export class FriendService {
     }
 
     public static async getFriendRelation(userId: number): Promise<FriendRelation> {
+        const currentUserId = await AuthenticationService.getCurrentOrNull();
+
+        if (currentUserId?.id == userId) return "yourself";
+
         const friends = await FriendService.getAllFriends();
         const sentRequests = await FriendService.getSentRequests();
         const receivedRequests = await FriendService.getReceivedRequests();
