@@ -8,11 +8,15 @@ import {screenNotImplemented} from "../../../../commons/notImplemented";
 import {DeleteFriendConfirmDialog} from "../../../components/friends/delete/deleteFriendConfirmDialog";
 import {AllFriendContext} from "../../../contexts/friends/allFriendContext";
 import {useTranslation} from "react-i18next";
+import {getFriendId} from "../../../../commons/getFriendId";
+import {Links} from "../../../../links";
+import {useNavigate} from "react-router-dom";
 
 export const AllFriends_Menu = ({selectedFriend, onClose}: {selectedFriend: Friendship | null, onClose: () => void}) => {
     const {t} = useTranslation();
     const userCtx = useContext(CurrentUserContext);
     const allFriendsCtx = useContext(AllFriendContext);
+    const nav = useNavigate();
 
     const [deleteConfirmDial, setDelConfirmDial] = useState(false);
 
@@ -26,7 +30,10 @@ export const AllFriends_Menu = ({selectedFriend, onClose}: {selectedFriend: Frie
             .catch((err) => { console.log("cannot del friend"); allFriendsCtx.setValue(undefined); throw err }) // TODO
     };
 
-    // TODO: UserProfile by user.id -  Screen Not Implemented.
+    const seeProfile = () => {
+        const friendId = getFriendId(userCtx.value!!.id, selectedFriend!!);
+        nav(Links.publicUserById(friendId));
+    }
 
     return (
         <React.Fragment>
@@ -47,7 +54,7 @@ export const AllFriends_Menu = ({selectedFriend, onClose}: {selectedFriend: Frie
                         {t("all-friends.delete-friend")}
                     </ListItemButton>
 
-                    <ListItemButton onClick={screenNotImplemented("user profile using user.id")}>
+                    <ListItemButton onClick={seeProfile}>
                         <ListItemIcon>
                             <Visibility/>
                         </ListItemIcon>
