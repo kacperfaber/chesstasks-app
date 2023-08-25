@@ -5,7 +5,7 @@ import {Links} from "./links";
 import {AllFriends} from "./ui/routes/friends/all/allFriends";
 import {AllFriendRequests} from "./ui/routes/friends/requests/all/allFriendRequests";
 import {PublicUserById} from "./ui/routes/user/public/publicUserById";
-import {userIdLoader} from "./ui/routes/loaders";
+import {puzzleIdLoader, userIdLoader} from "./ui/routes/loaders";
 import {SearchUser} from "./ui/routes/user/search/searchUser";
 import {PuzzleHistoryByUserId} from "./ui/routes/puzzle/history/byUserId/puzzleHistoryByUserId";
 import {PuzzleById} from "./puzzleById";
