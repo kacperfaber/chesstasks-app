@@ -23,5 +23,7 @@ export const Links = {
         return Links.PuzzleById.replace(":puzzleId", puzzleId.toString());
     },
 
-    PuzzleHistory: "/puzzle-history"
+    PuzzleHistory: "/puzzle-history",
+
+    Settings: "/settings"
 }

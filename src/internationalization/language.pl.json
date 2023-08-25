@@ -6,7 +6,9 @@
     "sent-friend-requests": "Wysłane zaproszenia",
     "received-friend-requests": "Otrzymane zaproszenia",
     "friend-request-accept": "Zaakceptuj zaproszenie",
-    "friend-request-reject": "Odrzuć zaproszenie"
+    "friend-request-reject": "Odrzuć zaproszenie",
+    "logout": "Wyloguj się",
+    "settings": "Ustawienia"
   },
 
   "drawer": {

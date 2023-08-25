@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../links";
 import {History, Home, LocalPizza, People, Person, Search, Style} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
+import {AuthenticationService} from "../../../../services/authentication/authenticationService";
 
 interface AppDrawerArgs {
     isOpen: boolean;
@@ -25,13 +26,17 @@ export const AppDrawer = (args: AppDrawerArgs) => {
 
     const nav = useNavigate();
 
-    const notImpl = () => { throw Error("AppDrawer.login and AppDrawer.logout not implemented.") };
+    const logout = () => {
+        AuthenticationService.logout()
+            .then(() => userContext.setValue(undefined))
+            .catch(() => {});
+    }
 
     // TODO: use another drawer, when user is not signed in.
 
     return (
         <Drawer anchor={'left'} open={args.isOpen} onClose={args.onClose}>
-            <AppDrawer_CurrentUser login={ () => nav(Links.Login) } logout={ notImpl } username={userContext.value?.username}/>
+            <AppDrawer_CurrentUser login={ () => nav(Links.Login) } logout={ logout } username={userContext.value?.username}/>
             <List>
                 <ListItemButton>
                     <ListItemIcon>
