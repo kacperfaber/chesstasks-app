@@ -172,7 +172,25 @@
   },
 
   "settings": {
-    "navbar-title": "Ustawienia"
+    "navbar-title": "Ustawienia",
+
+    "visibility": {
+      "me": "Tylko ja",
+      "only-friends": "Tylko przyjaciele",
+      "everyone": "Wszyscy"
+    },
+
+    "history-visibility": {
+      "title": "Widoczność historii zadań",
+      "body": "Zmiana tego ustawienia spowoduje, że niektórzy użytkownicy nie będą już mogli zobaczyć twojej histori."
+    },
+
+    "statistics-visibility": {
+      "title": "Widoczność statystyk",
+      "body": "Zmiana tego ustawienia spowoduje, że nie uprawnieni użytkownicy nie bedą już widzieć twojego rankingu i innych statystyk"
+    },
+    "cancel": "Anuluj",
+    "save": "Zapisz"
   },
 
   "puzzle-feedback": {
