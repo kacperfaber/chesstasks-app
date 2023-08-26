@@ -46,7 +46,7 @@ export const PuzzleById = () => {
             <Grid container>
                 { puzzle ?
                     <>
-                        <Grid item xs={12}>
+                        <Grid item md={6} xs={12}>
                             <PuzzleBoard puzzle={puzzle} onGoodMove={onGoodMove} onBadMove={onBadMove}/>
                         </Grid>
 

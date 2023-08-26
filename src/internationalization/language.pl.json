@@ -212,5 +212,9 @@
       "title": "To nie to...",
       "body": "Spróbuj coś innego"
     }
+  },
+
+  "puzzle-by-id": {
+    "navbar-title": "Zadanie"
   }
 }
