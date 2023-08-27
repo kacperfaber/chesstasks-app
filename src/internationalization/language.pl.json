@@ -247,5 +247,9 @@
 
   "puzzle-by-id": {
     "navbar-title": "Zadanie"
+  },
+
+  "all-themes": {
+    "navbar-title": "Wszystkie motywy"
   }
 }

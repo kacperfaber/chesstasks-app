@@ -7,13 +7,13 @@ import {ViewOnlyBoard} from "../../../components/chess/board/viewOnlyBoard";
 
 export const AllTheme_ListItem = ({theme}: { theme: Theme }) => {
     const onClick = () => {
-        // TODO
+        /* TODO*/ alert("there's no /play endpoint takes criteria like theme");
     };
 
     // TODO: CardContent.body should be puzzle description, translated...
 
     return (
-        <Grid item xs={6} xl={3}>
+        <Grid item xs={6} xl={1}>
             <Card>
                 <CardActionArea onClick={onClick}>
                     <CardMedia>
