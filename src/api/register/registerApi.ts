@@ -14,12 +14,12 @@ export type ConfirmPayload = {
 
 export class RegisterApi {
     public static register(payload: RegisterPayload): Promise<void> {
-        const url = `${Config.apiUrl}/register`;
-        return HttpUtils.postWithoutTokenAsync(url, payload);
+        const url = `${Config.apiUrl}/api/register`;
+        return HttpUtils.postWithoutTokenAsyncVoid(url, payload);
     }
 
     public static confirm(payload: ConfirmPayload): Promise<void> {
-        const url = `${Config.apiUrl}/register/confirm`;
-        return HttpUtils.postWithoutTokenAsync(url, payload);
+        const url = `${Config.apiUrl}/api/register/confirm`;
+        return HttpUtils.postWithoutTokenAsyncVoid(url, payload);
     }
 }

@@ -60,6 +60,14 @@ export class HttpUtils{
         });
     }
 
+    public static postWithoutTokenAsyncVoid(url: string, body: any) {
+        return new Promise<void>((resolve, reject) => {
+            fetch(url, {body: JSON.stringify(body), headers: this.headers(), method: "POST"})
+                .then((resp) => resp.status >= 200 && resp.status <= 299 ? resolve() : reject())
+                .catch(() => reject());
+        });
+    }
+
     public static postWithoutBodyAsync<T>(url: string, token: Token): Promise<T> {
         return new Promise<T>((resolve, reject) => {
             fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "POST"})
