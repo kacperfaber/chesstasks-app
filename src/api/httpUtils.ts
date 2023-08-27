@@ -76,4 +76,13 @@ export class HttpUtils{
                 .catch(() => reject());
         });
     }
+
+    public static postAsync<T>(url: string, body: any, token: Token): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {body: JSON.stringify(body), headers: token ? this.tokenHeaders(token) : this.headers(), method: "POST"})
+                .then(resp => resp.json() as T)
+                .then(resp => resolve(resp))
+                .catch(() => reject());
+        });
+    }
 }

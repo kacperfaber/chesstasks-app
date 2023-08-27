@@ -14,6 +14,6 @@ export class PlayApi {
     public static getPuzzles(rankingOffset: number | undefined, themeId: number | undefined, database: PuzzleDatabase | undefined, token: Token): Promise<Array<Puzzle>> {
         const url = `${Config.apiUrl}/api/play/training/puzzles`;
         const body = { rankingOffset, themeId, database };
-        return HttpUtils.getWithBodyAsync(url, body, token);
+        return HttpUtils.postAsync(url, body, token);
     }
 }
