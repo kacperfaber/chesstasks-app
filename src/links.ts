@@ -25,5 +25,7 @@ export const Links = {
 
     PuzzleHistory: "/puzzle-history",
 
-    Settings: "/settings"
+    Settings: "/settings",
+
+    AllThemes: "/themes/all"
 }

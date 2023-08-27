@@ -8,6 +8,7 @@ import {User} from "../../api/user";
 import {Friendship} from "../../api/friends/friendship";
 import {FriendRequest} from "../../api/friends/friendRequest";
 import {AuthenticationService} from "../../services/authentication/authenticationService";
+import {Theme} from "../../api/theme/theme";
 
 // TODO: Is it really needs to look like this?
 
@@ -24,6 +25,8 @@ export const AppContext: React.FC<AppContextAttrs> = (props) => {
 
     const [friendRequests, setSentFriendRequest] = useState<Array<FriendRequest> | undefined>(undefined);
 
+    const [allThemes, setAllThemes] = useState<Array<Theme> | undefined>(undefined);
+
     useEffect(() => {
         AuthenticationService.getCurrentOrNull()
             .then(setUser)
@@ -34,7 +37,7 @@ export const AppContext: React.FC<AppContextAttrs> = (props) => {
         <AllFriendContext.Provider value={{value: allFriends, setValue: setAllFriends}}>
             <ReceivedFriendRequestsContext.Provider value={{value: receivedFriendRequests, setValue: setReceivedFriendRequests}}>
                 <SentFriendRequestsContext.Provider value={{value: friendRequests, setValue: setSentFriendRequest}}>
-                    <AllThemeContext.Provider value={undefined}>
+                    <AllThemeContext.Provider value={{value: allThemes, setValue: setAllThemes}}>
 
                         {props.children}
 
