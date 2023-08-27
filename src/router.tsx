@@ -5,13 +5,14 @@ import {Links} from "./links";
 import {AllFriends} from "./ui/routes/friends/all/allFriends";
 import {AllFriendRequests} from "./ui/routes/friends/requests/all/allFriendRequests";
 import {PublicUserById} from "./ui/routes/user/public/publicUserById";
-import {puzzleIdLoader, userIdLoader} from "./ui/routes/loaders";
+import {playCriteriaLoader, puzzleIdLoader, userIdLoader} from "./ui/routes/loaders";
 import {SearchUser} from "./ui/routes/user/search/searchUser";
 import {PuzzleHistoryByUserId} from "./ui/routes/puzzle/history/byUserId/puzzleHistoryByUserId";
 import {MinePuzzleHistory} from "./ui/routes/puzzle/history/mine/minePuzzleHistory";
 import {Settings} from "./ui/routes/settings/settings";
 import {PuzzleById} from "./ui/routes/puzzle/byId/puzzleById";
 import {AllThemes} from "./ui/routes/themes/all/themes";
+import {Play} from "./ui/routes/play/play";
 
 export const Router = createBrowserRouter([
     {
@@ -69,5 +70,11 @@ export const Router = createBrowserRouter([
     {
         path: Links.AllThemes,
         element: <AllThemes/>
+    },
+
+    {
+        path: Links.Play,
+        loader: playCriteriaLoader,
+        element: <Play/>
     }
 ])

@@ -1,3 +1,5 @@
+import {PlayCriteria} from "./ui/routes/play/playCriteria";
+
 export const Links = {
     Index: "/",
     Login: "/login",
@@ -27,5 +29,11 @@ export const Links = {
 
     Settings: "/settings",
 
-    AllThemes: "/themes/all"
+    AllThemes: "/themes/all",
+
+    Play: "/play/database/:database/themeId/:themeId",
+
+    play(criteria: PlayCriteria) {
+        return Links.Play.replace(":database", criteria.database ?? "undefined").replace(":themeId", criteria.themeId?.toString() ?? "undefined")
+    }
 }

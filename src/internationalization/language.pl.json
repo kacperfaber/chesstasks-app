@@ -251,5 +251,9 @@
 
   "all-themes": {
     "navbar-title": "Wszystkie motywy"
+  },
+
+  "play": {
+    "navbar-title": "Zagraj"
   }
 }
