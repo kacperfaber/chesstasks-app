@@ -9,32 +9,49 @@ import {PlayService} from "../../../services/play/playService";
 
 export const Play = () => {
     const {t} = useTranslation();
+
+    // TODO: PlayCriteria is not used.
     const playCriteria = useLoaderData() as PlayCriteria;
+
+    const [buffer, setBuffer] = useState<Array<Puzzle>>();
+
+    const [index, setIndex] = useState(0);
 
     const [currentPuzzle, setCurrentPuzzle] = useState<Puzzle>();
 
     const nextPuzzleRequested = () => {
-        // Delete from buffer
+        setIndex(old => old + 1);
+    }
 
-        // Get puzzle:
-
-        // if buffer is empty, fetch new buffer
-
+    const reloadBuffer = () => {
         PlayService.getPuzzles(undefined, undefined, undefined)
-            .then(data => setCurrentPuzzle(data[1]));
+            .then(data => {
+                setBuffer(data);
+                setCurrentPuzzle(data[0])
+            })
+            .catch((err) => console.error(err));
     }
 
     useEffect(() => {
-        console.log("calling useEffect on Play")
-
-        PlayService.getPuzzles(undefined, undefined, undefined)
-            .then(data => setCurrentPuzzle(data[0]))
-            .catch((err) => console.error(err));
+        reloadBuffer();
     }, []);
+
+    useEffect(() => {
+        const nextPuzzle = buffer?.[index];
+
+        if (nextPuzzle) {
+            setCurrentPuzzle(nextPuzzle);
+        }
+
+        else {
+            reloadBuffer();
+        }
+    }, [index]);
 
     return (
         <AppLayout title={t("play.navbar-title")}>
-            { currentPuzzle ? <PlayPuzzle key={currentPuzzle.id} onNextPuzzleRequested={nextPuzzleRequested} puzzle={currentPuzzle}/> : null }
+            {currentPuzzle ? <PlayPuzzle key={currentPuzzle.id} onNextPuzzleRequested={nextPuzzleRequested}
+                                         puzzle={currentPuzzle}/> : null}
         </AppLayout>
     )
 }
