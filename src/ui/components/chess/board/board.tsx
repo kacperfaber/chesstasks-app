@@ -85,10 +85,11 @@ export class Board extends Component<BoardAttrs, BoardState> {
         // TODO: Component is called two times, because we're in React.StrictMode.
         //  the way with this.mount is bad, but it works and it's simple.
 
+        window.addEventListener("resize", this.onResizeRef);
+
         if (!this.mount) {
             this.mount = true;
             this.updateWidth();
-            window.addEventListener("resize", this.onResizeRef);
             let api = Chessground(this.boardRef?.current !!, this.initialConfig);
             this.setState({api});
             this.callInit(api);
