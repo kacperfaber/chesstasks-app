@@ -52,9 +52,8 @@ export const MinePuzzleHistory_PuzzleHistoryList = () => {
     useEffect(() => {
         PuzzleHistoryService.getMinePuzzleHistory()
             .then(setHistory)
-            .catch(() => {
-            }) // TODO
-    });
+            .catch(() => {}) // TODO
+    }, []);
 
     return (
         <List>
