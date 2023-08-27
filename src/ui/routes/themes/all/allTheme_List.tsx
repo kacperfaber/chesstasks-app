@@ -4,10 +4,14 @@ import {AllThemeContext} from "../../../contexts/theme/allThemeContext";
 import {Card, CardActionArea, CardContent, CardMedia, Grid, Typography} from "@mui/material";
 import {Theme} from "../../../../api/theme/theme";
 import {ViewOnlyBoard} from "../../../components/chess/board/viewOnlyBoard";
+import {useNavigate} from "react-router-dom";
+import {Links} from "../../../../links";
 
 export const AllTheme_ListItem = ({theme}: { theme: Theme }) => {
+    const nav = useNavigate();
+
     const onClick = () => {
-        /* TODO*/ alert("there's no /play endpoint takes criteria like theme");
+        nav(Links.play({themeId: theme.id}));
     };
 
     // TODO: CardContent.body should be puzzle description, translated...
@@ -33,7 +37,7 @@ export const AllTheme_ListItem = ({theme}: { theme: Theme }) => {
     );
 }
 
-export const AllThemeList = () => {
+export const AllTheme_List = () => {
     const allThemeCtx = useContext(AllThemeContext);
 
     useEffect(() => {
