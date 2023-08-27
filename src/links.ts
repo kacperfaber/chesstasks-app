@@ -35,5 +35,11 @@ export const Links = {
 
     play(criteria: PlayCriteria) {
         return Links.Play.replace(":database", criteria.database ?? "undefined").replace(":themeId", criteria.themeId?.toString() ?? "undefined")
+    },
+
+    playWithoutCriteria() {
+        return Links.Play
+            .replace(":database", "undefined")
+            .replace(":themeId", "undefined");
     }
 }
