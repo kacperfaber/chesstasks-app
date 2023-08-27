@@ -35,7 +35,38 @@
 
     "register-section": {
       "title": "Nie masz jeszcze konta?",
-      "body": "Tu możesz zarejestrować się w serwisie, jeśli nie posiadasz jeszcze konta."
+      "body": "Tu możesz zarejestrować się w serwisie, jeśli nie posiadasz jeszcze konta.",
+
+      "success": {
+        "title": "Powodzenie",
+        "body": "Teraz możesz się zalogować",
+        "login-in": "Zaloguj się"
+      },
+
+      "input-verification-code": {
+        "submit": "Zakończ",
+        "labels": {
+          "email": "Adres email",
+          "code": "Kod aktywacyjny"
+        }
+      },
+
+      "input-basic-data": {
+        "submit": "Kolejny krok",
+        "labels": {
+          "username": "Nazwa użytkownika",
+          "email": "Adres email",
+          "password": "Hasło"
+        }
+      },
+
+      "steps": {
+        "labels": {
+          "success": "Powodzenie",
+          "input-basic-data": "Wprowadź swoje dane",
+          "input-verification-code": "Potwierdź adres email"
+        }
+      }
     },
     "login-label": "Nazwa użytkownika lub email",
     "password-label": "Hasło",
