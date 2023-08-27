@@ -4,6 +4,7 @@ import {SubmitResponse} from "../../api/play/submitResponse";
 import {PuzzleDatabase} from "../../api/puzzles/puzzleDatabase";
 import {Puzzle} from "../../api/puzzles/puzzle";
 import {PlayStore} from "../../store/play/playStore";
+import {TrainingRanking} from "../../api/play/trainingRanking";
 
 export class PlayService {
     public static submitPuzzle(puzzleId: number, success: boolean, moves: string[]): Promise<SubmitResponse> {
@@ -22,6 +23,10 @@ export class PlayService {
         const puzzles = await PlayApi.getPuzzles(rankingOffset, themeId, database, TokenStorage.getToken() !!)
         PlayStore.setPuzzles(puzzles, {rankingOffset, themeId, database})
         return puzzles;
+    }
+
+    public static getUserRanking(userId: number): Promise<TrainingRanking> {
+        return PlayApi.getUserRanking(userId, TokenStorage.getToken() !!);
     }
 
     public static getRandomPuzzleOrNull(): Puzzle | undefined {

@@ -4,6 +4,9 @@ import {PuzzleFeedback, PuzzleFeedbackValue} from "../feedback/puzzleFeedback";
 import {PuzzleControllerResult} from "../../../../services/puzzle/puzzleController";
 import {Button, Grid} from "@mui/material";
 import {PuzzleBoard} from "../../chess/board/puzzle/puzzleBoard";
+import {PuzzleRanking} from "../ranking/puzzleRanking";
+import {PlayService} from "../../../../services/play/playService";
+import {SubmitResponse} from "../../../../api/play/submitResponse";
 
 export type NextPuzzleType = "solved" | "skip";
 
@@ -20,7 +23,16 @@ export const PlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     const [feedback, setFeedback] = useState<PuzzleFeedbackValue>("start")
     const [nextPuzzleType, setNextPuzzleType] = useState<NextPuzzleType>("skip");
 
-    const submit = () => {}
+    const [submitRes, setSubmitRes] = useState<SubmitResponse>();
+
+    const submit = () => {
+        if (submitRes) return;
+
+        PlayService.submitPuzzle(attrs.puzzle.id, feedback == "solved", ['e2e4']) // TODO.
+            .then(setSubmitRes)
+            .then(() => console.error("Submited bad moves"))
+            .catch(() => alert("Cannot submit"))
+    }
 
     const onGoodMove = (r: PuzzleControllerResult) => {
         attrs.onGoodMove?.(r);
@@ -36,8 +48,8 @@ export const PlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     }
 
     const onBadMove = (r: PuzzleControllerResult) => {
-        submit();
         setFeedback("bad_move");
+        submit();
         attrs.onBadMove?.(r);
         setNextPuzzleType("skip");
     }
@@ -49,8 +61,16 @@ export const PlayPuzzle = (attrs: PlayPuzzleAttrs) => {
                     <PuzzleBoard puzzle={attrs.puzzle} onGoodMove={onGoodMove} onBadMove={onBadMove}/>
                 </Grid>
 
-                <Grid item xs={12} md={6}>
-                    <PuzzleFeedback value={feedback} puzzle={attrs.puzzle}/>
+                <Grid item md={6} xs={12}>
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <PuzzleFeedback value={feedback} puzzle={attrs.puzzle}/>
+                        </Grid>
+
+                        <Grid item xs={12} >
+                            <PuzzleRanking ranking={submitRes?.ranking} rankingDiff={submitRes?.rankingDifference} feedback={feedback}/>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         </>
