@@ -28,7 +28,7 @@ export const AppDrawer_List = () => {
                 {t("drawer.random-puzzle")}
             </ListItemButton>
 
-            <ListItemButton>
+            <ListItemButton onClick={() => nav(Links.AllThemes)}>
                 <ListItemIcon>
                     <Style/>
                 </ListItemIcon>

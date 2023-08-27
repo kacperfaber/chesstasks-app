@@ -11,6 +11,7 @@ import {PuzzleHistoryByUserId} from "./ui/routes/puzzle/history/byUserId/puzzleH
 import {MinePuzzleHistory} from "./ui/routes/puzzle/history/mine/minePuzzleHistory";
 import {Settings} from "./ui/routes/settings/settings";
 import {PuzzleById} from "./ui/routes/puzzle/byId/puzzleById";
+import {AllThemes} from "./ui/routes/themes/all/themes";
 
 export const Router = createBrowserRouter([
     {
@@ -63,5 +64,10 @@ export const Router = createBrowserRouter([
     {
         path: Links.Settings,
         element: <Settings/>
+    },
+
+    {
+        path: Links.AllThemes,
+        element: <AllThemes/>
     }
 ])
