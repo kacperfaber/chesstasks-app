@@ -48,7 +48,7 @@ export const Links = {
 
     playAdvanced(criteria: AdvancedPlayCriteria): string {
         return Links.PlayAdvanced
-            .replace(":themeIds", criteria.themeIds.join(","))
+            .replace(":themeIds", criteria.themeIds.length == 0 ? "_" : criteria.themeIds.join(","))
             .replace(":from", criteria.ranking.from.toString())
             .replace(":to", criteria.ranking.to.toString());
     },

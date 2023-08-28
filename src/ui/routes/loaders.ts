@@ -13,8 +13,10 @@ export function playCriteriaLoader({params}: {params: any}) {
 }
 
 export function advancedCriteriaLoader({params}: {params: any}): AdvancedPlayCriteria {
+    const themeIds = params.themeIds == "_" ? [] as number[] : (params.themeIds as string).split(",").map(x => parseInt(x))
+
     return {
-        themeIds: (params.themeIds as string).split(",").map(x => parseInt(x)),
+        themeIds: themeIds,
         ranking: {
             from: params.from,
             to: params.to
