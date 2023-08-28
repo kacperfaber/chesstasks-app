@@ -2,7 +2,7 @@ import {Puzzle} from "../../../../api/puzzles/puzzle";
 import {useState} from "react";
 import {PuzzleFeedback, PuzzleFeedbackValue} from "../feedback/puzzleFeedback";
 import {PuzzleControllerResult} from "../../../../services/puzzle/puzzleController";
-import {Button, Grid} from "@mui/material";
+import {Button, Grid, Hidden} from "@mui/material";
 import {PuzzleBoard} from "../../chess/board/puzzle/puzzleBoard";
 import {PuzzleRanking} from "../ranking/puzzleRanking";
 import {PlayService} from "../../../../services/play/playService";
@@ -58,16 +58,21 @@ export const PlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     return (
         <>
             <Grid container spacing={5}>
-                <Grid item md={6} xs={12}>
+                <Hidden only={['xs', 'sm']}>
+                    <Grid item md={3}>
+                        <PuzzleFeedback value={feedback} puzzle={attrs.puzzle}/>
+                    </Grid>
+                </Hidden>
+
+                <Grid item md={5} xs={12}>
                     <PuzzleBoard puzzle={attrs.puzzle} onGoodMove={onGoodMove} onBadMove={onBadMove}/>
                 </Grid>
 
-                <Grid item md={6} xs={12}>
-                    <Grid container>
-                        <Grid item xs={12}>
-                            <PuzzleFeedback value={feedback} puzzle={attrs.puzzle}/>
-                        </Grid>
+                <Grid item md={1}>
+                </Grid>
 
+                <Grid item md={3} xs={12}>
+                    <Grid container>
                         <Grid item xs={12} >
                             <PuzzleRanking ranking={submitRes?.ranking} rankingDiff={submitRes?.rankingDifference} feedback={feedback}/>
                         </Grid>

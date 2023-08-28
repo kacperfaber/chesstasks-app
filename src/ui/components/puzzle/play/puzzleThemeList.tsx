@@ -34,8 +34,8 @@ export const PuzzleThemeList = ({puzzle}: PuzzleThemeListAttrs) => {
     const [themes, setThemes] = useState<{id: number, name: string}[]>();
 
     useEffect(() => {
-        const then = (themes: Array<Theme>) => {
-            const t = themes.map(th => {return {id: th.id, name: th.name}});
+        const then = (allThemes: Array<Theme>) => {
+            const t = puzzle.themes.map(name => allThemes.find(x => x.name == name)!!);
             setThemes(t);
         }
 
