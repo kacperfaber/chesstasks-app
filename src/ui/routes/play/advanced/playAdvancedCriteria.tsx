@@ -1,22 +1,24 @@
-import {useEffect, useState} from "react";
 import {PlayService} from "../../../../services/play/playService";
 import {Puzzle} from "../../../../api/puzzles/puzzle";
-import {AppLayout} from "../../../components/layout/appLayout";
-import {PlayPuzzle} from "../../../components/puzzle/play/playPuzzle";
-import {useTranslation} from "react-i18next";
 import {useLoaderData} from "react-router-dom";
 import {AdvancedPlayCriteria} from "./advancedPlayCriteria";
-import {stringify} from "ts-jest";
+import {PlayPuzzleContainer} from "../../../components/puzzle/play/playPuzzleContainer";
 
 export const PlayAdvancedCriteria = () => {
     // Loader data
     const playCriteria = useLoaderData() as AdvancedPlayCriteria;
 
+    const updateBuffer = (setBuffer: (arr: Array<Puzzle>) => void) => {
+        PlayService.searchPuzzles(playCriteria.ranking, playCriteria.themeIds)
+            .then(setBuffer)
+            .catch(() => alert("cannot fetch using searchPuzzles"));
+    }
+
     return (
-        <>
-            {
-                JSON.stringify(playCriteria)
-            }
-        </>
+        <PlayPuzzleContainer
+            onNextPuzzleRequested={() => {}}
+            onGoodMove={() => {}}
+            onBadMove={() => {}}
+            onBufferNeedsUpdate={updateBuffer}/>
     )
 }
