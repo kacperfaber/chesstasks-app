@@ -6,8 +6,6 @@ import {AppContext} from "./ui/contexts/appContext";
 import {AppThemeProvider} from "./ui/themes/appTheme";
 import {Internationalization} from "./internationalization/internationalization";
 
-// TODO: In API there's no themes, or I don't see it in docs.
-
 function getRootElement(): HTMLElement {
     const root = document.getElementById("app");
     if (!root) throw Error("Root element #app not found.");
