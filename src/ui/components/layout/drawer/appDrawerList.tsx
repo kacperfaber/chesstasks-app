@@ -35,6 +35,13 @@ export const AppDrawer_List = () => {
                 {t("drawer.puzzle-by-theme")}
             </ListItemButton>
 
+            <ListItemButton onClick={() => nav(Links.SearchAdvanced)}>
+                <ListItemIcon>
+                    <Style/>
+                </ListItemIcon>
+                {t("drawer.puzzle-search-advanced")}
+            </ListItemButton>
+
             <TransparentListSubHeader>
                 {t("drawer.history-title")}
             </TransparentListSubHeader>
