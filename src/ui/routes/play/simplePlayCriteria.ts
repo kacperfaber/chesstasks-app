@@ -1,6 +1,6 @@
 import {PuzzleDatabase} from "../../../api/puzzles/puzzleDatabase";
 
-export interface PlayCriteria {
+export interface SimplePlayCriteria {
     database?: PuzzleDatabase | undefined;
     themeId?: number | undefined;
 }

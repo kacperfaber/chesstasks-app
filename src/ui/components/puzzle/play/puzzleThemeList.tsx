@@ -18,7 +18,7 @@ export const PuzzleThemeListItem = ({themeName, themeId}: {themeId: number, them
     const nav = useNavigate();
 
     const click = () => {
-        nav(Links.play({themeId: themeId}));
+        nav(Links.playSimple({themeId: themeId}));
     }
 
     return (

@@ -24,8 +24,10 @@ export const SearchPuzzleAdvanced = () => {
     }
 
     const play = () => {
-        // nav(Links.playWithAdvancedSearchCriteria(rankingHolder.getValue(), selectedThemes));
-        // TODO: Not implemented.
+        nav(Links.playAdvanced({
+            ranking: rankingHolder.getValue(),
+            themeIds: selectedThemes
+        }));
     }
 
     return (

@@ -5,14 +5,16 @@ import {Links} from "./links";
 import {AllFriends} from "./ui/routes/friends/all/allFriends";
 import {AllFriendRequests} from "./ui/routes/friends/requests/all/allFriendRequests";
 import {PublicUserById} from "./ui/routes/user/public/publicUserById";
-import {playCriteriaLoader, puzzleIdLoader, userIdLoader} from "./ui/routes/loaders";
+import {advancedCriteriaLoader, playCriteriaLoader, puzzleIdLoader, userIdLoader} from "./ui/routes/loaders";
 import {SearchUser} from "./ui/routes/user/search/searchUser";
 import {PuzzleHistoryByUserId} from "./ui/routes/puzzle/history/byUserId/puzzleHistoryByUserId";
 import {MinePuzzleHistory} from "./ui/routes/puzzle/history/mine/minePuzzleHistory";
 import {Settings} from "./ui/routes/settings/settings";
 import {PuzzleById} from "./ui/routes/puzzle/byId/puzzleById";
 import {AllThemes} from "./ui/routes/themes/all/themes";
-import {Play} from "./ui/routes/play/play";
+import {SimplePlay} from "./ui/routes/play/simplePlay";
+import {PlayAdvancedCriteria} from "./ui/routes/play/advanced/playAdvancedCriteria";
+import {SearchPuzzleAdvanced} from "./ui/routes/puzzle/search/advanced/searchPuzzleAdvanced";
 
 export const Router = createBrowserRouter([
     {
@@ -73,8 +75,19 @@ export const Router = createBrowserRouter([
     },
 
     {
-        path: Links.Play,
+        path: Links.PlaySimple,
         loader: playCriteriaLoader,
-        element: <Play/>
+        element: <SimplePlay/>
+    },
+
+    {
+        path: Links.PlayAdvanced,
+        loader: advancedCriteriaLoader,
+        element: <PlayAdvancedCriteria/>
+    },
+
+    {
+        path: Links.SearchAdvanced,
+        element: <SearchPuzzleAdvanced/>
     }
 ])

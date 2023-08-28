@@ -11,7 +11,7 @@ export const AllTheme_ListItem = ({theme}: { theme: Theme }) => {
     const nav = useNavigate();
 
     const onClick = () => {
-        nav(Links.play({themeId: theme.id}));
+        nav(Links.playSimple({themeId: theme.id}));
     };
 
     // TODO: CardContent.body should be puzzle description, translated...

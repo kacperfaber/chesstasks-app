@@ -21,7 +21,7 @@ export const AppDrawer_List = () => {
                 {t("drawer.puzzle-title")}
             </TransparentListSubHeader>
 
-            <ListItemButton onClick={() => nav(Links.playWithoutCriteria())}>
+            <ListItemButton onClick={() => nav(Links.playSimpleWithoutCriteria())}>
                 <ListItemIcon>
                     <Search/>
                 </ListItemIcon>

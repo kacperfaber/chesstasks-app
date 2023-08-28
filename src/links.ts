@@ -1,4 +1,5 @@
-import {PlayCriteria} from "./ui/routes/play/playCriteria";
+import {SimplePlayCriteria} from "./ui/routes/play/simplePlayCriteria";
+import {AdvancedPlayCriteria} from "./ui/routes/play/advanced/advancedPlayCriteria";
 
 export const Links = {
     Index: "/",
@@ -31,15 +32,26 @@ export const Links = {
 
     AllThemes: "/themes/all",
 
-    Play: "/play/database/:database/themeId/:themeId",
+    PlaySimple: "/play/database/:database/themeId/:themeId",
 
-    play(criteria: PlayCriteria) {
-        return Links.Play.replace(":database", criteria.database ?? "undefined").replace(":themeId", criteria.themeId?.toString() ?? "undefined")
+    playSimple(criteria: SimplePlayCriteria) {
+        return Links.PlaySimple.replace(":database", criteria.database ?? "undefined").replace(":themeId", criteria.themeId?.toString() ?? "undefined")
     },
 
-    playWithoutCriteria() {
-        return Links.Play
+    playSimpleWithoutCriteria() {
+        return Links.PlaySimple
             .replace(":database", "undefined")
             .replace(":themeId", "undefined");
-    }
+    },
+
+    PlayAdvanced: "/play-advanced/:themeIds/:from/:to",
+
+    playAdvanced(criteria: AdvancedPlayCriteria): string {
+        return Links.PlayAdvanced
+            .replace(":themeIds", criteria.themeIds.join(","))
+            .replace(":from", criteria.ranking.from.toString())
+            .replace(":to", criteria.ranking.to.toString());
+    },
+
+    SearchAdvanced: "/play/search-advanced"
 }
