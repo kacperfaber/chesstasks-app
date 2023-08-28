@@ -7,6 +7,7 @@ import {PuzzleBoard} from "../../chess/board/puzzle/puzzleBoard";
 import {PuzzleRanking} from "../ranking/puzzleRanking";
 import {PlayService} from "../../../../services/play/playService";
 import {SubmitResponse} from "../../../../api/play/submitResponse";
+import {PuzzleThemeList} from "./puzzleThemeList";
 
 export type NextPuzzleType = "solved" | "skip";
 
@@ -69,6 +70,10 @@ export const PlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
                         <Grid item xs={12} >
                             <PuzzleRanking ranking={submitRes?.ranking} rankingDiff={submitRes?.rankingDifference} feedback={feedback}/>
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <PuzzleThemeList puzzle={attrs.puzzle}/>
                         </Grid>
                     </Grid>
                 </Grid>
