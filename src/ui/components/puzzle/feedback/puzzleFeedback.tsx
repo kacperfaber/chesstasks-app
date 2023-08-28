@@ -1,9 +1,10 @@
-import {Paper, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import {useEffect, useState} from "react";
 import {Colour} from "chlss";
 import {Puzzle} from "../../../../api/puzzles/puzzle";
 import {getColourToPlay} from "../../../../commons/puzzle/getColourToPlay";
 import {useTranslation} from "react-i18next";
+import {PlayPaper} from "../playPaper";
 
 export type PuzzleFeedbackValue = "solved" | "good_move" | "bad_move" | "start";
 
@@ -69,14 +70,16 @@ export const PuzzleFeedback = ({value, puzzle}: PuzzleFeedbackAttrs) => {
     }, []);
 
     return (
-        <Paper sx={{padding: '10px'}}>
-            {value == "start" ? <PuzzleFeedback_Start color={colorToPlay}/> : null}
+        <PlayPaper>
+            <>
+                {value == "start" ? <PuzzleFeedback_Start color={colorToPlay}/> : null}
 
-            {value == "solved" ? <PuzzleFeedback_Solved/> : null}
+                {value == "solved" ? <PuzzleFeedback_Solved/> : null}
 
-            {value == "bad_move" ? <PuzzleFeedback_BadMove/> : null}
+                {value == "bad_move" ? <PuzzleFeedback_BadMove/> : null}
 
-            {value == "good_move" ? <PuzzleFeedback_GoodMove/> : null}
-        </Paper>
+                {value == "good_move" ? <PuzzleFeedback_GoodMove/> : null}
+            </>
+        </PlayPaper>
     );
 }
