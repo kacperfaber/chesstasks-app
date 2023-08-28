@@ -3,7 +3,8 @@ const base = require("./webpack.config");
 const webpack = require("webpack");
 
 const config = {
-    apiUrl: 'http://localhost:8080'
+    apiUrl: 'http://localhost:8080',
+    apiKey: "dev-api-key"
 }
 
 module.exports = merge(base, {
@@ -12,7 +13,7 @@ module.exports = merge(base, {
     plugins: [
         new webpack.DefinePlugin({
             "process.env.PROFILE": JSON.stringify("dev"),
-            "process.env.CONFIG": JSON.stringify(config)
+            "process.env.CONFIG": JSON.stringify(config),
         })
     ]
 });

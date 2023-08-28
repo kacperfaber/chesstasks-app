@@ -1,4 +1,5 @@
 import {Token} from "../storage/token/tokenStorage";
+import {Config} from "../config/config";
 
 export class HttpUtils{
     private static tokenHeaders(token: Token): Headers {
@@ -6,6 +7,12 @@ export class HttpUtils{
         let headers = new Headers();
         headers.set("Authorization", JSON.stringify(token));
         headers.set("Content-Type", "application/json");
+        return headers;
+    }
+
+    private static apiKeyHeaders(): Headers {
+        let headers = new Headers();
+        headers.set("Authorization", Config.apiKey);
         return headers;
     }
 
@@ -66,6 +73,14 @@ export class HttpUtils{
                 .then((resp) => resp.status >= 200 && resp.status <= 299 ? resolve() : reject())
                 .catch(() => reject());
         });
+    }
+
+    public static postWithApiKey(url: string, body: any): Promise<void> {
+        return new Promise<void>((resolve, reject) => {
+            fetch(url, {headers: this.apiKeyHeaders(), body: JSON.stringify(body), method: "POST"})
+                .then(resp => resp.status >= 200 && resp.status <= 299 ? resolve() : reject())
+                .catch(reject);
+        })
     }
 
     public static postWithoutBodyAsync<T>(url: string, token: Token): Promise<T> {
