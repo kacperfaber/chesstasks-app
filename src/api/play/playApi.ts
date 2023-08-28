@@ -22,4 +22,10 @@ export class PlayApi {
         const url = `${Config.apiUrl}/api/play/training/ranking/${userId}`;
         return HttpUtils.getAsync(url, token);
     }
+
+    public static searchPuzzles(ranking: {from: number, to: number}, themeIds: number[], token: Token): Promise<Array<Puzzle>> {
+        const url = `${Config.apiUrl}/api/play/training/puzzles/search`;
+        const body = {ranking, themeIds};
+        return HttpUtils.postAsync(url, body, token);
+    }
 }

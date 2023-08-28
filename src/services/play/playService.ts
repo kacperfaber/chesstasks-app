@@ -33,5 +33,8 @@ export class PlayService {
         return PlayStore.getRandomPuzzleOrNull();
     }
 
-    // TODO: In PlayService there's no method to get random puzzle to play.
+    public static searchPuzzles(ranking: {from: number, to: number}, themeIds: number[]): Promise<Array<Puzzle>> {
+        return PlayApi.searchPuzzles(ranking, themeIds, TokenStorage.getToken() !!);
+    }
+
 }
