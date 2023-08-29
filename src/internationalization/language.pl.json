@@ -227,6 +227,13 @@
     "save": "Zapisz"
   },
 
+  "puzzle-actions": {
+    "mobile": {
+      "next-puzzle": "Następne zadanie",
+      "skip-puzzle": "Pomiń te zadanie..."
+    }
+  },
+
   "puzzle-feedback": {
     "find-best-move-for-white": "Znajdź najlepszy ruch dla białych",
     "find-best-move-for-black": "Znajdź najlepszy ruch dla czarnych",

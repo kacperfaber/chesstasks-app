@@ -46,7 +46,7 @@ export const DesktopAppToolbar_CurrentUserDialog = ({open, onClose}: { open: boo
                     <ListItemButton>
                         <ListItemIcon>
                             <Avatar>
-                                {currentUserCtx.value?.username.charAt(0).toUpperCase()}
+                                {currentUserCtx.value?.username?.charAt(0)?.toUpperCase()}
                             </Avatar>
                         </ListItemIcon>
 

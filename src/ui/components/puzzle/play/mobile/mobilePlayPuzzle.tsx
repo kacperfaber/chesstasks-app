@@ -7,6 +7,7 @@ import {PuzzleControllerResult} from "../../../../../services/puzzle/puzzleContr
 import {PuzzleBoard} from "../../../chess/board/puzzle/puzzleBoard";
 import {Grid, Typography} from "@mui/material";
 import {MobilePuzzleFeedback} from "./feedback/mobilePuzzleFeedback";
+import {MobilePlayPuzzle_Actions} from "./actions/mobileActions";
 
 export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     const [feedback, setFeedback] = useState<PuzzleFeedbackValue>("start")
@@ -51,6 +52,10 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
             <Grid item xs={12} sx={{marginTop: '15px', height: '100%'}}>
                 <MobilePuzzleFeedback puzzle={attrs.puzzle} feedback={feedback}/>
+            </Grid>
+
+            <Grid item xs={12} >
+                <MobilePlayPuzzle_Actions feedback={feedback} goNext={() => attrs.onNextPuzzleRequested?.(nextPuzzleType)}/>
             </Grid>
         </Grid>
     );
