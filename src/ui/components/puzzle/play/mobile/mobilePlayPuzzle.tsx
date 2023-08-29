@@ -8,6 +8,7 @@ import {PuzzleBoard} from "../../../chess/board/puzzle/puzzleBoard";
 import {Grid, Typography} from "@mui/material";
 import {MobilePuzzleFeedback} from "./feedback/mobilePuzzleFeedback";
 import {MobilePlayPuzzle_Actions} from "./actions/mobileActions";
+import {MobilePuzzleNav} from "./nav/mobilePuzzleNav";
 
 export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     const [feedback, setFeedback] = useState<PuzzleFeedbackValue>("start")
@@ -44,19 +45,25 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
         setNextPuzzleType("skip");
     }
 
+    const nextPuzzle = () => attrs.onNextPuzzleRequested?.(nextPuzzleType)
+
     return (
-        <Grid container style={{height: '100%'}}>
-            <Grid item xs={12}>
-                <PuzzleBoard puzzle={attrs.puzzle} onGoodMove={onGoodMove} onBadMove={onBadMove}/>
+        <>
+            <Grid container style={{height: '100%'}}>
+                <Grid item xs={12}>
+                    <PuzzleBoard puzzle={attrs.puzzle} onGoodMove={onGoodMove} onBadMove={onBadMove}/>
+                </Grid>
+
+                <Grid item xs={12} sx={{marginTop: '15px', height: '100%'}}>
+                    <MobilePuzzleFeedback puzzle={attrs.puzzle} feedback={feedback}/>
+                </Grid>
+
+                <Grid item xs={12} >
+                    <MobilePlayPuzzle_Actions feedback={feedback} goNext={nextPuzzle}/>
+                </Grid>
             </Grid>
 
-            <Grid item xs={12} sx={{marginTop: '15px', height: '100%'}}>
-                <MobilePuzzleFeedback puzzle={attrs.puzzle} feedback={feedback}/>
-            </Grid>
-
-            <Grid item xs={12} >
-                <MobilePlayPuzzle_Actions feedback={feedback} goNext={() => attrs.onNextPuzzleRequested?.(nextPuzzleType)}/>
-            </Grid>
-        </Grid>
+            <MobilePuzzleNav puzzle={attrs.puzzle} feedback={feedback} nextPuzzle={nextPuzzle}/>
+        </>
     );
 }
