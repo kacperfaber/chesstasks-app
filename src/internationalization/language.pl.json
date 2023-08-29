@@ -278,6 +278,17 @@
         "current-user": "Użytkownik",
         "this-user-logged-in": "Ten użytkownik jest zalogowany"
       }
+    },
+
+    "mobile": {
+      "navigation": {
+        "items": {
+          "home": "Strona domowa",
+          "random-puzzles": "Losowe zadania",
+          "search-advanced": "Wyszukiwanie zaawansowane",
+          "menu": "Menu"
+        }
+      }
     }
   }
 }
