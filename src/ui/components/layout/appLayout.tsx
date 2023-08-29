@@ -1,28 +1,15 @@
-import {AppToolbar} from "./toolbar/toolbar";
-import {AppDrawer} from "./drawer/appDrawer";
 import {ReactNode, useState} from "react";
-import {AppContext} from "../../contexts/appContext";
-import {AppThemeProvider} from "../../themes/appTheme";
+import {ResponsiveAppToolbar} from "./toolbar/responsive/responsiveAppToolbar";
 
 interface AppLayoutArgs {
     children: ReactNode;
-    title: string;
+    title: string; // TODO;
 }
 
 export const AppLayout = (args: AppLayoutArgs) => {
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const onClose = () =>
-    {
-        setIsOpen(false);
-    }
-
     return (
         <>
-            <AppToolbar title={args.title}  menuButton={{onClick: () => setIsOpen(true)}}></AppToolbar>
-
-            <AppDrawer isOpen={isOpen} onClose={onClose}></AppDrawer>
+            <ResponsiveAppToolbar/>
 
             <div style={{padding: '25px'}}>
                 {args.children}

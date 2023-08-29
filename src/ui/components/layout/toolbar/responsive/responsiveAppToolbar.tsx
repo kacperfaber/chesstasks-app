@@ -27,9 +27,7 @@ export const DesktopAppToolbar_UserActions = () => {
             </IconButton>
 
             <IconButton onClick={onAccountClicked}>
-                <Badge badgeContent={'4'} color={'primary'}>
-                    <AccountCircle/>
-                </Badge>
+                <AccountCircle/>
             </IconButton>
 
             <DesktopAppToolbar_CurrentUserDialog open={currentUserDialog}
@@ -47,7 +45,7 @@ export const DesktopAppToolbar_AnonymousActions = () => {
     )
 }
 
-export const DesktopAppToolbar = () => {
+export const ResponsiveAppToolbar = () => {
     const {t} = useTranslation();
 
     const userCtx = useContext(CurrentUserContext);
