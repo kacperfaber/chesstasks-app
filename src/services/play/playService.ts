@@ -12,9 +12,9 @@ export class PlayService {
     }
 
     public static async getPuzzles(rankingOffset: number | undefined, themeId: number | undefined, database: PuzzleDatabase | undefined): Promise<Array<Puzzle>> {
-        if (PlayStore.hasPuzzles()) {
-            return PlayStore.puzzles !!;
-        }
+        // if (PlayStore.hasPuzzles()) {
+        //     return PlayStore.puzzles !!;
+        // }
 
         return PlayService.fetchPuzzles(rankingOffset, themeId, database);
     }
