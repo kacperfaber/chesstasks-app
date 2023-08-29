@@ -34,8 +34,8 @@ export const Links = {
 
     PlaySimple: "/play/database/:database/themeId/:themeId",
 
-    playSimple(criteria: SimplePlayCriteria) {
-        return Links.PlaySimple.replace(":database", criteria.database ?? "undefined").replace(":themeId", criteria.themeId?.toString() ?? "undefined")
+    playSimple(criteria: SimplePlayCriteria | undefined) {
+        return Links.PlaySimple.replace(":database", criteria?.database ?? "undefined").replace(":themeId", criteria?.themeId?.toString() ?? "undefined")
     },
 
     playSimpleWithoutCriteria() {
@@ -53,5 +53,9 @@ export const Links = {
             .replace(":to", criteria.ranking.to.toString());
     },
 
-    SearchAdvanced: "/play/search-advanced"
+    SearchAdvanced: "/play/search-advanced",
+
+    OnlyMobile: {
+        Menu: "/only-mobile/menu"
+    }
 }

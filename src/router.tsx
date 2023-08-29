@@ -15,6 +15,7 @@ import {AllThemes} from "./ui/routes/themes/all/themes";
 import {SimplePlay} from "./ui/routes/play/simplePlay";
 import {PlayAdvancedCriteria} from "./ui/routes/play/advanced/playAdvancedCriteria";
 import {SearchPuzzleAdvanced} from "./ui/routes/puzzle/search/advanced/searchPuzzleAdvanced";
+import {OnlyMobileMenu} from "./ui/routes/onlyMobile/menu/onlyMobileMenu";
 
 export const Router = createBrowserRouter([
     {
@@ -89,5 +90,10 @@ export const Router = createBrowserRouter([
     {
         path: Links.SearchAdvanced,
         element: <SearchPuzzleAdvanced/>
+    },
+
+    {
+        path: Links.OnlyMobile.Menu,
+        element: <OnlyMobileMenu/>
     }
 ])

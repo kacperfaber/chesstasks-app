@@ -281,6 +281,22 @@
     },
 
     "mobile": {
+      "menu": {
+        "home": "Strona główna",
+        "puzzle-title": "Zadania",
+        "random-puzzle": "Losowe zadania",
+        "puzzle-by-theme": "Zadania według motywu",
+        "puzzle-search-advanced": "Wyszukiwanie zaawansowane",
+
+        "history-title": "Historia zadań",
+        "history": "Historia",
+
+        "friends-title": "Przyjaciele",
+        "friends": "Przyjaciele",
+        "friend-requests": "Zaproszenia do przyjaciół",
+        "search-user": "Wyszukaj użytkownika"
+      },
+
       "navigation": {
         "items": {
           "home": "Strona domowa",
