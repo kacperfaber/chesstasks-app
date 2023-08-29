@@ -32,7 +32,7 @@ export const SearchPuzzleAdvanced = () => {
 
     return (
         <>
-        <AppLayout title={t("search-puzzle-advanced.navbar-title")}>
+        <AppLayout title={t("search-puzzle-advanced.navbar-title")} mobile={{selectedNav: "search-advanced", showNav: true}}>
             <Grid container>
                 <Grid item xs={12}>
                     <RankingSlider holder={rankingHolder} value={{from: 1500, to: 2500}}/>
