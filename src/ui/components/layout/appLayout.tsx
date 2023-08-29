@@ -17,7 +17,7 @@ export type DesktopAppLayoutArgs = {
 }
 
 export type MobileAppLayoutArgs = {
-    selectedNav: MobileNavigationItemValue,
+    selectedNav?: MobileNavigationItemValue,
     showNav?: boolean
 }
 

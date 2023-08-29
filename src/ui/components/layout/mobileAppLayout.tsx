@@ -4,7 +4,7 @@ import {ReactNode, useState} from "react";
 import {MobileNavigation, MobileNavigationItemValue} from "./navigation/mobile/mobileNavigation";
 
 export const MobileAppLayout = ({children, mobile}: {mobile: MobileAppLayoutArgs} & {children: ReactNode}) => {
-    const [selectedMenu, setSelectedMenu] = useState<MobileNavigationItemValue>(mobile.selectedNav);
+    const [selectedMenu, setSelectedMenu] = useState<MobileNavigationItemValue>(mobile.selectedNav ?? "home");
 
     return (
         <>
