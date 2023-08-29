@@ -8,6 +8,8 @@ export type PlayPuzzleContainerAttrs = {
     onBadMove?: (p: Puzzle, r: PuzzleControllerResult) => void;
     onNextPuzzleRequested?: (nextPuzzleType: NextPuzzleType) => void;
     onBufferNeedsUpdate?: (setBuffer: (arr: Array<Puzzle>) => void) => void;
+
+    render?: (puzzle: Puzzle, onNextPuzzleRequested: (nextPuzzleType: NextPuzzleType) => void) => void;
 }
 
 export const PlayPuzzleContainer = (attrs: PlayPuzzleContainerAttrs) => {
@@ -51,7 +53,7 @@ export const PlayPuzzleContainer = (attrs: PlayPuzzleContainerAttrs) => {
     return (
         <>
             {
-                currentPuzzle ? <PlayPuzzle puzzle={currentPuzzle} onNextPuzzleRequested={nextPuzzleRequested}/> : null
+                currentPuzzle ? attrs.render?.(currentPuzzle, nextPuzzleRequested) ?? <PlayPuzzle puzzle={currentPuzzle} onNextPuzzleRequested={nextPuzzleRequested}/> : null
             }
         </>
     )
