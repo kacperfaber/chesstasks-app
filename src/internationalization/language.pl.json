@@ -8,7 +8,9 @@
     "friend-request-accept": "Zaakceptuj zaproszenie",
     "friend-request-reject": "Odrzuć zaproszenie",
     "logout": "Wyloguj się",
-    "settings": "Ustawienia"
+    "settings": "Ustawienia",
+    "close": "Zamknij",
+    "login-in": "Zaloguj się"
   },
 
   "drawer": {
@@ -268,5 +270,14 @@
   "puzzle-ranking": {
     "title": "Ranking",
     "body": "Twój ranking będzie zwiększony lub zmniejszony w zależności od poziomu zadania. Nie ulegnie zmianie jeśli zadanie zostało już wykonane"
+  },
+  "layout": {
+    "navbar": {
+      "title": "ChessTasks.com",
+      "current-user": {
+        "current-user": "Użytkownik",
+        "this-user-logged-in": "Ten użytkownik jest zalogowany"
+      }
+    }
   }
 }
