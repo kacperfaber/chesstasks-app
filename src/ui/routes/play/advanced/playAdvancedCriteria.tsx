@@ -7,6 +7,7 @@ import {NextPuzzleType} from "../../../components/puzzle/play/playPuzzle";
 import {useMediaQuery, useTheme} from "@mui/material";
 import {MobilePlayPuzzle} from "../../../components/puzzle/play/mobile/mobilePlayPuzzle";
 import {DesktopPlayPuzzle} from "../../../components/puzzle/play/desktop/desktopPlayPuzzle";
+import {AppLayout} from "../../../components/layout/appLayout";
 
 export const PlayAdvancedCriteria = () => {
     // Loader data
@@ -28,11 +29,13 @@ export const PlayAdvancedCriteria = () => {
     }
 
     return (
-        <PlayPuzzleContainer
-            onNextPuzzleRequested={() => {}}
-            onGoodMove={() => {}}
-            onBadMove={() => {}}
-            render={renderPuzzleComp}
-            onBufferNeedsUpdate={updateBuffer}/>
+        <AppLayout title={''} mobile={{}}>
+            <PlayPuzzleContainer
+                onNextPuzzleRequested={() => {}}
+                onGoodMove={() => {}}
+                onBadMove={() => {}}
+                render={renderPuzzleComp}
+                onBufferNeedsUpdate={updateBuffer}/>
+        </AppLayout>
     )
 }
