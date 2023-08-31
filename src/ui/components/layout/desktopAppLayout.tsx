@@ -16,7 +16,7 @@ export const DesktopAppLayout = ({children}: {desktop: DesktopAppLayoutArgs} & {
         <>
             <ResponsiveAppToolbar menuButton={onMenuButton}/>
 
-            <div style={{padding: '10px'}}>
+            <div style={{padding: '10px', height: '100%'}}>
                 {children}
             </div>
 

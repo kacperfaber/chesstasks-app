@@ -10,7 +10,7 @@ export const MobileAppLayout = ({children, mobile}: {mobile: MobileAppLayoutArgs
         <>
             <ResponsiveAppToolbar/>
 
-            <div style={{padding: '10px'}}>
+            <div style={{padding: '10px', height: '100%'}}>
                 {children}
             </div>
 

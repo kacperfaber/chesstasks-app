@@ -13,6 +13,7 @@ export class HttpUtils{
     private static apiKeyHeaders(): Headers {
         let headers = new Headers();
         headers.set("Authorization", Config.apiKey);
+        headers.set("Content-Type", "application/json");
         return headers;
     }
 
