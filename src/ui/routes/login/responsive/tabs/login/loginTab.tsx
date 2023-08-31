@@ -7,7 +7,7 @@ import styled from "styled-components";
 import {Avatar, Button, Checkbox, FormControlLabel, Grid, Link, TextField, Typography} from "@mui/material";
 import {AccountCircle} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
-import {MobileLogin_FormWrapper} from "../formWrapper";
+import {ResponsiveLogin_FormWrapper} from "../formWrapper";
 
 const LoginFormWrapper = styled.div`
   width: 100%;
@@ -19,7 +19,7 @@ const LoginFormWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const MobileLogin_LoginTab = () => {
+export const ResponsiveLogin_LoginTab = () => {
     const {t} = useTranslation();
     const nav = useNavigate();
     const userCtx = useContext(CurrentUserContext);
@@ -46,7 +46,7 @@ export const MobileLogin_LoginTab = () => {
     }
 
     return (
-        <MobileLogin_FormWrapper>
+        <ResponsiveLogin_FormWrapper>
             <Avatar>
                 <AccountCircle/>
             </Avatar>
@@ -63,6 +63,6 @@ export const MobileLogin_LoginTab = () => {
                        variant={'outlined'}></TextField>
 
             <Button onClick={submit} variant={'contained'}>{t('login.submit')}</Button>
-        </MobileLogin_FormWrapper>
+        </ResponsiveLogin_FormWrapper>
     )
 }

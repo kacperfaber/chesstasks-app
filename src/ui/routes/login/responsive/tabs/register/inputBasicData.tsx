@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {RegisterService} from "../../../../../../services/register/registerService";
 import {Avatar, Button, Checkbox, FormControlLabel, TextField, Typography} from "@mui/material";
-import {MobileLogin_FormWrapper} from "../formWrapper";
+import {ResponsiveLogin_FormWrapper} from "../formWrapper";
 import {AccountCircle, Email} from "@mui/icons-material";
 
-export const MobileLogin_InputBasicData = ({nextStep}: {nextStep: () => void}) => {
+export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export const MobileLogin_InputBasicData = ({nextStep}: {nextStep: () => void}) =
     }
 
     return (
-        <MobileLogin_FormWrapper>
+        <ResponsiveLogin_FormWrapper>
             <Avatar>
                 <AccountCircle/>
             </Avatar>
@@ -53,6 +53,6 @@ export const MobileLogin_InputBasicData = ({nextStep}: {nextStep: () => void}) =
             <FormControlLabel required control={<Checkbox checked={agree} onChange={(e, v) => setAgree(v)}/>} label={t("register.i-agree")} />
 
             <Button disabled={!agree} variant={'contained'} onClick={submit}>{t("register.submit")}</Button>
-        </MobileLogin_FormWrapper>
+        </ResponsiveLogin_FormWrapper>
     )
 }

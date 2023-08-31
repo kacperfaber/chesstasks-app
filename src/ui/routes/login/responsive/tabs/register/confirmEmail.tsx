@@ -2,10 +2,10 @@ import {Avatar, Button, TextField, Typography} from "@mui/material";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {RegisterService} from "../../../../../../services/register/registerService";
-import {MobileLogin_FormWrapper} from "../formWrapper";
+import {ResponsiveLogin_FormWrapper} from "../formWrapper";
 import {AccountCircle, Email} from "@mui/icons-material";
 
-export const MobileLogin_ConfirmEmail = ({nextStep}: { nextStep: () => void }) => {
+export const ResponsiveLogin_ConfirmEmail = ({nextStep}: { nextStep: () => void }) => {
     const {t} = useTranslation();
     const [email, setEmail] = useState("");
     const [code, setCode] = useState("");
@@ -17,7 +17,7 @@ export const MobileLogin_ConfirmEmail = ({nextStep}: { nextStep: () => void }) =
     }
 
     return (
-        <MobileLogin_FormWrapper>
+        <ResponsiveLogin_FormWrapper>
             <Avatar>
                 <Email/>
             </Avatar>
@@ -44,6 +44,6 @@ export const MobileLogin_ConfirmEmail = ({nextStep}: { nextStep: () => void }) =
                 onChange={(e) => setCode(e.currentTarget.value)}/>
 
             <Button onClick={submit} variant={'contained'}>{t("register.submit")}</Button>
-        </MobileLogin_FormWrapper>
+        </ResponsiveLogin_FormWrapper>
     )
 }

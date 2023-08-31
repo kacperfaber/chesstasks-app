@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MobileLogin_FormWrapper =  styled.div`
+export const ResponsiveLogin_FormWrapper =  styled.div`
   width: 100%;
   height: 60%;
   

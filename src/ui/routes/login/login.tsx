@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../links";
 import {RegisterSection} from "./register/registerSection";
-import {MobileLogin} from "./mobile/login";
+import {ResponsiveLogin} from "./responsive/login";
 
 export const Login = () => {
     const {t} = useTranslation();
@@ -29,10 +29,7 @@ export const Login = () => {
 
     return (
         <AppLayout title={t("login.navbar-title")}>
-            {
-                isMobile ? <MobileLogin/> : null
-            }
-
+            <ResponsiveLogin/>
         </AppLayout>
     );
 };
