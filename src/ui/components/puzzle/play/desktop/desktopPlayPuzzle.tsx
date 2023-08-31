@@ -7,8 +7,9 @@ import {CurrentUserContext} from "../../../../contexts/authentication/currentUse
 import {PuzzleBoard} from "../../../chess/board/puzzle/puzzleBoard";
 import {NextPuzzleType, PuzzleFeedbackValue} from "../../feedback/puzzleFeedbackValue";
 import {PlayPuzzleAttrs} from "../playPuzzle";
-import {ResponsivePuzzleFeedback} from "../feedback/responsive/responsivePuzzleFeedback";
 import {DesktopPlayPuzzle_ControlGrid} from "./desktopPlayControlGrid";
+import {DesktopPlayPuzzle_ThemeList} from "./themes/themeList";
+import {DesktopPlayPuzzle_Ranking} from "./ranking/puzzleRanking";
 
 export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     // TODO: Copied from MobilePlayPuzzle
@@ -35,9 +36,16 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     useEffect(() => {
         if (!(userCtx.value)) return;
 
+        if (submitRes?.ranking && submitRes?.rankingDifference) {
+            setRanking(submitRes?.ranking);
+            setRankingDiff(submitRes?.rankingDifference);
+            return
+        }
+
         PlayService.getUserRanking(userCtx.value.id)
             .then(({ranking}) => setRanking(ranking))
-            .catch(() => {}) // TODO;
+            .catch(() => {
+            }) // TODO;
     }, [submitRes]);
 
     const onGoodMove = (r: PuzzleControllerResult) => {
@@ -64,14 +72,16 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
     return (
         <Grid container spacing={5}>
-            <Grid item md={3}>
+            <Grid item md={0} lg={0} xl={3}>
+                <DesktopPlayPuzzle_Ranking ranking={ranking} rankingDiff={rankingDiff}/>
+                <DesktopPlayPuzzle_ThemeList feedback={feedback} puzzle={attrs.puzzle}/>
             </Grid>
 
-            <Grid item md={5}>
-                <PuzzleBoard onBadMove={onBadMove} onGoodMove={onGoodMove} puzzle={attrs.puzzle}></PuzzleBoard>
+            <Grid item md={8} lg={7} xl={6}>
+                <PuzzleBoard key={attrs.puzzle.id} onBadMove={onBadMove} onGoodMove={onGoodMove} puzzle={attrs.puzzle}/>
             </Grid>
 
-            <Grid item md={3}>
+            <Grid item md={4} lg={5} xl={3}>
                 <DesktopPlayPuzzle_ControlGrid nextPuzzle={nextPuzzle} feedback={feedback} puzzle={attrs.puzzle}/>
             </Grid>
         </Grid>

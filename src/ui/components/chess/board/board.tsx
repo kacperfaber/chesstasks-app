@@ -103,7 +103,7 @@ export class Board extends Component<BoardAttrs, BoardState> {
     render() {
         return (
             <div ref={this.parentRef}>
-                <div style={{width: `${this.state?.width ?? 0}px`, height: `${this.state?.width ?? 0}px`}}
+                <div style={{maxHeight: '85vh', maxWidth: '85vh', width: `${this.state?.width ?? 0}px`, height: `${this.state?.width ?? 0}px`}}
                      ref={this.boardRef}>
 
                 </div>
