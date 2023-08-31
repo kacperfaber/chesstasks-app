@@ -16,12 +16,11 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
     const [submitRes, setSubmitRes] = useState<SubmitResponse>();
 
-    const submit = () => {
+    const submit = (moves: string[], success: boolean) => {
         if (submitRes) return;
 
-        PlayService.submitPuzzle(attrs.puzzle.id, feedback == "solved", ['e2e4']) // TODO.
+        PlayService.submitPuzzle(attrs.puzzle.id, success, moves ?? []) // TODO.
             .then(setSubmitRes)
-            .then(() => console.error("Submited bad moves"))
             .catch(() => alert("Cannot submit"))
     }
 
@@ -31,7 +30,7 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
         if (r.finished) {
             setFeedback("solved");
             setNextPuzzleType("solved")
-            submit();
+            submit([], true);
             return;
         }
 
@@ -40,7 +39,7 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
     const onBadMove = (r: PuzzleControllerResult) => {
         setFeedback("bad_move");
-        submit();
+        submit(r.moves!!, false);
         attrs.onBadMove?.(r);
         setNextPuzzleType("skip");
     }

@@ -2,7 +2,7 @@ import {Grid} from "@mui/material";
 import {useContext, useEffect, useState} from "react";
 import {SubmitResponse} from "../../../../../api/play/submitResponse";
 import {PlayService} from "../../../../../services/play/playService";
-import {PuzzleControllerResult} from "../../../../../services/puzzle/puzzleController";
+import {PuzzleController, PuzzleControllerResult} from "../../../../../services/puzzle/puzzleController";
 import {CurrentUserContext} from "../../../../contexts/authentication/currentUserContext";
 import {PuzzleBoard} from "../../../chess/board/puzzle/puzzleBoard";
 import {NextPuzzleType, PuzzleFeedbackValue} from "../../feedback/puzzleFeedbackValue";
@@ -24,13 +24,13 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     const [ranking, setRanking] = useState<number>();
     const [rankingDiff, setRankingDiff] = useState<number>();
 
-    const submit = () => {
+    const submit = (moves: string[], success: boolean) => {
         if (submitRes) return;
 
-        PlayService.submitPuzzle(attrs.puzzle.id, feedback == "solved", ['e2e4']) // TODO.
+        // TODO: I don't know I should send empty array when puzzle is solved.
+        PlayService.submitPuzzle(attrs.puzzle.id, success, moves ?? []) // TODO.
             .then(setSubmitRes)
-            .then(() => console.error("Submited bad moves")) // TODO
-            .catch(() => alert("Cannot submit"))
+            .catch(() => alert("Cannot submit"));
     }
 
     useEffect(() => {
@@ -54,7 +54,7 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
         if (r.finished) {
             setFeedback("solved");
             setNextPuzzleType("solved")
-            submit();
+            submit([], true);
             return;
         }
 
@@ -63,7 +63,7 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
     const onBadMove = (r: PuzzleControllerResult) => {
         setFeedback("bad_move");
-        submit();
+        submit(r.moves!!, false);
         attrs.onBadMove?.(r);
         setNextPuzzleType("skip");
     }

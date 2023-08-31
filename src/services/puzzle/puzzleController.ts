@@ -21,6 +21,7 @@ export type PuzzleControllerResult = {
     finished: boolean;
     isOk: boolean;
     nextComputerMove: string | undefined;
+    moves?: string[];
 }
 
 export class PuzzleController {
@@ -56,6 +57,16 @@ export class PuzzleController {
         }
     }
 
+    getPushedMoves(includeThisOne: string): string[] {
+        const arr: string[] = [];
+        for (let x = 0; x < this.index; x++) {
+            const {computerMove, userMove} = this.moves[x];
+            arr.push(computerMove, userMove);
+        }
+        arr.push(this.moves[this.index].computerMove, includeThisOne);
+        return arr;
+    }
+
     pushMove(uci: string): PuzzleControllerResult {
         const {userMove, computerMove} = this.getBlock();
         if (userMove == uci) {
@@ -77,7 +88,8 @@ export class PuzzleController {
             isOk: false,
             finished: false,
             move: uci,
-            nextComputerMove: undefined
+            nextComputerMove: undefined,
+            moves: this.getPushedMoves(uci)
         }
     }
 
