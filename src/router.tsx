@@ -5,7 +5,13 @@ import {Links} from "./links";
 import {AllFriends} from "./ui/routes/friends/all/allFriends";
 import {AllFriendRequests} from "./ui/routes/friends/requests/all/allFriendRequests";
 import {PublicUserById} from "./ui/routes/user/public/publicUserById";
-import {advancedCriteriaLoader, playCriteriaLoader, puzzleIdLoader, userIdLoader} from "./ui/routes/loaders";
+import {
+    advancedCriteriaLoader,
+    playCriteriaLoader,
+    puzzleIdLoader,
+    respFriendsScreenLoader,
+    userIdLoader
+} from "./ui/routes/loaders";
 import {SearchUser} from "./ui/routes/user/search/searchUser";
 import {PuzzleHistoryByUserId} from "./ui/routes/puzzle/history/byUserId/puzzleHistoryByUserId";
 import {MinePuzzleHistory} from "./ui/routes/puzzle/history/mine/minePuzzleHistory";
@@ -16,6 +22,7 @@ import {SimplePlay} from "./ui/routes/play/simplePlay";
 import {PlayAdvancedCriteria} from "./ui/routes/play/advanced/playAdvancedCriteria";
 import {SearchPuzzleAdvanced} from "./ui/routes/puzzle/search/advanced/searchPuzzleAdvanced";
 import {OnlyMobileMenu} from "./ui/routes/onlyMobile/menu/onlyMobileMenu";
+import {ResponsiveFriends} from "./ui/routes/friends/responsive/responsiveFriends";
 
 export const Router = createBrowserRouter([
     {
@@ -95,5 +102,11 @@ export const Router = createBrowserRouter([
     {
         path: Links.OnlyMobile.Menu,
         element: <OnlyMobileMenu/>
+    },
+
+    {
+        path: Links.Friends,
+        loader: respFriendsScreenLoader,
+        element: <ResponsiveFriends/>
     }
 ])

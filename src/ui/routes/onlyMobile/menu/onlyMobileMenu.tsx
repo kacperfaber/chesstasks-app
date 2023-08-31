@@ -60,14 +60,14 @@ export const OnlyMobileMenu = () => {
                     {t("layout.mobile.menu.friends-title")}
                 </TransparentListSubHeader>
 
-                <ListItemButton onClick={() => nav(Links.AllFriends)}>
+                <ListItemButton onClick={() => nav(Links.friends("friends"))}>
                     <ListItemIcon>
                         <People/>
                     </ListItemIcon>
                     {t("layout.mobile.menu.friends")}
                 </ListItemButton>
 
-                <ListItemButton onClick={() => nav(Links.AllFriendRequests)}>
+                <ListItemButton onClick={() => nav(Links.friends("requests"))}>
                     <ListItemIcon>
                         <People/>
                     </ListItemIcon>

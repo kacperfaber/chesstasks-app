@@ -1,12 +1,14 @@
 import {SimplePlayCriteria} from "./ui/routes/play/simplePlayCriteria";
 import {AdvancedPlayCriteria} from "./ui/routes/play/advanced/advancedPlayCriteria";
+import {MobileFriendsScreenTabs} from "./ui/routes/friends/responsive/mobile/mobileFriendsScreen";
 
 export const Links = {
     Index: "/",
     Login: "/login",
-    AllFriends: "/friends",
+    AllFriends: "/all-friends",
     AllFriendRequests: "/friend-requests",
     PublicUserById: "/public-user/by-id/:userId",
+    Friends: "/friends/:screen",
 
     publicUserById(id: number): string {
         return Links.PublicUserById.replace(":userId", id.toString());
@@ -57,5 +59,9 @@ export const Links = {
 
     OnlyMobile: {
         Menu: "/only-mobile/menu"
+    },
+
+    friends(screen: MobileFriendsScreenTabs | null): string {
+        return Links.Friends.replace(":screen", screen ?? "_");
     }
 }

@@ -1,4 +1,5 @@
 import {AdvancedPlayCriteria} from "./play/advanced/advancedPlayCriteria";
+import {MobileFriendsScreenTabs} from "./friends/responsive/mobile/mobileFriendsScreen";
 
 export function userIdLoader({params}: {params: any}) {
     return {userId: params.userId};
@@ -22,4 +23,8 @@ export function advancedCriteriaLoader({params}: {params: any}): AdvancedPlayCri
             to: params.to
         }
     }
+}
+
+export function respFriendsScreenLoader({params}: {params: any}): MobileFriendsScreenTabs {
+    return params.screen == "_" ? "friends" : params.screen as MobileFriendsScreenTabs;
 }

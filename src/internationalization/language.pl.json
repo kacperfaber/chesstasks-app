@@ -89,6 +89,11 @@
     "you-can-now-manage-friendship": "Możesz tu zarządzać przyjąźnią"
   },
 
+  "friends": {
+    "all-friends": "Przyjaciele",
+    "requests": "Zaproszenia"
+  },
+
   "delete-friend-confirm-dialog": {
     "title": "Czy napewno chcesz usunąć te przyjaźń",
     "text": "Nie będzie można tego cofnać",
