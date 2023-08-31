@@ -1,7 +1,7 @@
 import {PuzzleControllerResult} from "../../../../services/puzzle/puzzleController";
 import {Puzzle} from "../../../../api/puzzles/puzzle";
-import {NextPuzzleType, PlayPuzzle} from "./playPuzzle";
 import {useEffect, useState} from "react";
+import {NextPuzzleType} from "../feedback/puzzleFeedbackValue";
 
 export type PlayPuzzleContainerAttrs = {
     onGoodMove?: (p: Puzzle, r: PuzzleControllerResult) => void;
@@ -53,7 +53,7 @@ export const PlayPuzzleContainer = (attrs: PlayPuzzleContainerAttrs) => {
     return (
         <>
             {
-                currentPuzzle ? attrs.render?.(currentPuzzle, nextPuzzleRequested) ?? <PlayPuzzle puzzle={currentPuzzle} onNextPuzzleRequested={nextPuzzleRequested}/> : null
+                currentPuzzle ? attrs.render?.(currentPuzzle, nextPuzzleRequested) : null
             }
         </>
     )

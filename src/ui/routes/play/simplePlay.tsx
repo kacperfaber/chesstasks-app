@@ -5,10 +5,10 @@ import {AppLayout} from "../../components/layout/appLayout";
 import {PlayService} from "../../../services/play/playService";
 import {PlayPuzzleContainer} from "../../components/puzzle/play/playPuzzleContainer";
 import {useTranslation} from "react-i18next";
-import {NextPuzzleType} from "../../components/puzzle/play/playPuzzle";
 import {useMediaQuery, useTheme} from "@mui/material";
 import {MobilePlayPuzzle} from "../../components/puzzle/play/mobile/mobilePlayPuzzle";
 import {DesktopPlayPuzzle} from "../../components/puzzle/play/desktop/desktopPlayPuzzle";
+import {NextPuzzleType} from "../../components/puzzle/feedback/puzzleFeedbackValue";
 
 export const SimplePlay = () => {
     const {t} = useTranslation();

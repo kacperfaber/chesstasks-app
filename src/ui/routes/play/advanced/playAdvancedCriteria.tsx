@@ -3,11 +3,11 @@ import {Puzzle} from "../../../../api/puzzles/puzzle";
 import {useLoaderData} from "react-router-dom";
 import {AdvancedPlayCriteria} from "./advancedPlayCriteria";
 import {PlayPuzzleContainer} from "../../../components/puzzle/play/playPuzzleContainer";
-import {NextPuzzleType} from "../../../components/puzzle/play/playPuzzle";
 import {useMediaQuery, useTheme} from "@mui/material";
 import {MobilePlayPuzzle} from "../../../components/puzzle/play/mobile/mobilePlayPuzzle";
 import {DesktopPlayPuzzle} from "../../../components/puzzle/play/desktop/desktopPlayPuzzle";
 import {AppLayout} from "../../../components/layout/appLayout";
+import {NextPuzzleType} from "../../../components/puzzle/feedback/puzzleFeedbackValue";
 
 export const PlayAdvancedCriteria = () => {
     // Loader data
