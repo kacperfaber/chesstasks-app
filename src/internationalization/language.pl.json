@@ -279,7 +279,8 @@
 
   "puzzle-theme-list": {
     "title": "Motywy w zadaniu",
-    "body": "Lista wszystkich motywów użytych w tym zadaniu",
+    "body-not-solved": "Motywy nie są widoczne w trakcie rozwiązywania",
+    "body-solved": "Lista wszystkich motywów użytych w tym zadaniu",
 
     "more-this-theme-puzzles": "Więcej zadań z tego motywu"
   },
