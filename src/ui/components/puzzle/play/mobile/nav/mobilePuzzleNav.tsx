@@ -1,5 +1,5 @@
 import {Puzzle} from "../../../../../../api/puzzles/puzzle";
-import {PuzzleFeedbackValue} from "../../../feedback/puzzleFeedback";
+import {PuzzleFeedbackValue} from "../../../feedback/puzzleFeedbackValue";
 import {BottomNavigation, BottomNavigationAction, Paper} from "@mui/material";
 import {ArrowRight, BarChart} from "@mui/icons-material";
 import {useState} from "react";

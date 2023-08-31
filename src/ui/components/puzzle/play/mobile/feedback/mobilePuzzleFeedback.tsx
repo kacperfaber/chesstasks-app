@@ -1,4 +1,4 @@
-import {PuzzleFeedbackValue} from "../../../feedback/puzzleFeedback";
+import {PuzzleFeedbackValue} from "../../../feedback/puzzleFeedbackValue";
 import {getColourToPlay} from "../../../../../../commons/puzzle/getColourToPlay";
 import {Puzzle} from "../../../../../../api/puzzles/puzzle";
 import {Typography} from "@mui/material";

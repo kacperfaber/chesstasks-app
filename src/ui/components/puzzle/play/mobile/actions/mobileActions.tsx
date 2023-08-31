@@ -3,7 +3,7 @@ import {PlayArrow} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
 import {MobileNavigationItemValue} from "../../../../layout/navigation/mobile/mobileNavigation";
 import styled from "styled-components";
-import {PuzzleFeedbackValue} from "../../../feedback/puzzleFeedback";
+import {PuzzleFeedbackValue} from "../../../feedback/puzzleFeedbackValue";
 
 const ActionsWrapper = styled.div`
   display: flex;

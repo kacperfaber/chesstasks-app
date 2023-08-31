@@ -2,7 +2,7 @@ import {useLoaderData} from "react-router-dom";
 import {AppLayout} from "../../../components/layout/appLayout";
 import {useTranslation} from "react-i18next";
 import {Backdrop, Grid} from "@mui/material";
-import {PuzzleFeedback, PuzzleFeedbackValue} from "../../../components/puzzle/feedback/puzzleFeedback";
+import {PuzzleFeedback, PuzzleFeedbackValue} from "../../../components/puzzle/feedback/puzzleFeedbackValue";
 import {useEffect, useState} from "react";
 import {Puzzle} from "../../../../api/puzzles/puzzle";
 import {PuzzleService} from "../../../../services/puzzle/puzzleService";

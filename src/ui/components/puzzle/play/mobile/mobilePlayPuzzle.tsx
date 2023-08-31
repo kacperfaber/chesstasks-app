@@ -1,6 +1,6 @@
 import {NextPuzzleType, PlayPuzzleAttrs} from "../playPuzzle";
 import {useState} from "react";
-import {PuzzleFeedbackValue} from "../../feedback/puzzleFeedback";
+import {PuzzleFeedbackValue} from "../../feedback/puzzleFeedbackValue";
 import {SubmitResponse} from "../../../../../api/play/submitResponse";
 import {PlayService} from "../../../../../services/play/playService";
 import {PuzzleControllerResult} from "../../../../../services/puzzle/puzzleController";

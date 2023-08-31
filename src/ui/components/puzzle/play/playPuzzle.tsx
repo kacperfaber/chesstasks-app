@@ -1,6 +1,6 @@
 import {Puzzle} from "../../../../api/puzzles/puzzle";
 import {useState} from "react";
-import {PuzzleFeedback, PuzzleFeedbackValue} from "../feedback/puzzleFeedback";
+import {PuzzleFeedback, PuzzleFeedbackValue} from "../feedback/puzzleFeedbackValue";
 import {PuzzleControllerResult} from "../../../../services/puzzle/puzzleController";
 import {Button, Grid, Hidden} from "@mui/material";
 import {PuzzleBoard} from "../../chess/board/puzzle/puzzleBoard";
