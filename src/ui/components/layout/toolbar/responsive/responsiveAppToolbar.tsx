@@ -1,4 +1,4 @@
-import {AppBar, Badge, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
+import {AppBar, Badge, Box, Button, IconButton, MenuList, Toolbar, Typography} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import {AccountCircle, Settings} from "@mui/icons-material";
 import {useNavigate} from "react-router-dom";
@@ -7,6 +7,15 @@ import {useContext, useEffect, useState} from "react";
 import {Links} from "../../../../../links";
 import {CurrentUserContext} from "../../../../contexts/authentication/currentUserContext";
 import {AuthenticationService} from "../../../../../services/authentication/authenticationService";
+import MenuIcon from "@mui/icons-material/menu"
+
+export const MenuButton = (args: {onClick: () => void}) => {
+    return (
+        <IconButton onClick={args.onClick} edge={'start'} sx={{mr: 2}}>
+            <MenuIcon/>
+        </IconButton>
+    )
+}
 
 export const DesktopAppToolbar_UserActions = () => {
     const nav = useNavigate();
@@ -45,7 +54,11 @@ export const DesktopAppToolbar_AnonymousActions = () => {
     )
 }
 
-export const ResponsiveAppToolbar = () => {
+export interface ResponsiveAppToolbarAttrs {
+    menuButton?: () => void;
+}
+
+export const ResponsiveAppToolbar = (attrs: ResponsiveAppToolbarAttrs) => {
     const {t} = useTranslation();
 
     const userCtx = useContext(CurrentUserContext);
@@ -61,6 +74,8 @@ export const ResponsiveAppToolbar = () => {
         <>
             <AppBar position={'static'}>
                 <Toolbar>
+                    {attrs.menuButton ? <MenuButton onClick={attrs.menuButton}/> : null}
+
                     <Typography variant={'h5'}>
                         {t("layout.navbar.title")}
                     </Typography>

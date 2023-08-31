@@ -1,11 +1,11 @@
 import {List, ListItemButton, ListItemIcon} from "@mui/material";
 import {History, Home, People, Search, Style} from "@mui/icons-material";
-import {Links} from "../../../../links";
-import {TransparentListSubHeader} from "../../../base/list/transparentListSubHeader";
 import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
+import {TransparentListSubHeader} from "../../../../base/list/transparentListSubHeader";
+import {Links} from "../../../../../links";
 
-export const AppDrawer_List = () => {
+export const DesktopDrawer_List = () => {
     const {t} = useTranslation();
     const nav = useNavigate();
     return (
@@ -57,14 +57,14 @@ export const AppDrawer_List = () => {
                 {t("drawer.friends-title")}
             </TransparentListSubHeader>
 
-            <ListItemButton onClick={() => nav(Links.AllFriends)}>
+            <ListItemButton onClick={() => nav(Links.friends(null))}>
                 <ListItemIcon>
                     <People/>
                 </ListItemIcon>
                 {t("drawer.friends")}
             </ListItemButton>
 
-            <ListItemButton onClick={() => nav(Links.AllFriendRequests)}>
+            <ListItemButton onClick={() => nav(Links.friends(null))}>
                 <ListItemIcon>
                     <People/>
                 </ListItemIcon>
