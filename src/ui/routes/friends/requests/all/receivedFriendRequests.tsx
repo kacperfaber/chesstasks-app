@@ -81,13 +81,11 @@ export const AllFriendRequests_ReceivedRequestList = () => {
     }
 
     useEffect(() => {
-        console.log("useEffect called");
-
         FriendService.getReceivedRequests()
             .then(receivedCtx.setValue)
             .catch(() => {
             }) // TODO;
-    });
+    }, []);
 
     return (
         <>

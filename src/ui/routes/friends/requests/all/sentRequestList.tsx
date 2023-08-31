@@ -55,7 +55,7 @@ export const AllFriendRequests_SentRequestList = () => {
     return (<>
         {
             sentRequests.value?.map(request =>
-                <AllFriendRequests_SentRequestItem req={request}></AllFriendRequests_SentRequestItem>
+                <AllFriendRequests_SentRequestItem key={request.id} req={request}></AllFriendRequests_SentRequestItem>
             )
         }
     </>);
