@@ -236,6 +236,11 @@
     "mobile": {
       "next-puzzle": "Następne zadanie",
       "skip-puzzle": "Pomiń te zadanie..."
+    },
+
+    "desktop": {
+      "next-puzzle": "Następne zadanie",
+      "skip-puzzle": "Pomiń te zadanie..."
     }
   },
 

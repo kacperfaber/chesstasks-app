@@ -8,6 +8,7 @@ import {PuzzleBoard} from "../../../chess/board/puzzle/puzzleBoard";
 import {NextPuzzleType, PuzzleFeedbackValue} from "../../feedback/puzzleFeedbackValue";
 import {PlayPuzzleAttrs} from "../playPuzzle";
 import {ResponsivePuzzleFeedback} from "../feedback/responsive/responsivePuzzleFeedback";
+import {DesktopPlayPuzzle_ControlGrid} from "./desktopPlayControlGrid";
 
 export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     // TODO: Copied from MobilePlayPuzzle
@@ -62,7 +63,7 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     const nextPuzzle = () => attrs.onNextPuzzleRequested?.(nextPuzzleType)
 
     return (
-        <Grid container>
+        <Grid container spacing={5}>
             <Grid item md={3}>
             </Grid>
 
@@ -71,7 +72,7 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
             </Grid>
 
             <Grid item md={3}>
-                <ResponsivePuzzleFeedback puzzle={attrs.puzzle} feedback={feedback}/>
+                <DesktopPlayPuzzle_ControlGrid nextPuzzle={nextPuzzle} feedback={feedback} puzzle={attrs.puzzle}/>
             </Grid>
         </Grid>
     );
