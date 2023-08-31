@@ -22,6 +22,7 @@ export type PuzzleControllerResult = {
     isOk: boolean;
     nextComputerMove: string | undefined;
     moves?: string[];
+    expected: string;
 }
 
 export class PuzzleController {
@@ -46,14 +47,15 @@ export class PuzzleController {
         return this.index == (this.moves.length - 1);
     }
 
-    goToNext(uci: string): PuzzleControllerResult {
+    goToNext(uci: string, expected: string): PuzzleControllerResult {
         this.index++;
         const block = this.getBlock();
         return {
             nextComputerMove: block.computerMove,
             finished: false,
             move: uci,
-            isOk: true
+            isOk: true,
+            expected
         }
     }
 
@@ -77,11 +79,12 @@ export class PuzzleController {
                     isOk: true,
                     move: uci,
                     finished: fin,
-                    nextComputerMove: undefined
+                    nextComputerMove: undefined,
+                    expected: userMove
                 }
             }
 
-            return this.goToNext(uci);
+            return this.goToNext(uci, userMove);
         }
 
         return {
@@ -89,7 +92,8 @@ export class PuzzleController {
             finished: false,
             move: uci,
             nextComputerMove: undefined,
-            moves: this.getPushedMoves(uci)
+            moves: this.getPushedMoves(uci),
+            expected: userMove
         }
     }
 

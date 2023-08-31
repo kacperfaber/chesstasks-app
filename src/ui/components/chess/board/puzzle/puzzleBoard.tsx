@@ -9,8 +9,8 @@ import {PuzzleController, PuzzleControllerResult} from "../../../../../services/
 import {ChessService} from "../../../../../services/chess/chessService";
 
 export interface PuzzleBoardAttrs {
-    onGoodMove?: (result: PuzzleControllerResult) => void;
-    onBadMove?: (result: PuzzleControllerResult) => void;
+    onGoodMove?: (result: PuzzleControllerResult, controller: PuzzleController, api?: Api) => void;
+    onBadMove?: (result: PuzzleControllerResult, controller: PuzzleController, api?: Api) => void;
 }
 
 export const PuzzleBoard = ({puzzle, onBadMove, onGoodMove}: {puzzle: Puzzle} & PuzzleBoardAttrs) => {
@@ -22,7 +22,7 @@ export const PuzzleBoard = ({puzzle, onBadMove, onGoodMove}: {puzzle: Puzzle} & 
         const result = puzzleController.pushMove(uci);
 
         if (result.isOk) {
-            onGoodMove?.(result);
+            onGoodMove?.(result, puzzleController, cg);
 
             if (!result.finished && result.nextComputerMove) {
                 const [orig, dest] = UCI.toKeys(result.nextComputerMove)
@@ -33,7 +33,7 @@ export const PuzzleBoard = ({puzzle, onBadMove, onGoodMove}: {puzzle: Puzzle} & 
         else {
             // TODO: Undo last move, because it's bad and give user another try from this move.
 
-            onBadMove?.(result);
+            onBadMove?.(result, puzzleController, cg);
         }
     };
 

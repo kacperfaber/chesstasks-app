@@ -3,12 +3,14 @@ import {useState} from "react";
 import {PuzzleFeedbackValue} from "../../feedback/puzzleFeedbackValue";
 import {SubmitResponse} from "../../../../../api/play/submitResponse";
 import {PlayService} from "../../../../../services/play/playService";
-import {PuzzleControllerResult} from "../../../../../services/puzzle/puzzleController";
+import {PuzzleController, PuzzleControllerResult} from "../../../../../services/puzzle/puzzleController";
 import {PuzzleBoard} from "../../../chess/board/puzzle/puzzleBoard";
 import {Grid, Typography} from "@mui/material";
 import {MobilePlayPuzzle_Actions} from "./actions/mobileActions";
 import {MobilePuzzleNav} from "./nav/mobilePuzzleNav";
 import {ResponsivePuzzleFeedback} from "../feedback/responsive/responsivePuzzleFeedback";
+import {showCorrectAnswer} from "../../../../../commons/showCorrectAnswer";
+import {Api} from "chessground/api";
 
 export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     const [feedback, setFeedback] = useState<PuzzleFeedbackValue>("start")
@@ -24,7 +26,7 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
             .catch(() => alert("Cannot submit"))
     }
 
-    const onGoodMove = (r: PuzzleControllerResult) => {
+    const onGoodMove = (r: PuzzleControllerResult, controller: PuzzleController, cg?: Api) => {
         attrs.onGoodMove?.(r);
 
         if (r.finished) {
@@ -37,8 +39,9 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
         setFeedback("good_move");
     }
 
-    const onBadMove = (r: PuzzleControllerResult) => {
+    const onBadMove = (r: PuzzleControllerResult, controller: PuzzleController, cg?: Api) => {
         setFeedback("bad_move");
+        showCorrectAnswer(r.move, r.expected, cg);
         submit(r.moves!!, false);
         attrs.onBadMove?.(r);
         setNextPuzzleType("skip");

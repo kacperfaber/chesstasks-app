@@ -10,6 +10,9 @@ import {PlayPuzzleAttrs} from "../playPuzzle";
 import {DesktopPlayPuzzle_ControlGrid} from "./desktopPlayControlGrid";
 import {DesktopPlayPuzzle_ThemeList} from "./themes/themeList";
 import {DesktopPlayPuzzle_Ranking} from "./ranking/puzzleRanking";
+import {Api} from "chessground/api";
+import {UCI} from "../../../../../commons/uci";
+import {showCorrectAnswer} from "../../../../../commons/showCorrectAnswer";
 
 export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     // TODO: Copied from MobilePlayPuzzle
@@ -48,7 +51,7 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
             }) // TODO;
     }, [submitRes]);
 
-    const onGoodMove = (r: PuzzleControllerResult) => {
+    const onGoodMove = (r: PuzzleControllerResult, controller: PuzzleController, cg?: Api) => {
         attrs.onGoodMove?.(r);
 
         if (r.finished) {
@@ -61,10 +64,11 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
         setFeedback("good_move");
     }
 
-    const onBadMove = (r: PuzzleControllerResult) => {
+    const onBadMove = (r: PuzzleControllerResult, controller: PuzzleController, cg?: Api) => {
         setFeedback("bad_move");
         submit(r.moves!!, false);
         attrs.onBadMove?.(r);
+        showCorrectAnswer(r.move, r.expected, cg);
         setNextPuzzleType("skip");
     }
 
