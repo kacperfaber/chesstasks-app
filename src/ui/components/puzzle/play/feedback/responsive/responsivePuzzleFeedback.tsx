@@ -6,36 +6,36 @@ import {useTranslation} from "react-i18next";
 import {Check, Close} from "@mui/icons-material";
 import styled from "styled-components";
 
-export type MobilePuzzleFeedbackAttrs = {
+export type ResponsivePuzzleFeedbackAttrs = {
     puzzle: Puzzle,
     feedback: PuzzleFeedbackValue,
 }
 
-const MobileFeedbackWrapper = styled.div`
+const ResponsiveWrapper = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
 `;
 
-export const MobilePuzzleFeedback_Start = ({puzzle, feedback}: MobilePuzzleFeedbackAttrs) => {
+export const ResponsivePuzzleFeedback_Start = ({puzzle, feedback}: ResponsivePuzzleFeedbackAttrs) => {
     const {t} = useTranslation();
 
     const col = getColourToPlay(puzzle.fen);
 
     return (
-        <MobileFeedbackWrapper>
+        <ResponsiveWrapper>
             <Typography variant={'h5'}>
                 {t(`puzzle-feedback.find-best-move-for-${col}`)}
             </Typography>
-        </MobileFeedbackWrapper>
+        </ResponsiveWrapper>
     )
 }
 
-export const MobilePuzzleFeedback_BadMove = () => {
+export const ResponsivePuzzleFeedback_BadMove = () => {
     const {t} = useTranslation();
 
     return (
-        <MobileFeedbackWrapper>
+        <ResponsiveWrapper>
             <Close sx={{color: 'red'}}/>
 
             <Typography variant={'h5'}>
@@ -45,15 +45,15 @@ export const MobilePuzzleFeedback_BadMove = () => {
             <Typography variant={'body2'} color={'text.secondary'}>
                 {t(`puzzle-feedback.bad-move.body`)}
             </Typography>
-        </MobileFeedbackWrapper>
+        </ResponsiveWrapper>
     )
 }
 
-export const MobilePuzzleFeedback_GoodMove = () => {
+export const ResponsivePuzzleFeedback_GoodMove = () => {
     const {t} = useTranslation();
 
     return (
-        <MobileFeedbackWrapper>
+        <ResponsiveWrapper>
             <Typography variant={'h5'}>
                 {t(`puzzle-feedback.good-move.title`)}
             </Typography>
@@ -61,15 +61,15 @@ export const MobilePuzzleFeedback_GoodMove = () => {
             <Typography variant={'body2'} color={'text.secondary'}>
                 {t(`puzzle-feedback.good-move.body`)}
             </Typography>
-        </MobileFeedbackWrapper>
+        </ResponsiveWrapper>
     )
 }
 
-export const MobilePuzzleFeedback_Solved = () => {
+export const ResponsivePuzzleFeedback_Solved = () => {
     const {t} = useTranslation();
 
     return (
-        <MobileFeedbackWrapper>
+        <ResponsiveWrapper>
             <Check sx={{ color: 'green'}}/>
 
             <Typography variant={'h5'}>
@@ -79,25 +79,25 @@ export const MobilePuzzleFeedback_Solved = () => {
             <Typography variant={'body2'} color={'text.secondary'}>
                 {t(`puzzle-feedback.solved.body`)}
             </Typography>
-        </MobileFeedbackWrapper>
+        </ResponsiveWrapper>
     )
 }
 
-export const MobilePuzzleFeedback = ({feedback, puzzle}: MobilePuzzleFeedbackAttrs) => {
+export const ResponsivePuzzleFeedback = ({feedback, puzzle}: ResponsivePuzzleFeedbackAttrs) => {
     if (feedback == "start") {
-        return <MobilePuzzleFeedback_Start feedback={feedback} puzzle={puzzle}/>
+        return <ResponsivePuzzleFeedback_Start feedback={feedback} puzzle={puzzle}/>
     }
 
     else if (feedback == "good_move") {
-        return <MobilePuzzleFeedback_GoodMove />
+        return <ResponsivePuzzleFeedback_GoodMove />
     }
 
     else if (feedback == "bad_move") {
-        return <MobilePuzzleFeedback_BadMove/>
+        return <ResponsivePuzzleFeedback_BadMove/>
     }
 
     else if (feedback == "solved") {
-        return <MobilePuzzleFeedback_Solved/>
+        return <ResponsivePuzzleFeedback_Solved/>
     }
 
     // TODO: Never, unless feedback has only 'start', good_move, bad_move, solved

@@ -5,9 +5,9 @@ import {PlayService} from "../../../../../services/play/playService";
 import {PuzzleControllerResult} from "../../../../../services/puzzle/puzzleController";
 import {CurrentUserContext} from "../../../../contexts/authentication/currentUserContext";
 import {PuzzleBoard} from "../../../chess/board/puzzle/puzzleBoard";
-import {MobilePuzzleFeedback} from "../mobile/feedback/mobilePuzzleFeedback";
 import {NextPuzzleType, PuzzleFeedbackValue} from "../../feedback/puzzleFeedbackValue";
 import {PlayPuzzleAttrs} from "../playPuzzle";
+import {ResponsivePuzzleFeedback} from "../feedback/responsive/responsivePuzzleFeedback";
 
 export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
     // TODO: Copied from MobilePlayPuzzle
@@ -71,7 +71,7 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
             </Grid>
 
             <Grid item md={3}>
-                <MobilePuzzleFeedback puzzle={attrs.puzzle} feedback={feedback}/>
+                <ResponsivePuzzleFeedback puzzle={attrs.puzzle} feedback={feedback}/>
             </Grid>
         </Grid>
     );
