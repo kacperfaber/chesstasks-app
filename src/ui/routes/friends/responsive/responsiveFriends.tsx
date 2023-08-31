@@ -8,7 +8,7 @@ export const ResponsiveFriends = () => {
 
     return (
         <AppLayout title={''}>
-            {isMobile ? <MobileFriendsScreen/> : null}
+            {isMobile ? <MobileFriendsScreen/> : <h1>TODO: Desktop friends not implemented.</h1>}
         </AppLayout>
     )
 }
