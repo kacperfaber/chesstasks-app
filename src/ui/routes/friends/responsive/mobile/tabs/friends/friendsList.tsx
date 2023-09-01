@@ -10,12 +10,12 @@ import {getFriendId} from "../../../../../../../commons/getFriendId";
 import {Links} from "../../../../../../../links";
 import {AllFriends_Menu} from "../../../../all/allFriendsMenu";
 
-export interface MobileFriendsScreen_FriendsListAttrs {
+export interface ResponsiveFriendsScreen_FriendsListAttrs {
     friends: Array<Friendship>;
     user: User;
 }
 
-export function MobileFriendsScreen_FriendsList({friends, user}: MobileFriendsScreen_FriendsListAttrs) {
+export function ResponsiveFriendsScreen({friends, user}: ResponsiveFriendsScreen_FriendsListAttrs) {
     const {t} = useTranslation();
     const nav = useNavigate();
     const [selectedFriend, setSelectedFriend] = useState<Friendship | null>(null);

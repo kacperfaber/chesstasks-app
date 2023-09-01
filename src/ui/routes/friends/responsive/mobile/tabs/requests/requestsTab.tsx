@@ -1,11 +1,11 @@
 import {Grid} from "@mui/material";
-import {MobileFriendsScreen_RequestsList} from "./requestsList";
+import {ResponsiveFriendsScreen_RequestsList} from "./requestsList";
 
-export function MobileFriendsScreen_RequestsTab() {
+export function ResponsiveFriendsScreen_RequestsTab() {
     return (
         <Grid container>
             <Grid item xs={12}>
-                <MobileFriendsScreen_RequestsList/>
+                <ResponsiveFriendsScreen_RequestsList/>
             </Grid>
         </Grid>
     )

@@ -1,5 +1,5 @@
 import {AdvancedPlayCriteria} from "./play/advanced/advancedPlayCriteria";
-import {MobileFriendsScreenTabs} from "./friends/responsive/mobile/mobileFriendsScreen";
+import {MobileFriendsScreenTabs} from "./friends/responsive/mobile/responsiveFriendsScreen";
 
 export function userIdLoader({params}: {params: any}) {
     return {userId: params.userId};

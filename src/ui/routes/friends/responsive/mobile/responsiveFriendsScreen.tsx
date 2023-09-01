@@ -1,13 +1,13 @@
 import {Box, Tab, Tabs} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import React, {useState} from "react";
-import {MobileFriendsScreen_FriendsTab} from "./tabs/friends/friendsTab";
-import {MobileFriendsScreen_RequestsTab} from "./tabs/requests/requestsTab";
+import {ResponsiveFriendsScreen_FriendsTab} from "./tabs/friends/friendsTab";
+import {ResponsiveFriendsScreen_RequestsTab} from "./tabs/requests/requestsTab";
 import {useLoaderData} from "react-router-dom";
 
 export type MobileFriendsScreenTabs = "friends" | "requests";
 
-export const MobileFriendsScreen = () => {
+export const ResponsiveFriendsScreen = () => {
     const {t} = useTranslation();
     const initialTab = useLoaderData() as MobileFriendsScreenTabs;
     const [tab, setTab] = useState<MobileFriendsScreenTabs>(initialTab);
@@ -26,9 +26,9 @@ export const MobileFriendsScreen = () => {
                 </Tabs>
             </Box>
 
-            { tab == "friends" ? <MobileFriendsScreen_FriendsTab/> : null}
+            { tab == "friends" ? <ResponsiveFriendsScreen_FriendsTab/> : null}
 
-            { tab == "requests" ? <MobileFriendsScreen_RequestsTab/> : null}
+            { tab == "requests" ? <ResponsiveFriendsScreen_RequestsTab/> : null}
 
         </Box>
     )

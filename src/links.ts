@@ -1,6 +1,6 @@
 import {SimplePlayCriteria} from "./ui/routes/play/simplePlayCriteria";
 import {AdvancedPlayCriteria} from "./ui/routes/play/advanced/advancedPlayCriteria";
-import {MobileFriendsScreenTabs} from "./ui/routes/friends/responsive/mobile/mobileFriendsScreen";
+import {MobileFriendsScreenTabs} from "./ui/routes/friends/responsive/mobile/responsiveFriendsScreen";
 
 export const Links = {
     Index: "/",

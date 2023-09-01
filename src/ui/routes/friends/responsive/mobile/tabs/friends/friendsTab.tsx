@@ -6,9 +6,9 @@ import {AllFriends_ListItem} from "../../../../all/friendItem";
 import {CurrentUserContext} from "../../../../../../contexts/authentication/currentUserContext";
 import {UserService} from "../../../../../../../services/user/userService";
 import {AuthenticationService} from "../../../../../../../services/authentication/authenticationService";
-import {MobileFriendsScreen_FriendsList} from "./friendsList";
+import {ResponsiveFriendsScreen} from "./friendsList";
 
-export function MobileFriendsScreen_FriendsTab() {
+export function ResponsiveFriendsScreen_FriendsTab() {
     const allFriends = useContext(AllFriendContext);
     const userCtx = useContext(CurrentUserContext);
 
@@ -26,7 +26,7 @@ export function MobileFriendsScreen_FriendsTab() {
         <Grid container>
             <Grid item xs={12}>
                 {
-                    allFriends.value && userCtx.value ? <MobileFriendsScreen_FriendsList user={userCtx.value} friends={allFriends.value}/> : null
+                    allFriends.value && userCtx.value ? <ResponsiveFriendsScreen user={userCtx.value} friends={allFriends.value}/> : null
                 }
             </Grid>
         </Grid>

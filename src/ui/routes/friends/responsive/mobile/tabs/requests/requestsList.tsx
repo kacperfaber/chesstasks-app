@@ -4,7 +4,7 @@ import {AllFriendRequests_SentRequestList} from "../../../../requests/all/sentRe
 import {AllFriendRequests_ReceivedRequestList} from "../../../../requests/all/receivedFriendRequests";
 import {useTranslation} from "react-i18next";
 
-export const MobileFriendsScreen_RequestsList = () => {
+export const ResponsiveFriendsScreen_RequestsList = () => {
     const {t} = useTranslation();
     return (
         <List>
