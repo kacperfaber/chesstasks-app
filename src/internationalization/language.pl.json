@@ -14,7 +14,8 @@
     "probably-hidden": "Prawdopodobnie ukryte",
     "friend-request-accept": "Zaakceptuj zaproszenie",
     "friend-request-reject": "Odrzuć zaproszenie",
-    "see-friend-profile": "Zobacz profil użytkownika"
+    "see-friend-profile": "Zobacz profil użytkownika",
+    "close": "Zamknij"
   },
   "_layout": {
     "_mobile": {
@@ -433,5 +434,12 @@
       "name": "Zwolnienie",
       "description": "Posunięcie, często z tempem, które udostępnia pole, linię bądź przekątną do wykorzystania w następnej taktyce."
     }
+  },
+
+  "__privacy": {
+    "register-rodo-statement": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO.",
+    "register-privacy-statement": "Akceptuję Politykę Prywatności i zgadzam się na jej postanowienia.",
+    "privacy-statement": "Polityka prywatności",
+    "rodo-statement": "Postanowienia RODO"
   }
 }

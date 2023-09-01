@@ -5,11 +5,44 @@ import {Avatar, Button, Checkbox, FormControlLabel, TextField, Typography} from 
 import {ResponsiveLogin_FormWrapper} from "../formWrapper";
 import {AccountCircle, Email} from "@mui/icons-material";
 
+export type ResponsiveLogin_InputBasicDataAgreeAttrs = {
+    rodo: boolean;
+    setRodo: (x: boolean) => void;
+
+    privacy: boolean;
+    setPrivacy: (x: boolean) => void;
+}
+
+const PrivacyButton = () => {
+    const {t} = useTranslation();
+    return (
+        <Button onClick={() => window.location.replace("/privacy.txt")} variant={'text'}>{t("__privacy.privacy-statement")}</Button>
+    );
+}
+
+const RodoButton = () => {
+    const {t} = useTranslation();
+    return (
+        <Button onClick={() => window.location.replace("/rodo.txt")} variant={'text'}>{t("__privacy.rodo-statement")}</Button>
+    );
+}
+
+export const ResponsiveLogin_InputBasicDataAgree = ({rodo, setRodo, privacy, setPrivacy}: ResponsiveLogin_InputBasicDataAgreeAttrs) => {
+    const {t} = useTranslation();
+    return (
+        <>
+            <FormControlLabel required control={<Checkbox checked={privacy} onChange={(e, v) => setPrivacy(v)}/>} label={<>{t("__privacy.register-privacy-statement")}<PrivacyButton/></>} />
+            <FormControlLabel required control={<Checkbox checked={rodo} onChange={(e, v) => setRodo(v)}/>} label={<>{t("__privacy.register-rodo-statement")}<RodoButton/></>} />
+        </>
+    )
+}
+
 export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [agree, setAgree] = useState(false);
+    const [privacy, setPrivacy] = useState(false);
+    const [rodo, setRodo] = useState(false);
     const {t} = useTranslation();
 
     const submit = () => {
@@ -50,9 +83,9 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
                 value={password}
                 onChange={(e) => setPassword(e.currentTarget.value)}/>
 
-            <FormControlLabel required control={<Checkbox checked={agree} onChange={(e, v) => setAgree(v)}/>} label={t("register.i-agree")} />
+            <ResponsiveLogin_InputBasicDataAgree rodo={rodo} setRodo={setRodo} privacy={privacy} setPrivacy={setPrivacy}/>
 
-            <Button disabled={!agree} variant={'contained'} onClick={submit}>{t("login._responsive.register-tab._comps.input-basic-data.submit")}</Button>
+            <Button disabled={(!privacy) || (!rodo)} variant={'contained'} onClick={submit}>{t("login._responsive.register-tab._comps.input-basic-data.submit")}</Button>
         </ResponsiveLogin_FormWrapper>
     )
 }
