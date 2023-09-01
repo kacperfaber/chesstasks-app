@@ -277,5 +277,161 @@
     "query": "Szukana treść",
     "search-results": "Wyniki wyszukiwania",
     "error-message": "Wystąpił błąd podczas szukania"
+  },
+
+
+  "__themes": {
+    "attackingF2F7": {
+      "name": "Atak na f2 lub f7",
+      "description": "Atak koncentrujący się na pionach f2 lub f7, na przykład taki jak w szewskim macie."
+    },
+    "queensideAttack": {
+      "name": "Atak skrzydłem hetmańskim",
+      "description": "Atak na króla przeciwnika po długiej roszadzie."
+    },
+    "kingsideAttack": {
+      "name": "Atak skrzydłem królewskim",
+      "description": "Atak na króla przeciwnika po krótkiej roszadzie."
+    },
+    "discoveredAttack": {
+      "name": "Atak z odsłony",
+      "description": "Ruch bierki, która blokuje atak innej figury dalekiego zasięgu, np. ruch skoczkiem uaktywniający wieżę."
+    },
+    "quietMove": {
+      "name": "Cichy ruch",
+      "description": "Posunięcie niebędące ani szachem, ani biciem, które przygotowuje groźbę nie do uniknięcia w jednym z kolejnych posunięć."
+    },
+    "dovetailMate": {
+      "name": "Jaskółczy ogon",
+      "description": "Hetman matuje sąsiedniego króla, którego jedyne dwa pola ucieczki są zablokowane przez własne bierki."
+    },
+    "bishopEndgame": {
+      "name": "Końcówka gońcowa",
+      "description": "Gra końcowa wyłącznie z gońcami i pionami."
+    },
+    "queenEndgame": {
+      "name": "Końcówka hetmańska",
+      "description": "Gra końcowa wyłącznie z hetmanami i pionami."
+    },
+    "pawnEndgame": {
+      "name": "Końcówka pionkowa",
+      "description": "Gra końcowa wyłącznie z pionami."
+    },
+    "knightEndgame": {
+      "name": "Końcówka skoczkowa",
+      "description": "Gra końcowa wyłącznie ze skoczkami i pionami."
+    },
+    "rookEndgame": {
+      "name": "Końcówka wieżowa",
+      "description": "Gra końcowa wyłącznie z wieżami i pionami."
+    },
+    "queenRookEndgame": {
+      "name": "Końcówka wieżowo-hetmańska",
+      "description": "Gra końcowa wyłącznie z wieżami, hetmanami i pionami."
+    },
+    "anastasiaMate": {
+      "name": "Mat Anastazji",
+      "description": "Skoczek, wieża lub hetman łączą siły, aby złapać przeciwnego króla w pułapkę pomiędzy bandą szachownicy, a jego inną figurą."
+    },
+    "bodenMate": {
+      "name": "Mat Bodena",
+      "description": "Dwa atakujące gońce na przeciwnych przekątnych matują króla ograniczonego przez własne bierki."
+    },
+    "arabianMate": {
+      "name": "Mat arabski",
+      "description": "Skoczek i wieża współpracują razem, aby zaciągnąć króla w róg szachownicy."
+    },
+    "doubleBishopMate": {
+      "name": "Mat dwoma gońcami",
+      "description": "Dwa atakujące gońce na sąsiednich przekątnych matują króla ograniczonego przez własne bierki."
+    },
+    "hookMate": {
+      "name": "Mat haka",
+      "description": "Mat wieżą, skoczkiem i pionkiem z wrogim pionem blokującym ucieczkę króla."
+    },
+    "backRankMate": {
+      "name": "Mat na ostatniej linii",
+      "description": "Zamatuj króla uwięzionego w ostatnim rzędzie przez własne bierki."
+    },
+    "deflection": {
+      "name": "Odciągnięcie",
+      "description": "Posunięcie odciągające bierkę przeciwnika od innego wykonywanego przez nią zadania, np. ochrony kluczowego pola."
+    },
+    "exposedKing": {
+      "name": "Odsłonięty król",
+      "description": "Taktyka z udziałem króla z kilkoma jego obrońcami, często prowadząca do mata."
+    },
+    "doubleCheck": {
+      "name": "Podwójny szach",
+      "description": "Szach dwoma bierkami jednocześnie będący wynikiem ataku z odkrycia, w którym zarówno bierka poruszana, jak i odkryta atakują króla."
+    },
+    "sacrifice": {
+      "name": "Poświęcenie",
+      "description": "Taktyka wykorzystująca krótkoterminowe oddanie materiału do zdobycia przewagi po forsownej sekwencji posunięć."
+    },
+    "promotion": {
+      "name": "Promocja",
+      "description": "Promocja piona lub zagrożenie promocją jest kluczem tej taktyki."
+    },
+    "interference": {
+      "name": "Przeszkoda",
+      "description": "Ruch figurą pomiędzy dwie figury przeciwnika, tak, że jedna lub obydwie są niebronione. Na przykład ruch skoczkiem na bronione pole pomiędzy dwie wieże."
+    },
+    "attraction": {
+      "name": "Przyciąganie",
+      "description": "Wymiana bądź poświęcenie zachęcające lub zmuszające bierkę przeciwnika do zajęcia pola, na którym będzie ona celem kolejnych taktyk."
+    },
+    "xRayAttack": {
+      "name": "Rentgen",
+      "description": "Figura atakuje albo broni pole przez wrogą figurę."
+    },
+    "defensiveMove": {
+      "name": "Ruch obronny",
+      "description": "Precyzyjne posunięcie lub ich ciąg, niezbędne by uniknąć straty materiału lub innej przewagi."
+    },
+    "skewer": {
+      "name": "Szpila",
+      "description": "Motyw, w którym bierka o wyższej wartości unikając ataku pozwala na zbicie bądź zaatakowanie bierki o niższej wartości. Odwrotność związania."
+    },
+    "underPromotion": {
+      "name": "Słaba promocja",
+      "description": "Promocja na skoczka, gońca lub wieżę."
+    },
+    "trappedPiece": {
+      "name": "Uwięziona figura",
+      "description": "Bierka nie może uniknąć zbicia z powodu ograniczenia mobilności."
+    },
+    "fork": {
+      "name": "Widełki",
+      "description": "Ruch w którym poruszona bierka atakuje jednocześnie dwie bierki przeciwnika."
+    },
+    "hangingPiece": {
+      "name": "Wisząca figura",
+      "description": "Taktyka wykorzystująca możliwość zbicia niebronionej lub niedostatecznie bronionej bierki przeciwnika."
+    },
+    "intermezzo": {
+      "name": "Wtrącony ruch",
+      "description": "Zamiast zagrania spodziewanego posunięcia, wykonanie takiego, które stanowi bezpośrednią groźbę, na którą przeciwnik zmuszony jest odpowiedzieć. Znane również jako 'zwischenzug'."
+    },
+    "advancedPawn": {
+      "name": "Zaawansowany pion",
+      "description": "Zaawansowany pion lub pion grożący przemianą jest kluczowy w taktyce."
+    },
+    "capturingDefender": {
+      "name": "Zabicie obrońcy",
+      "description": "Usunięcie obrońcy, który jest kluczowy do obrony innej figury, pozwalając na zbicie niebronionej figury w następnym ruchu."
+    },
+    "zugzwang": {
+      "name": "Zugzwang",
+      "description": "Ograniczone ruchy przeciwnika powodują, że każde posunięcie pogarsza jego pozycję."
+    },
+    "pin": {
+      "name": "Związanie",
+      "description": "Taktyka wykorzystująca związania, czyli sytuacje, w których ruch bierki naraża na atak figurę o wyższej wartości."
+    },
+    "clearance": {
+      "name": "Zwolnienie",
+      "description": "Posunięcie, często z tempem, które udostępnia pole, linię bądź przekątną do wykorzystania w następnej taktyce."
+    }
   }
 }

@@ -8,6 +8,7 @@ import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../../../links";
 
 export const DesktopPlayPuzzle_ThemeListItem = ({theme}: { theme: string }) => {
+    const {t} = useTranslation();
     return (
         <>
             <ListItem secondaryAction={<Lock/>}>
