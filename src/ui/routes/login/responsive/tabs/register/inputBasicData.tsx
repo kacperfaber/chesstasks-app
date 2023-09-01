@@ -4,6 +4,7 @@ import {RegisterService} from "../../../../../../services/register/registerServi
 import {Avatar, Button, Checkbox, FormControlLabel, TextField, Typography} from "@mui/material";
 import {ResponsiveLogin_FormWrapper} from "../formWrapper";
 import {AccountCircle, Email} from "@mui/icons-material";
+import {PrivacyButton, RodoButton} from "../../../../../components/privacy/privacyButtons";
 
 export type ResponsiveLogin_InputBasicDataAgreeAttrs = {
     rodo: boolean;
@@ -11,20 +12,6 @@ export type ResponsiveLogin_InputBasicDataAgreeAttrs = {
 
     privacy: boolean;
     setPrivacy: (x: boolean) => void;
-}
-
-const PrivacyButton = () => {
-    const {t} = useTranslation();
-    return (
-        <Button onClick={() => window.location.replace("/privacy.txt")} variant={'text'}>{t("__privacy.privacy-statement")}</Button>
-    );
-}
-
-const RodoButton = () => {
-    const {t} = useTranslation();
-    return (
-        <Button onClick={() => window.location.replace("/rodo.txt")} variant={'text'}>{t("__privacy.rodo-statement")}</Button>
-    );
 }
 
 export const ResponsiveLogin_InputBasicDataAgree = ({rodo, setRodo, privacy, setPrivacy}: ResponsiveLogin_InputBasicDataAgreeAttrs) => {
