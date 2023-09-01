@@ -10,7 +10,7 @@ export const ResponsiveLogin_Success = ({goLogin}: {goLogin: () => void}) => {
             <Check sx={{color: 'green'}} />
 
             <Typography variant={'h5'}>
-                {t("login.success")}
+                {t("login._responsive.register-tab._comps.success.title")}
             </Typography>
 
             <Button variant={'contained'} onClick={goLogin}>

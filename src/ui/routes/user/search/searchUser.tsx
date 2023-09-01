@@ -77,7 +77,7 @@ export const SearchUser = () => {
     };
 
     return (
-        <AppLayout title={t('search-user.navbar-title')}>
+        <AppLayout title={''}>
             <Grid container>
                 <Grid item xs={12}>
                     <Typography variant={'h5'}>{t("search-user.title")}</Typography>

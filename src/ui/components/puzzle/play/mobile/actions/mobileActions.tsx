@@ -24,9 +24,9 @@ export const MobilePlayPuzzle_Actions = ({feedback, goNext}: {feedback: PuzzleFe
                     {feedback == "solved" ? (<Button onClick={nextClick} variant={'contained'}>
                             <PlayArrow/>
 
-                            {t("puzzle-actions.mobile.next-puzzle")}
+                            {t("puzzle._mobile._comps.puzzle-actions.next-puzzle")}
                         </Button>) : (<Button onClick={nextClick} variant={'text'}>
-                                {t("puzzle-actions.mobile.skip-puzzle")}
+                                {t("puzzle._mobile._comps.puzzle-actions.skip-puzzle")}
                         </Button>
                         )
                     }

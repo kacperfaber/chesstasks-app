@@ -6,7 +6,7 @@ import {AllTheme_List} from "./allTheme_List";
 export const AllThemes = () => {
     const {t} = useTranslation();
     return (
-        <AppLayout title={t("all-themes.navbar-title")}>
+        <AppLayout title={''}>
             <Grid container>
                 <AllTheme_List/>
             </Grid>

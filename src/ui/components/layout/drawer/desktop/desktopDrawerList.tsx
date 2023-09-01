@@ -14,68 +14,68 @@ export const DesktopDrawer_List = () => {
                 <ListItemIcon>
                     <Home/>
                 </ListItemIcon>
-                {t("drawer.home")}
+                {t("_layout._desktop.drawer-list.home")}
             </ListItemButton>
 
             <TransparentListSubHeader>
-                {t("drawer.puzzle-title")}
+                {t("_layout._desktop.drawer-list.puzzle-title")}
             </TransparentListSubHeader>
 
             <ListItemButton onClick={() => nav(Links.playSimpleWithoutCriteria())}>
                 <ListItemIcon>
                     <Search/>
                 </ListItemIcon>
-                {t("drawer.random-puzzle")}
+                {t("_layout._desktop.drawer-list.random-puzzle")}
             </ListItemButton>
 
             <ListItemButton onClick={() => nav(Links.AllThemes)}>
                 <ListItemIcon>
                     <Style/>
                 </ListItemIcon>
-                {t("drawer.puzzle-by-theme")}
+                {t("_layout._desktop.drawer-list.puzzle-by-theme")}
             </ListItemButton>
 
             <ListItemButton onClick={() => nav(Links.SearchAdvanced)}>
                 <ListItemIcon>
                     <Style/>
                 </ListItemIcon>
-                {t("drawer.puzzle-search-advanced")}
+                {t("_layout._desktop.drawer-list.puzzle-search-advanced")}
             </ListItemButton>
 
             <TransparentListSubHeader>
-                {t("drawer.history-title")}
+                {t("_layout._desktop.drawer-list.history-title")}
             </TransparentListSubHeader>
 
             <ListItemButton onClick={() => nav(Links.PuzzleHistory)}>
                 <ListItemIcon>
                     <History/>
                 </ListItemIcon>
-                {t("drawer.history")}
+                {t("_layout._desktop.drawer-list.history")}
             </ListItemButton>
 
             <TransparentListSubHeader>
-                {t("drawer.friends-title")}
+                {t("_layout._desktop.drawer-list.friends-title")}
             </TransparentListSubHeader>
 
             <ListItemButton onClick={() => nav(Links.friends(null))}>
                 <ListItemIcon>
                     <People/>
                 </ListItemIcon>
-                {t("drawer.friends")}
+                {t("_layout._desktop.drawer-list.friends")}
             </ListItemButton>
 
             <ListItemButton onClick={() => nav(Links.friends(null))}>
                 <ListItemIcon>
                     <People/>
                 </ListItemIcon>
-                {t("drawer.friend-requests")}
+                {t("_layout._desktop.drawer-list.friend-requests")}
             </ListItemButton>
 
             <ListItemButton onClick={() => nav(Links.SearchUser)}>
                 <ListItemIcon>
                     <Search/>
                 </ListItemIcon>
-                {t("drawer.search-user")}
+                {t("_layout._desktop.drawer-list.search-user")}
             </ListItemButton>
         </List>
     )

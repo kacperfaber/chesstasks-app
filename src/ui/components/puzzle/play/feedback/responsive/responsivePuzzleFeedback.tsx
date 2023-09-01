@@ -25,7 +25,7 @@ export const ResponsivePuzzleFeedback_Start = ({puzzle, feedback}: ResponsivePuz
     return (
         <ResponsiveWrapper>
             <Typography variant={'h5'}>
-                {t(`puzzle-feedback.find-best-move-for-${col}`)}
+                {t(`puzzle._responsive._comps.puzzle-feedback.find-best-move-for-${col}`)}
             </Typography>
         </ResponsiveWrapper>
     )
@@ -39,11 +39,11 @@ export const ResponsivePuzzleFeedback_BadMove = () => {
             <Close sx={{color: 'red'}}/>
 
             <Typography variant={'h5'}>
-                {t(`puzzle-feedback.bad-move.title`)}
+                {t(`puzzle._responsive._comps.puzzle-feedback.bad-move.title`)}
             </Typography>
 
             <Typography variant={'body2'} color={'text.secondary'}>
-                {t(`puzzle-feedback.bad-move.body`)}
+                {t(`puzzle._responsive._comps.puzzle-feedback.bad-move.body`)}
             </Typography>
         </ResponsiveWrapper>
     )
@@ -55,11 +55,11 @@ export const ResponsivePuzzleFeedback_GoodMove = () => {
     return (
         <ResponsiveWrapper>
             <Typography variant={'h5'}>
-                {t(`puzzle-feedback.good-move.title`)}
+                {t(`puzzle._responsive._comps.puzzle-feedback.good-move.title`)}
             </Typography>
 
             <Typography variant={'body2'} color={'text.secondary'}>
-                {t(`puzzle-feedback.good-move.body`)}
+                {t(`puzzle._responsive._comps.puzzle-feedback.good-move.body`)}
             </Typography>
         </ResponsiveWrapper>
     )
@@ -73,11 +73,11 @@ export const ResponsivePuzzleFeedback_Solved = () => {
             <Check sx={{ color: 'green'}}/>
 
             <Typography variant={'h5'}>
-                {t(`puzzle-feedback.solved.title`)}
+                {t(`puzzle._responsive._comps.puzzle-feedback.solved.title`)}
             </Typography>
 
             <Typography variant={'body2'} color={'text.secondary'}>
-                {t(`puzzle-feedback.solved.body`)}
+                {t(`puzzle._responsive._comps.puzzle-feedback.solved.body`)}
             </Typography>
         </ResponsiveWrapper>
     )

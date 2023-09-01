@@ -51,18 +51,18 @@ export const ResponsiveLogin_LoginTab = () => {
                 <AccountCircle/>
             </Avatar>
 
-            <Typography variant={'h5'}>{t("login.title")}</Typography>
+            <Typography variant={'h5'}>{t("login._responsive.login-tab.title")}</Typography>
 
             <TextField onChange={(v) => setLogin(v.target.value)} sx={{width: '100%', my: '5px'}}
-                       label={t('login.login-label')}
+                       label={t('login._responsive.login-tab.login-label')}
                        variant={'outlined'}></TextField>
 
             <TextField onChange={(v) => setPass(v.target.value)} sx={{width: '100%', my: '5px'}}
                        type={'password'}
-                       label={t('login.password-label')}
+                       label={t('login._responsive.login-tab.password-label')}
                        variant={'outlined'}></TextField>
 
-            <Button onClick={submit} variant={'contained'}>{t('login.submit')}</Button>
+            <Button onClick={submit} variant={'contained'}>{t('login._responsive.login-tab.submit')}</Button>
         </ResponsiveLogin_FormWrapper>
     )
 }

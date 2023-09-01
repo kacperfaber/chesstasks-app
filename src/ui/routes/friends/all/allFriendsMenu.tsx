@@ -42,7 +42,7 @@ export const AllFriends_Menu = ({selectedFriend, onClose}: {selectedFriend: Frie
                     {selectedFriend ? FriendService.getFriendName(userCtx.value!!.id, selectedFriend) : null}
                 </Typography>
                 <Typography variant={'body2'}>
-                    {t("all-friends.you-can-now-manage-friendship")}
+                    {t("friends._comps.friend-menu.you-can-now-manage-friendship")}
                 </Typography>
 
                 <List>
@@ -51,7 +51,7 @@ export const AllFriends_Menu = ({selectedFriend, onClose}: {selectedFriend: Frie
                             <Delete/>
                         </ListItemIcon>
 
-                        {t("all-friends.delete-friend")}
+                        {t("_all.delete-friend")}
                     </ListItemButton>
 
                     <ListItemButton onClick={seeProfile}>
@@ -59,7 +59,7 @@ export const AllFriends_Menu = ({selectedFriend, onClose}: {selectedFriend: Frie
                             <Visibility/>
                         </ListItemIcon>
 
-                        {t("all-friends.see-friend-profile")}
+                        {t("_all.see-friend-profile")}
                     </ListItemButton>
                 </List>
             </Drawer>

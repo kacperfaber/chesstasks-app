@@ -20,15 +20,15 @@ export const ResponsiveLogin_RegisterTab = ({goToLogin}: { goToLogin: () => void
 
         <Stepper activeStep={step}>
             <Step>
-                <StepLabel>{t("register.steps.register")}</StepLabel>
+                <StepLabel>{t("login._responsive.register-tab._comps.steps.register")}</StepLabel>
             </Step>
 
             <Step>
-                <StepLabel>{t("register.steps.confirm-email")}</StepLabel>
+                <StepLabel>{t("login._responsive.register-tab._comps.steps.confirm-email")}</StepLabel>
             </Step>
 
             <Step>
-                <StepLabel>{t("register.steps.success")}</StepLabel>
+                <StepLabel>{t("login._responsive.register-tab._comps.steps.success")}</StepLabel>
             </Step>
         </Stepper>
     </>)

@@ -50,7 +50,7 @@ export const DesktopAppToolbar_AnonymousActions = () => {
     const nav = useNavigate();
 
     return (
-        <Button onClick={() => nav(Links.Login)} variant={'contained'}>{t("all.login-in")}</Button>
+        <Button onClick={() => nav(Links.Login)} variant={'contained'}>{t("_all.login-in")}</Button>
     )
 }
 
@@ -77,7 +77,7 @@ export const ResponsiveAppToolbar = (attrs: ResponsiveAppToolbarAttrs) => {
                     {attrs.menuButton ? <MenuButton onClick={attrs.menuButton}/> : null}
 
                     <Typography variant={'h5'}>
-                        {t("layout.navbar.title")}
+                        {t("_all.logo")}
                     </Typography>
 
                     <Box sx={{flexGrow: 1}}></Box>

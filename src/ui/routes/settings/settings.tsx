@@ -53,25 +53,25 @@ export const Settings = () => {
 
     return (
         <>
-            <AppLayout title={t("settings.navbar-title")}>
+            <AppLayout title={''}>
                 { historyVisibility && statisticsVisibility ? <Grid container>
                     <Grid style={{marginBottom: '30px'}} item xs={12}>
-                        <Typography variant={'h5'}>{t("settings.history-visibility.title")}</Typography>
-                        <Typography variant={'body2'} color={'text.secondary'}>{t("settings.history-visibility.body")}</Typography>
+                        <Typography variant={'h5'}>{t("settings._history.title")}</Typography>
+                        <Typography variant={'body2'} color={'text.secondary'}>{t("settings._history.body")}</Typography>
 
                         <BaseVisibilityInput value={historyVisibility} setValue={setHistoryVisibility}/>
                     </Grid>
 
                     <Grid style={{marginBottom: '30px'}} item xs={12}>
-                        <Typography variant={'h5'}>{t("settings.statistics-visibility.title")}</Typography>
-                        <Typography variant={'body2'} color={'text.secondary'}>{t("settings.statistics-visibility.body")}</Typography>
+                        <Typography variant={'h5'}>{t("settings._stats.title")}</Typography>
+                        <Typography variant={'body2'} color={'text.secondary'}>{t("settings._stats.body")}</Typography>
 
                         <BaseVisibilityInput value={statisticsVisibility} setValue={setStatisticsVisibility}/>
                     </Grid>
 
                     <Grid item xs={12}>
                         <Button variant={'contained'} onClick={performSave}>{t("settings.save")}</Button>
-                        <Button variant={'contained'} onClick={cancel}>{t("settings.cancel")}</Button>
+                        <Button variant={'contained'} onClick={cancel}>{t("_all.cancel")}</Button>
                     </Grid>
                 </Grid> : null }
             </AppLayout>

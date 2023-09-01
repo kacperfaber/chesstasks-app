@@ -12,7 +12,7 @@ import {useTranslation} from "react-i18next";
 
 const PuzzleHistoryByUserId_PuzzleHistoryList_RenderError = () => {
     const {t} = useTranslation();
-    return (<Typography>{t("puzzle-history-by-user-id.probably-hidden")}</Typography>);
+    return (<Typography>{t("puzzle-history._by-user-id.probably-hidden")}</Typography>);
 }
 
 const PuzzleHistoryByUserId_PuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistory: PuzzleHistory }) => {
@@ -28,7 +28,7 @@ const PuzzleHistoryByUserId_PuzzleHistoryList_Item = ({puzzleHistory}: { puzzleH
     }, []);
 
     const primaryText = () => {
-        return puzzleHistory.success ? t("puzzle-history-by-user-id.list.item.success-title") : t("puzzle-history-by-user-id.list.item.failed-title")
+        return puzzleHistory.success ? t("puzzle-history._by-user-id._item._success.title") : t("puzzle-history._by-user-id._item._failed.title")
     }
 
     return (

@@ -24,12 +24,12 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
                 <AccountCircle/>
             </Avatar>
 
-            <Typography variant={'h5'}>{t("register.register.title")}</Typography>
-            <Typography variant={'body2'} color={'text.secondary'}>{t("register.register.body")}</Typography>
+            <Typography variant={'h5'}>{t("login._responsive.register-tab._comps.input-basic-data.title")}</Typography>
+            <Typography variant={'body2'} color={'text.secondary'}>{t("login._responsive.register-tab._comps.input-basic-data.body")}</Typography>
 
             <TextField
                 sx={{width: '100%'}}
-                label={t("register.username")}
+                label={t("login._responsive.register-tab._comps.input-basic-data.username")}
                 required={true}
                 value={username}
                 onChange={(e) => setUsername(e.currentTarget.value)}/>
@@ -37,7 +37,7 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
             <TextField
                 sx={{width: '100%'}}
                 required={true}
-                label={t("register.email")}
+                label={t("login._responsive.register-tab._comps.input-basic-data.email")}
                 type={'email'}
                 value={email}
                 onChange={(e) => setEmail(e.currentTarget.value)}/>
@@ -45,14 +45,14 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
             <TextField
                 sx={{width: '100%'}}
                 required={true}
-                label={t("register.password")}
+                label={t("login._responsive.register-tab._comps.input-basic-data.password")}
                 type={'password'}
                 value={password}
                 onChange={(e) => setPassword(e.currentTarget.value)}/>
 
             <FormControlLabel required control={<Checkbox checked={agree} onChange={(e, v) => setAgree(v)}/>} label={t("register.i-agree")} />
 
-            <Button disabled={!agree} variant={'contained'} onClick={submit}>{t("register.submit")}</Button>
+            <Button disabled={!agree} variant={'contained'} onClick={submit}>{t("login._responsive.register-tab._comps.input-basic-data.submit")}</Button>
         </ResponsiveLogin_FormWrapper>
     )
 }

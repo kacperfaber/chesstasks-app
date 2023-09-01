@@ -53,8 +53,8 @@ export const DesktopPlayPuzzle_Ranking = ({ranking, rankingDiff}: DesktopPlayPuz
 
     return (
         <PlayPaper>
-            <Typography variant={'h5'}>{t("puzzle-ranking.title")}</Typography>
-            <Typography variant={'body2'} color={'text.secondary'}>{t("puzzle-ranking.body")}</Typography>
+            <Typography variant={'h5'}>{t("puzzle._desktop._comps.puzzle-ranking.title")}</Typography>
+            <Typography variant={'body2'} color={'text.secondary'}>{t("puzzle._desktop._comps.puzzle-ranking.body")}</Typography>
 
             <DesktopRankingWrapper>
                 <Typography sx={{display: 'inline'}} variant={'h4'}>{ranking}</Typography>

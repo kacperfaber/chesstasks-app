@@ -14,7 +14,7 @@ export const DesktopPlayPuzzle_SolvedActionButton = ({goNext}: {goNext: () => vo
     return (
         <Button variant={'contained'} onClick={goNext}>
             <PlayArrow/>
-            {t("puzzle-actions.desktop.next-puzzle")}
+            {t("puzzle._desktop._comps.puzzle-actions.next-puzzle")}
         </Button>
     )
 }
@@ -23,7 +23,7 @@ export const DesktopPlayPuzzle_SkipActionButton = ({goNext}: {goNext: () => void
     const {t} = useTranslation();
     return (
         <Button variant={'text'} onClick={goNext}>
-            {t("puzzle-actions.desktop.skip-puzzle")}
+            {t("puzzle._desktop._comps.puzzle-actions.skip-puzzle")}
         </Button>
     );
 }

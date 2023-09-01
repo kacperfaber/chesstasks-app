@@ -31,7 +31,7 @@ export const PublicUserById = () => {
                 <Grid item xs={12}>
                     <PublicProfile_BasePaper>
                         <Typography variant={'h4'}>{user?.username}</Typography>
-                        <Typography color={'text.secondary'} variant={'body2'}>{t("public-user-by-id.body", {username: user?.username ?? "undefined"})}</Typography>
+                        <Typography color={'text.secondary'} variant={'body2'}>{t("public-user.body", {username: user?.username ?? "undefined"})}</Typography>
                     </PublicProfile_BasePaper>
                 </Grid>
 

@@ -35,20 +35,20 @@ export const NoRelationCard = ({userId, resetRelation}: FriendCardAttrs) => {
                 <CardActionArea onClick={onCardClick}>
                     <CardContent>
                         <Typography variant={'h5'}>
-                            {t("public-user-by-id.cards.no-relation.title")}
+                            {t("public-user._comps.no-relation.title")}
                         </Typography>
 
                         <Typography variant={'body2'} color={'text.secondary'}>
-                            {t("public-user-by-id.cards.no-relation.body")}
+                            {t("public-user._comps.no-relation.body")}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
             </Card>
 
-            <ConfirmDialog title={t("public-user-by-id.cards.no-relation.send-request-dialog.title")}
-                           body={t("public-user-by-id.cards.no-relation.send-request-dialog.body")}
-                           confirmText={t("public-user-by-id.cards.no-relation.send-request-dialog.send-request")}
-                           cancelText={t("all.cancel")}
+            <ConfirmDialog title={t("public-user._comps.send-request-dialog.title")}
+                           body={t("public-user._comps.send-request-dialog.body")}
+                           confirmText={t("public-user._comps.send-request-dialog.confirm")}
+                           cancelText={t("_all.cancel")}
                            onClose={onDialogClose}
                            open={dial}/>
         </>

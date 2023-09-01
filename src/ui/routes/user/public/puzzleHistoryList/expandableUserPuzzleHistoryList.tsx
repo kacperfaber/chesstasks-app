@@ -20,8 +20,8 @@ export const ExpandablePuzzleHistoryList_Item = ({puzzleHistory}: { puzzleHistor
     }, []);
 
     const itemPrimaryText = puzzleHistory.success ?
-        t("public-user-by-id.puzzle-history.item.solved") :
-        t("public-user-by-id.puzzle-history.item.not-solved")
+        t("public-user._comps.puzzle-history.item-solved") :
+        t("public-user._comps.puzzle-history.item-not-solved")
 
     const nav = useNavigate();
 

@@ -28,9 +28,9 @@ export const MinePuzzleHistory_PuzzleHistoryListItem = ({puzzleHistory}: {puzzle
 
     const secondaryText = () => {
         if (puzzleHistory.success) {
-            return t("mine-puzzle-history.list.item.body.solved", tData);
+            return t("puzzle-history._mine._comps.list-item.secondary.solved", tData);
         }
-        return t("mine-puzzle-history.list.item.body.failed", tData);
+        return t("puzzle-history._mine._comps.list-item.secondary.failed", tData);
     }
 
     return (
@@ -40,7 +40,7 @@ export const MinePuzzleHistory_PuzzleHistoryListItem = ({puzzleHistory}: {puzzle
             </ListItemAvatar>
 
             <ListItemButton onClick={itemClicked}>
-                {puzzle ? <ListItemText primary={t("mine-puzzle-history.list.item.title", tData)} secondary={secondaryText()}/> : null}
+                {puzzle ? <ListItemText primary={t("puzzle-history._mine._comps.list-item.primary", tData)} secondary={secondaryText()}/> : null}
             </ListItemButton>
         </ListItem>
     )

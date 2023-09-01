@@ -9,13 +9,13 @@ export const ResponsiveFriendsScreen_RequestsList = () => {
     return (
         <List>
             <TransparentListSubHeader>
-                {t("all.sent-friend-requests")}
+                {t("_all.sent-friend-requests")}
             </TransparentListSubHeader>
 
             <AllFriendRequests_SentRequestList/>
 
             <TransparentListSubHeader>
-                {t("all.received-friend-requests")}
+                {t("_all.received-friend-requests")}
             </TransparentListSubHeader>
 
             <AllFriendRequests_ReceivedRequestList/>

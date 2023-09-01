@@ -39,7 +39,7 @@ export const DesktopPlayPuzzle_AllThemesButton = () => {
 
     return (
         <Button onClick={click} variant={'text'}>
-            {t("puzzle-theme-list.all-themes")}
+            {t("puzzle._desktop._comps.all-themes._button.all-themes")}
         </Button>
     );
 }
@@ -49,11 +49,11 @@ export const DesktopPlayPuzzle_ThemeList = ({feedback, puzzle}: { feedback: Puzz
     return (
         <PlayPaper>
             <Typography variant={'h5'}>
-                {t("play-puzzle-list.title")}
+                {t("puzzle._desktop._comps.all-themes.title")}
             </Typography>
 
             <Typography variant={'body2'} color={'text.secondary'}>
-                {isPuzzleFinished(feedback) ? t("play-puzzle-list.body-finished") : t("play-puzzle-list.body-not-finished")}
+                {isPuzzleFinished(feedback) ? t("puzzle._desktop._comps.all-themes.body-finished") : t("puzzle._desktop._comps.all-themes.body-not-finished")}
             </Typography>
 
             {

@@ -26,12 +26,12 @@ export const MobilePlayRankingDialog = ({open, onClose}: {open: boolean, onClose
     return (
         <Dialog open={open} onClose={onClose}>
             <DialogContent>
-                <Typography variant={'body2'}>{t("puzzle-ranking.title")}</Typography>
+                <Typography variant={'body2'}>{t("puzzle._mobile._comps.puzzle-ranking-dialog.title")}</Typography>
                 <Typography variant={'h5'}>{rank}</Typography>
             </DialogContent>
 
             <DialogActions>
-                <Button onClick={onClose}>{t("all.close")}</Button>
+                <Button onClick={onClose}>{t("_all.close")}</Button>
             </DialogActions>
         </Dialog>
     )

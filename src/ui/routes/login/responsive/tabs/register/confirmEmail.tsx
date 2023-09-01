@@ -22,14 +22,14 @@ export const ResponsiveLogin_ConfirmEmail = ({nextStep}: { nextStep: () => void 
                 <Email/>
             </Avatar>
 
-            <Typography variant={'h5'}>{t("register.confirm-email.title")}</Typography>
+            <Typography variant={'h5'}>{t("login._responsive.register-tab._comps.confirm-email.title")}</Typography>
 
             <Typography variant={'body2'} color={'text.secondary'}>
                 {t("register.confirm-email.body")}
             </Typography>
 
             <TextField
-                label={t("register.email")}
+                label={t("login._responsive.register-tab._comps.confirm-email.email")}
                 sx={{width: '100%'}}
                 required={true}
                 type={email}
@@ -39,11 +39,11 @@ export const ResponsiveLogin_ConfirmEmail = ({nextStep}: { nextStep: () => void 
             <TextField
                 required={true}
                 sx={{width: '100%'}}
-                label={t("register.code")}
+                label={t("login._responsive.register-tab._comps.confirm-email.code")}
                 value={code}
                 onChange={(e) => setCode(e.currentTarget.value)}/>
 
-            <Button onClick={submit} variant={'contained'}>{t("register.submit")}</Button>
+            <Button onClick={submit} variant={'contained'}>{t("login._responsive.register-tab._comps.confirm-email.submit")}</Button>
         </ResponsiveLogin_FormWrapper>
     )
 }

@@ -44,11 +44,12 @@ export const MobileNavigation = ({selected, setSelected}: MobileNavigationAttrs)
     // TODO: Mobile - BottomNavigation has no paper, and it looks like bg transparent.
 
     return (
-        <BottomNavigation style={{position: 'fixed', width: '100%', bottom: 0}} value={selected} onChange={onValueChange}>
-            <BottomNavigationAction label={t("layout.mobile.navigation.items.home")} value={"home"} icon={<Home/>}></BottomNavigationAction>
-            <BottomNavigationAction label={t("layout.mobile.navigation.items.random-puzzles")} value={"random-puzzles"} icon={<PlayArrow/>}></BottomNavigationAction>
-            <BottomNavigationAction label={t("layout.mobile.navigation.items.search-advanced")} value={"search-advanced"} icon={<Search/>}></BottomNavigationAction>
-            <BottomNavigationAction label={t("layout.mobile.navigation.items.menu")} value={"menu"} icon={<More/>}></BottomNavigationAction>
+        <BottomNavigation style={{position: 'fixed', width: '100%', bottom: 0}} value={selected}
+                          onChange={onValueChange}>
+            <BottomNavigationAction value={"home"} icon={<Home/>}></BottomNavigationAction>
+            <BottomNavigationAction value={"random-puzzles"} icon={<PlayArrow/>}></BottomNavigationAction>
+            <BottomNavigationAction value={"search-advanced"} icon={<Search/>}></BottomNavigationAction>
+            <BottomNavigationAction value={"menu"} icon={<More/>}></BottomNavigationAction>
         </BottomNavigation>
     )
 }

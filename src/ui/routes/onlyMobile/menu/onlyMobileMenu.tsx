@@ -17,68 +17,68 @@ export const OnlyMobileMenu = () => {
                     <ListItemIcon>
                         <Home/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.home")}
+                    {t("_layout._mobile.drawer-list.home")}
                 </ListItemButton>
 
                 <TransparentListSubHeader>
-                    {t("layout.mobile.menu.puzzle-title")}
+                    {t("_layout._mobile.drawer-list.puzzle-title")}
                 </TransparentListSubHeader>
 
                 <ListItemButton onClick={() => nav(Links.playSimpleWithoutCriteria())}>
                     <ListItemIcon>
                         <Search/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.random-puzzle")}
+                    {t("_layout._mobile.drawer-list.random-puzzle")}
                 </ListItemButton>
 
                 <ListItemButton onClick={() => nav(Links.AllThemes)}>
                     <ListItemIcon>
                         <Style/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.puzzle-by-theme")}
+                    {t("_layout._mobile.drawer-list.puzzle-by-theme")}
                 </ListItemButton>
 
                 <ListItemButton onClick={() => nav(Links.SearchAdvanced)}>
                     <ListItemIcon>
                         <Style/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.puzzle-search-advanced")}
+                    {t("_layout._mobile.drawer-list.puzzle-search-advanced")}
                 </ListItemButton>
 
                 <TransparentListSubHeader>
-                    {t("layout.mobile.menu.history-title")}
+                    {t("_layout._mobile.drawer-list.history-title")}
                 </TransparentListSubHeader>
 
                 <ListItemButton onClick={() => nav(Links.PuzzleHistory)}>
                     <ListItemIcon>
                         <History/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.history")}
+                    {t("_layout._mobile.drawer-list.history")}
                 </ListItemButton>
 
                 <TransparentListSubHeader>
-                    {t("layout.mobile.menu.friends-title")}
+                    {t("_layout._mobile.drawer-list.friends-title")}
                 </TransparentListSubHeader>
 
                 <ListItemButton onClick={() => nav(Links.friends("friends"))}>
                     <ListItemIcon>
                         <People/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.friends")}
+                    {t("_layout._mobile.drawer-list.friends")}
                 </ListItemButton>
 
                 <ListItemButton onClick={() => nav(Links.friends("requests"))}>
                     <ListItemIcon>
                         <People/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.friend-requests")}
+                    {t("_layout._mobile.drawer-list.friend-requests")}
                 </ListItemButton>
 
                 <ListItemButton onClick={() => nav(Links.SearchUser)}>
                     <ListItemIcon>
                         <Search/>
                     </ListItemIcon>
-                    {t("layout.mobile.menu.search-user")}
+                    {t("_layout._mobile.drawer-list.search-user")}
                 </ListItemButton>
             </List>
         </AppLayout>

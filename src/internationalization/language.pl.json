@@ -1,328 +1,281 @@
 {
-  "all": {
+  "_all": {
+    "logo": "ChessTasks.com",
     "cancel": "Anuluj",
-    "delete-friend": "Usuń przyjaciela",
-    "register-in": "Zarejestruj się",
-    "sent-friend-requests": "Wysłane zaproszenia",
-    "received-friend-requests": "Otrzymane zaproszenia",
-    "friend-request-accept": "Zaakceptuj zaproszenie",
-    "friend-request-reject": "Odrzuć zaproszenie",
     "logout": "Wyloguj się",
-    "settings": "Ustawienia",
-    "close": "Zamknij",
-    "login-in": "Zaloguj się"
-  },
-
-  "drawer": {
-    "puzzle-title": "Zadania",
-    "random-puzzle": "Losowe zadania",
-    "puzzle-by-theme": "Zadania według motywu",
-    "puzzle-search-advanved": "Wyszukiwanie zaawansowane",
-
-    "history-title": "Historia zadań",
-    "history": "Historia",
-
-    "friends-title": "Przyjaciele",
+    "login-in": "Zaloguj się",
+    "sent-friend-requests": "Wysłane zaproszenia do przyjaciół",
+    "received-friend-requests": "Otrzymane zaproszenia do przyjaciół",
     "friends": "Przyjaciele",
     "friend-requests": "Zaproszenia do przyjaciół",
-    "search-user": "Wyszukaj użytkownika"
-  },
-
-  "login": {
-    "navbar-title": "Zaloguj się",
-
-    "login-section": {
-      "title": "Zaloguj się",
-      "body": "Jeśli posiadasz konto, możesz łatwo zalogować się używając poniższego formularza."
-    },
-
-    "register-section": {
-      "title": "Nie masz jeszcze konta?",
-      "body": "Tu możesz zarejestrować się w serwisie, jeśli nie posiadasz jeszcze konta.",
-
-      "success": {
-        "title": "Powodzenie",
-        "body": "Teraz możesz się zalogować",
-        "login-in": "Zaloguj się"
-      },
-
-      "input-verification-code": {
-        "submit": "Zakończ",
-        "labels": {
-          "email": "Adres email",
-          "code": "Kod aktywacyjny"
-        }
-      },
-
-      "input-basic-data": {
-        "submit": "Kolejny krok",
-        "labels": {
-          "username": "Nazwa użytkownika",
-          "email": "Adres email",
-          "password": "Hasło"
-        }
-      },
-
-      "steps": {
-        "labels": {
-          "success": "Powodzenie",
-          "input-basic-data": "Wprowadź swoje dane",
-          "input-verification-code": "Potwierdź adres email"
-        }
-      }
-    },
-    "login-label": "Nazwa użytkownika lub email",
-    "password-label": "Hasło",
-    "submit": "Zaloguj się",
-
-    "login-failed": {
-      "title": "Logowanie nie udało się",
-      "content": "Sprawdź dane i spróbuj ponownie"
-    }
-  },
-
-  "all-friends": {
-    "navbar-title": "Wszyscy twoi przyjaciele",
-    "click-to-see-user-profile": "Kliknij by wyświetlić profil użytkownika",
+    "register-in": "Zarejestruj się",
+    "play": "Zagraj",
     "delete-friend": "Usuń przyjaciela",
-    "see-friend-profile": "Odwiedź profil przyjaciela",
-    "you-can-now-manage-friendship": "Możesz tu zarządzać przyjąźnią"
+    "probably-hidden": "Prawdopodobnie ukryte",
+    "friend-request-accept": "Zaakceptuj zaproszenie",
+    "friend-request-reject": "Odrzuć zaproszenie",
+    "see-friend-profile": "Zobacz profil użytkownika"
   },
-
-  "friends": {
-    "all-friends": "Przyjaciele",
-    "requests": "Zaproszenia"
-  },
-
-  "delete-friend-confirm-dialog": {
-    "title": "Czy napewno chcesz usunąć te przyjaźń",
-    "text": "Nie będzie można tego cofnać",
-    "actions": {
-      "cancel": "Anuluj",
-      "confirm": "Potwierdź"
-    }
-  },
-
-  "all-friend-requests": {
-    "navbar-title": "Zaproszenia do znajomych",
-    "request-sent-at": "Zaproszenie wysłane {{at}}",
-    "request-received-at": "Zaproszenie otrzymano {{at}}"
-  },
-
-  "public-user-by-id": {
-    "navbar-title": "Profil publiczny",
-    "body": "To jest profil publiczny użytkownika {{username}}, treści jakie widzisz są zależne od ustawień tego",
-
-    "puzzle-history": {
-      "navbar-title": "Historia zadań użytkownika",
-      "title": "Historia zadań",
-      "item": {
-        "solved": "Rozwiązane poprawnie",
-        "not-solved": "Rozwiązane błędnie"
-      },
-      "more": "Więcej",
-      "probably-hidden": "Nie masz dostępu do histori zadąń tego użytkownika"
-    },
-
-    "statistics": {
-      "title": "Statystyki",
-      "total-solved": "Rozwiązano",
-      "total-fails": "Błędnie"
-    },
-
-    "cards": {
-      "no-relation": {
-        "title": "Nie jesteście przyjaciółmi",
-        "body": "Jeśli chcesz zaprosić użytkownika - kliknij",
-        "send-request-dialog": {
-          "title": "Chcesz zaprosić użytkownika do przyjaciół?",
-          "body": "Spowoduje to wysłanie zaproszenia do użytkownika",
-          "send-request": "Wyślij zaproszenie"
-        }
-      },
-
-      "request-received": {
-        "title": "Ten użytkownik zaprosił cię do przyjaciół",
-        "body": "Kliknij i zdecyduj, czy chcesz go zaakceptować",
-
-        "accept-or-reject-dialog": {
-          "title": "Czy chcesz zaakceptować zaproszenie?",
-          "body": "Spowoduje to dodanie użytkownika do grona twoich przyjaciół",
-
-          "reject": "Odrzuć",
-          "accept": "Zaakceptuj"
-        }
-      },
-
-      "request-sent": {
-        "title": "Zaproszenie wysłano",
-        "body": "Jeśli ten użytkownik je zaakceptuje, to zostanie twoim przyjacielem"
-      },
-
-      "friend": {
-        "title": "Ten użytkownik jest twoim przyjacielem.",
-        "body": "Jeśli chcesz go usunąć - kliknij",
-
-        "delete-friend-dialog": {
-          "title": "Czy chcesz usunąć tego użytkownika z grona przyjaciół?",
-          "body": "Tej operacji nie można cofnąć"
-        }
-      }
-    }
-  },
-
-  "search-user": {
-    "search": "Wyszukaj",
-    "query": "Szukana treść",
-    "title": "Wyszukaj użytkownika",
-    "body": "Przy użyciu tego formularza",
-    "navbar-title": "Wyszukiwanie użytkowników",
-    "click-to-see-profile": "Kliknij, by przejść do profilu użytkownika",
-    "search-results": "Wyniki wyszukiwania",
-    "error-message": "Błąd podczas wyszukiwania"
-  },
-
-  "puzzle-history-by-user-id": {
-    "title": "Historia zadań",
-    "body": "Użytkownika {{username}}, może być niewidoczna jeśli użytkownik nie zezwala na to",
-    "probably-hidden": "Nie masz teraz dostępu do histori zadań tego użytkownika, prawdopobnie nie zezwolił na to.",
-    "list": {
-      "item": {
-        "success-title": "Zadanie rozwiązane poprawnie",
-        "failed-title": "Zadanie rozwiązane błędnie"
-      }
-    }
-  },
-
-  "mine-puzzle-history": {
-    "navbar-title": "Historia zadań",
-    "title": "Historia zadań",
-    "body": "Twoja historia zadań zawiera wszystkie zadanie jakie rozwiązałeś, poprawnie i błędnie.",
-
-    "list": {
-      "item": {
-        "title": "Zadanie {{p.id}}",
-        "body": {
-          "solved": "Zadanie rozwiązano poprawnie",
-          "failed": "Zadanie rozwiązano błędnie"
-        }
-      }
-    }
-  },
-
-  "settings": {
-    "navbar-title": "Ustawienia",
-
-    "visibility": {
-      "me": "Tylko ja",
-      "only-friends": "Tylko przyjaciele",
-      "everyone": "Wszyscy"
-    },
-
-    "history-visibility": {
-      "title": "Widoczność historii zadań",
-      "body": "Zmiana tego ustawienia spowoduje, że niektórzy użytkownicy nie będą już mogli zobaczyć twojej histori."
-    },
-
-    "statistics-visibility": {
-      "title": "Widoczność statystyk",
-      "body": "Zmiana tego ustawienia spowoduje, że nie uprawnieni użytkownicy nie bedą już widzieć twojego rankingu i innych statystyk"
-    },
-    "cancel": "Anuluj",
-    "save": "Zapisz"
-  },
-
-  "puzzle-actions": {
-    "mobile": {
-      "next-puzzle": "Następne zadanie",
-      "skip-puzzle": "Pomiń te zadanie..."
-    },
-
-    "desktop": {
-      "next-puzzle": "Następne zadanie",
-      "skip-puzzle": "Pomiń te zadanie..."
-    }
-  },
-
-  "puzzle-feedback": {
-    "find-best-move-for-white": "Znajdź najlepszy ruch dla białych",
-    "find-best-move-for-black": "Znajdź najlepszy ruch dla czarnych",
-    "your-move": "Twój ruch",
-
-    "solved": {
-      "title": "Sukces",
-      "body": "Dobra robota, oby tak dalej"
-    },
-
-    "good-move": {
-      "title": "Dobry ruch",
-      "body": "Kontynuuj..."
-    },
-
-    "bad-move": {
-      "title": "To nie to...",
-      "body": "Spróbuj coś innego"
-    }
-  },
-
-  "puzzle-by-id": {
-    "navbar-title": "Zadanie"
-  },
-
-  "all-themes": {
-    "navbar-title": "Wszystkie motywy"
-  },
-
-  "play": {
-    "navbar-title": "Zagraj"
-  },
-
-  "puzzle-theme-list": {
-    "title": "Motywy w zadaniu",
-    "body-not-solved": "Motywy nie są widoczne w trakcie rozwiązywania",
-    "body-solved": "Lista wszystkich motywów użytych w tym zadaniu",
-
-    "more-this-theme-puzzles": "Więcej zadań z tego motywu"
-  },
-
-  "puzzle-ranking": {
-    "title": "Ranking",
-    "body": "Twój ranking będzie zwiększony lub zmniejszony w zależności od poziomu zadania. Nie ulegnie zmianie jeśli zadanie zostało już wykonane"
-  },
-  "layout": {
-    "navbar": {
-      "title": "ChessTasks.com",
-      "current-user": {
-        "current-user": "Użytkownik",
-        "this-user-logged-in": "Ten użytkownik jest zalogowany"
-      }
-    },
-
-    "mobile": {
-      "menu": {
+  "_layout": {
+    "_mobile": {
+      "drawer-list": {
         "home": "Strona główna",
         "puzzle-title": "Zadania",
         "random-puzzle": "Losowe zadania",
         "puzzle-by-theme": "Zadania według motywu",
         "puzzle-search-advanced": "Wyszukiwanie zaawansowane",
-
         "history-title": "Historia zadań",
-        "history": "Historia",
-
+        "history": "Historia zadań",
         "friends-title": "Przyjaciele",
         "friends": "Przyjaciele",
         "friend-requests": "Zaproszenia do przyjaciół",
-        "search-user": "Wyszukaj użytkownika"
+        "search-user": "Wyszukiwanie użytkowników"
+      }
+    },
+
+    "_desktop": {
+      "drawer-list": {
+        "home": "Strona główna",
+        "puzzle-title": "Zadania",
+        "random-puzzle": "Losowe zadania",
+        "puzzle-by-theme": "Zadania według motywu",
+        "puzzle-search-advanced": "Wyszukiwanie zaawansowane",
+        "history-title": "Historia zadań",
+        "history": "Historia zadań",
+        "friends-title": "Przyjaciele",
+        "friends": "Przyjaciele",
+        "friend-requests": "Zaproszenia do przyjaciół",
+        "search-user": "Wyszukiwanie użytkowników"
+      }
+    },
+    "_responsive": {
+      "_comps": {
+        "current-user-dialog": {
+          "title": "Użytkownik",
+          "this-user-logged-in": "Ten użytkownik jest zalogowany"
+        }
+      },
+      "navbar": {
+      }
+    }
+  },
+  "friends": {
+    "_responsive": {
+      "friend-list": {
+        "click-to-see-user-profile": "Kliknij, by zobaczyć profil użytkownika"
+      }
+    },
+    "_comps": {
+      "delete-friend-confirm-dialog": {
+        "title": "Usuwanie przyjaciela",
+        "body": "Tej czynności nie można cofnąć",
+        "confirm": "Potwierdź"
       },
 
-      "navigation": {
-        "items": {
-          "home": "Strona domowa",
-          "random-puzzles": "Losowe zadania",
-          "search-advanced": "Wyszukiwanie zaawansowane",
-          "menu": "Menu"
+      "sent-request-list": {
+        "request-sent-at": "Zaproszenie wysłane o {{at}}"
+      },
+
+      "friend-menu": {
+        "you-can-now-manage-friendship": "Możesz zarządzać przyjaźnią"
+      }
+    }
+  },
+  "puzzle": {
+    "_desktop": {
+      "_comps": {
+        "puzzle-actions": {
+          "next-puzzle": "Następne zadanie",
+          "skip-puzzle": "Pomiń zadanie"
+        },
+        "puzzle-ranking": {
+          "title": "Ranking",
+          "body": "Twój ranking będzie zmodyfikowany w zależności od poziomu zadania oraz od tego czy je rozwiążesz czy nie. Ranking nie zostanie zmieniony, jeśli już rozwiązałeś te zadania"
+        },
+        "all-themes-button": {
+        },
+        "all-themes": {
+          "_button": {
+            "all-themes": "Wszystkie motywy"
+          },
+          "title": "Motywy",
+          "body-finished": "Wszystkie motywy w zadaniu",
+          "body-not-finished": "Motywy bedą widoczne po zakończeniu zadania"
+        }
+      }
+    },
+    "_responsive": {
+      "_comps": {
+        "puzzle-feedback": {
+          "find-best-move-for-white": "Znajdź najlepszy ruch dla białych",
+          "find-best-move-for-black": "Znajdź najlepszy ruch dla czarnych",
+          "bad-move": {
+            "title": "To nie to",
+            "body": "Zobacz rozwiązanie, lub spróbuj ponownie"
+          },
+          "good-move": {
+            "title": "Dobry ruch",
+            "body": "Ale to jeszcze nie koniec"
+          },
+          "solved": {
+            "title": "Sukces!",
+            "body": "Rozwiązałeś te zadanie!"
+          }
+        }
+      }
+    },
+    "_mobile": {
+      "_comps": {
+        "puzzle-actions": {
+          "next-puzzle": "Następne zadanie",
+          "skip-puzzle": "Pomiń zadanie"
+        },
+        "puzzle-ranking-dialog": {
+          "title": "Ranking"
         }
       }
     }
+  },
+  "login": {
+    "_responsive": {
+      "login-tab": {
+        "title": "Logowanie",
+        "submit": "Zaloguj się",
+        "password-label": "Hasło",
+        "login-label": "Login"
+      },
+      "register-tab": {
+        "_comps": {
+          "steps": {
+            "register": "Zarejestruj się",
+            "confirm-email": "Potwierdź email",
+            "success": "Sukces"
+          },
+
+          "input-basic-data": {
+            "title": "Rejestracja",
+            "body": "Jeśli nie masz konta, zarejestruj się...",
+            "username": "Nazwa użytkownika",
+            "email": "Adres email",
+            "password": "Hasło",
+            "submit": "Następny krok"
+          },
+          "confirm-email": {
+            "title": "Podaj kod bezpieczeństwa",
+            "email": "Adres email",
+            "code": "Kod bezpieczeństwa",
+            "submit": "Zakończ"
+          },
+
+          "success": {
+            "title": "Powodzenie!"
+          }
+        }
+      }
+    }
+  },
+
+  "puzzle-history": {
+    "_by-user-id": {
+      "title": "Historia zadań użytkownika",
+      "body": "To jest historia użytkownika {{username}}. Nie będzie widoczna jeśli użytkownik zablokował widoczność swojej historii.",
+
+      "probably-hidden": "Prawdopobnie ukryte",
+      "_item": {
+        "_success": {
+          "title": "Zadanie rozwiązane"
+        },
+
+        "_failed": {
+          "title": "Zadanie rozwiązane błędnie"
+        }
+      }
+    },
+    "_mine": {
+      "title": "Moja historia zadań",
+      "body": "",
+
+      "_comps": {
+        "list": {},
+
+        "list-item": {
+          "secondary": {
+            "solved": "Rozwiązane poprawnie",
+            "failed": "Rozwiązane niepoprawnie"
+          },
+
+          "primary": "Zadanie {{p.id}}"
+        }
+      }
+    }
+
+  },
+
+  "settings": {
+    "_history": {
+      "title": "Widoczność historii",
+      "body": "Tym ustawieniem zmieniasz, kto może widzieć twoją historie zadań"
+    },
+
+    "_stats": {
+      "title": "Widoczność statystyk",
+      "body": "Tym ustawieniem zmieniasz, kto widzi twój ranking oraz inne statystyki"
+    },
+
+    "save": "Zapisz"
+  },
+
+  "public-user": {
+
+    "title": "Profil publiczny",
+    "body": "To co widzisz jest zależne od ustawień prywatności tego użytkownika",
+
+    "_comps": {
+
+      "puzzle-history": {
+        "item-solved": "Zadanie rozwiązane",
+        "not-solved": "Zadanie rozwiązane błędnie"
+      },
+
+      "delete-friend-dialog": {
+        "title": "Usuń przyjaciela",
+        "body": "Tej czynności nie można cofnąć"
+      },
+
+      "request-received": {
+        "title": "Zaproszenie otrzymano",
+        "body": "Zdecyduj, co chcesz z nim zrobić"
+      },
+
+      "request-received-dialog": {
+        "title": "Otrzymano zaproszenie",
+        "body": "Co chcesz z nim zrobić?"
+      },
+
+      "request-sent": {
+        "title": "Zaproszenie wysłano",
+        "body": "Poczekaj na jego akceptacje przez użytkownika"
+      },
+
+      "no-relation": {
+        "title": "Brak relacji",
+        "body": "Nie jesteście przyjaciółmi"
+      },
+
+      "send-request-dialog": {
+        "title": "Czy napewno chcesz zaprosić użytkownika do przyjaciół?",
+        "body": "Spowoduje to wysłanie zaproszenia do użytkownika",
+        "confirm": "Wyślij"
+      }
+    }
+  },
+
+  "search-user": {
+    "click-to-see-profile": "Zobacz profil",
+    "title": "Wyszukaj użytkownika",
+    "body": "Użyj do tego poniższego formularza",
+    "query": "Szukana treść",
+    "search-results": "Wyniki wyszukiwania",
+    "error-message": "Wystąpił błąd podczas szukania"
   }
 }

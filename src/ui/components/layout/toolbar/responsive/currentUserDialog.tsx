@@ -39,7 +39,7 @@ export const DesktopAppToolbar_CurrentUserDialog = ({open, onClose}: { open: boo
         <Dialog open={open} onClose={onClose}>
             <DialogContent>
                 <Typography variant={'h5'}>
-                    {t("layout.navbar.current-user.current-user")}
+                    {t("_layout._responsive._comps.title")}
                 </Typography>
 
                 <List>
@@ -52,7 +52,7 @@ export const DesktopAppToolbar_CurrentUserDialog = ({open, onClose}: { open: boo
 
                         <ListItemText
                             primary={currentUserCtx.value?.username}
-                            secondary={t("layout.navbar.current-user.this-user-logged-in")}/>
+                            secondary={t("_layout._responsive._comps.this-user-logged-in")}/>
                     </ListItemButton>
 
                     <ListItemButton onClick={logout}>
@@ -61,14 +61,14 @@ export const DesktopAppToolbar_CurrentUserDialog = ({open, onClose}: { open: boo
                         </ListItemIcon>
 
                         <ListItemText
-                            primary={t("all.logout")}/>
+                            primary={t("_all.logout")}/>
                     </ListItemButton>
                 </List>
             </DialogContent>
 
             <DialogActions>
                 <Button variant={'text'} onClick={closeClick}>
-                    {t("all.close")}
+                    {t("_all.close")}
                 </Button>
             </DialogActions>
         </Dialog>

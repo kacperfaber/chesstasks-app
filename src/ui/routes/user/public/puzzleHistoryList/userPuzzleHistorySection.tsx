@@ -22,7 +22,7 @@ const RenderInfo = () => {
     const {t} = useTranslation();
     return (
         <Typography variant={'body2'} color={'text.secondary'}>
-            {t("public-user-by-id.puzzle-history.probably-hidden")}
+            {t("_all.probably-hidden")}
         </Typography>
     )
 }
@@ -44,7 +44,7 @@ export const UserPuzzleHistorySection = ({userId}: { userId: number }) => {
     return (
         <>
             <PublicProfile_BasePaper>
-                <Typography variant={'h5'}>{t("public-user-by-id.puzzle-history.title")}</Typography>
+                <Typography variant={'h5'}>{t("public-user.title")}</Typography>
 
                 {
                     fetch == undefined ? <CircularProgress/> : <></>

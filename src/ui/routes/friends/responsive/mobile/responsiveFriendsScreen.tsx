@@ -21,8 +21,8 @@ export const ResponsiveFriendsScreen = () => {
         <Box>
             <Box sx={{width: '100%', borderBottom: '1px', borderColor: 'divider'}}>
                 <Tabs value={tab} onChange={onTabChange} variant={'fullWidth'}>
-                    <Tab label={t("friends.all-friends")} value={"friends"}></Tab>
-                    <Tab label={t("friends.requests")} value={"requests"}></Tab>
+                    <Tab label={t("_all.friends")} value={"friends"}></Tab>
+                    <Tab label={t("_all.friend-requests")} value={"requests"}></Tab>
                 </Tabs>
             </Box>
 

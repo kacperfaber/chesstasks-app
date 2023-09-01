@@ -9,17 +9,17 @@ export const DeleteFriendConfirmDialog = ({open, onConfirmed, onClose}: DeleteFr
     return (
         <Dialog open={open} onClose={onClose}>
             <DialogTitle>
-                {t("delete-friend-confirm-dialog.title")}
+                {t("friends._comps.delete-friend-confirm-dialog.title")}
             </DialogTitle>
 
             <DialogContent>
                 <DialogContentText>
-                    {t("delete-friend-confirm-dialog.text")}
+                    {t("friends._comps.delete-friend-confirm-dialog.body")}
                 </DialogContentText>
 
                 <DialogActions>
-                    <Button autoFocus onClick={onClose}>{t("delete-friend-confirm-dialog.actions.cancel")}</Button>
-                    <Button onClick={onConfirmed}>{t("delete-friend-confirm-dialog.actions.confirm")}</Button>
+                    <Button autoFocus onClick={onClose}>{t("_all.cancel")}</Button>
+                    <Button onClick={onConfirmed}>{t("friends._comps.delete-friend-confirm-dialog.confirm")}</Button>
                 </DialogActions>
             </DialogContent>
         </Dialog>

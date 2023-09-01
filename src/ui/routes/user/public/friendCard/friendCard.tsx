@@ -59,10 +59,10 @@ export const FriendsCard = ({userId, resetRelation}: FriendCardAttrs) => {
         </Card>
 
         <ConfirmDialog
-            title={t("public-user-by-id.cards.friend.delete-friend-dialog.title")}
-            body={t("public-user-by-id.cards.friend.delete-friend-dialog.body")}
-            confirmText={t("all.delete-friend")}
-            cancelText={t("all.cancel")}
+            title={t("public-user._comps.delete-friend-dialog.title")}
+            body={t("public-user._comps.delete-friend-dialog.body")}
+            confirmText={t("_all.delete-friend")}
+            cancelText={t("_all.cancel")}
             onClose={onDialogClose}
             open={dial}/>
     </>)

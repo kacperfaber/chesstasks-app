@@ -29,13 +29,13 @@ export const AllFriendRequests_SentRequestItem = ({req}: { req: FriendRequest })
                 <ListItemButton>
                     <ListItemText
                         primary={req.targetUserName}
-                        secondary={t("all-friend-requests.request-sent-at", {at: getDate(req.createdAt)})}/>
+                        secondary={t("friends._comps.sent-request-list.request-sent-at", {at: getDate(req.createdAt)})}/>
                 </ListItemButton>
             </ListItem>
 
             <Menu anchorEl={menuAnchor} open={menuAnchor != undefined} onClose={() => setMenuAnchor(undefined)}>
                 <MenuItem onClick={performDeleteFriendReq}>
-                    {t("all.cancel")}
+                    {t("_all.cancel")}
                 </MenuItem>
             </Menu>
         </>

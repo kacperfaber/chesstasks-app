@@ -51,7 +51,7 @@ const AllFriendRequests_ReceivedListItem = ({req, resetCtx}: { req: FriendReques
                     </ListItemIcon>
 
                     <ListItemText>
-                        {t("all.friend-request-accept")}
+                        {t("_all.friend-request-accept")}
                     </ListItemText>
 
                 </MenuItem>
@@ -62,7 +62,7 @@ const AllFriendRequests_ReceivedListItem = ({req, resetCtx}: { req: FriendReques
                     </ListItemIcon>
 
                     <ListItemText>
-                        {t("all.friend-request-reject")}
+                        {t("_all.friend-request-reject")}
                     </ListItemText>
                 </MenuItem>
             </Menu>

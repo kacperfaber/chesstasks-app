@@ -8,11 +8,11 @@ export const FriendRequestSentCard = ({userId}: FriendCardAttrs) => {
             <CardActionArea>
                 <CardContent>
                     <Typography variant={'h5'}>
-                        {t("public-user-by-id.cards.request-sent.title")}
+                        {t("public-user._comps.request-sent.title")}
                     </Typography>
 
                     <Typography variant={'body2'} color={'text.secondary'}>
-                        {t("public-user-by-id.cards.request-sent.body")}
+                        {t("public-user._comps.request-sent.body")}
                     </Typography>
                 </CardContent>
             </CardActionArea>

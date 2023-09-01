@@ -23,8 +23,8 @@ export const ResponsiveLogin = () => {
                 <Grid item xs={12} md={10} lg={8} xl={6} sx={{height: '100%'}}>
                     <Box>
                         <Tabs value={tab} onChange={onTabChange}>
-                            <Tab label={t("all.login-in")} value={"login"}/>
-                            <Tab label={t("all.register-in")} value={"register"}/>
+                            <Tab label={t("_all.login-in")} value={"login"}/>
+                            <Tab label={t("_all.register-in")} value={"register"}/>
                         </Tabs>
                     </Box>
 

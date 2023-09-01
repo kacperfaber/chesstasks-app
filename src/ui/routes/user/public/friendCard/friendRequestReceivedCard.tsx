@@ -47,11 +47,11 @@ export const FriendRequestReceivedCard = ({resetRelation, userId}: FriendCardAtt
                 <CardActionArea onClick={onCardClick}>
                     <CardContent>
                         <Typography variant={'h5'}>
-                            {t("public-user-by-id.cards.request-received.title")}
+                            {t("public-user._comps.request-received.title")}
                         </Typography>
 
                         <Typography variant={'body2'} color={'text.secondary'}>
-                            {t("public-user-by-id.cards.request-received.body")}
+                            {t("public-user._comps.request-received.body")}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -59,18 +59,18 @@ export const FriendRequestReceivedCard = ({resetRelation, userId}: FriendCardAtt
 
             <Dialog open={dial} onClose={() => setDial(false)}>
                 <DialogTitle>
-                    {t("public-user-by-id.cards.request-received.accept-or-reject-dialog.title")}
+                    {t("public-user._comps.request-received-dialog.title")}
                 </DialogTitle>
 
                 <DialogContent>
                     <DialogContentText>
-                        {t("public-user-by-id.cards.request-received.accept-or-reject-dialog.body")}
+                        {t("public-user._comps.request-received-dialog.body")}
                     </DialogContentText>
 
                     <DialogActions>
-                        <Button autoFocus onClick={() => setDial(false)}>{t("all.cancel")}</Button>
-                        <Button onClick={() => { performReject(); setDial(false)}}>{t("public-user-by-id.cards.request-received.accept-or-reject-dialog.reject")}</Button>
-                        <Button onClick={() => { performAccept(); setDial(false); }}>{t("public-user-by-id.cards.request-received.accept-or-reject-dialog.accept")}</Button>
+                        <Button autoFocus onClick={() => setDial(false)}>{t("_all.cancel")}</Button>
+                        <Button onClick={() => { performReject(); setDial(false)}}>{t("public-user._comps.request-received-dialog.reject")}</Button>
+                        <Button onClick={() => { performAccept(); setDial(false); }}>{t("public-user._comps.request-received-dialog.accept")}</Button>
                     </DialogActions>
                 </DialogContent>
             </Dialog>

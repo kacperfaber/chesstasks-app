@@ -32,7 +32,7 @@ export const SimplePlay = () => {
     }
 
     return (
-        <AppLayout title={t("play.navbar-title")} mobile={{selectedNav: "random-puzzles", showNav: false}}>
+        <AppLayout title={t("")} mobile={{selectedNav: "random-puzzles", showNav: false}}>
             <PlayPuzzleContainer render={renderPuzzleResponsive} onBufferNeedsUpdate={reloadBuffer}/>
         </AppLayout>
     )

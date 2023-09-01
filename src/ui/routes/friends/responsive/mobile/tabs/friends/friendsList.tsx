@@ -40,7 +40,7 @@ export function ResponsiveFriendsScreen({friends, user}: ResponsiveFriendsScreen
                         <ListItemButton onClick={() => itemClicked(friend)}>
                             <ListItemText
                                 primary={FriendService.getFriendName(user.id, friend)}
-                                secondary={t("all-friends.click-to-see-user-profile")}
+                                secondary={t("friends._responsive.friend-list.click-to-see-user-profile")}
                             />
                         </ListItemButton>
 

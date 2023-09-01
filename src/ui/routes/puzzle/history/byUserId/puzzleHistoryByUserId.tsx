@@ -18,11 +18,11 @@ export const PuzzleHistoryByUserId = () => {
     }, []);
 
     return (
-        <AppLayout title={t("puzzle-history-by-user-id.navbar-title")}>
+        <AppLayout title={t("")}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Typography variant={'h4'}>{t("puzzle-history-by-user-id.title")}</Typography>
-                    <Typography variant={'body2'}>{t("puzzle-history-by-user-id.body", {username})}</Typography>
+                    <Typography variant={'h4'}>{t("puzzle-history._by-user-id.title")}</Typography>
+                    <Typography variant={'body2'}>{t("puzzle-history._by-user-id.body", {username})}</Typography>
                 </Grid>
 
                 <Grid item xs={12}>
