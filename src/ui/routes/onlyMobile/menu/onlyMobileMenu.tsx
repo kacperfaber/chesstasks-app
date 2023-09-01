@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {TransparentListSubHeader} from "../../../base/list/transparentListSubHeader";
 import {Links} from "../../../../links";
 import {useTranslation} from "react-i18next";
+import {PrivacyNav} from "../../../../commons/privacy/privacyNav";
 
 export const OnlyMobileMenu = () => {
     const nav = useNavigate();
@@ -79,6 +80,24 @@ export const OnlyMobileMenu = () => {
                         <Search/>
                     </ListItemIcon>
                     {t("_layout._mobile.drawer-list.search-user")}
+                </ListItemButton>
+
+                <TransparentListSubHeader>
+                    {t("_layout._desktop.drawer-list.privacy-title")}
+                </TransparentListSubHeader>
+
+                <ListItemButton onClick={PrivacyNav.rodoStatement}>
+                    <ListItemIcon>
+                        <Search/>
+                    </ListItemIcon>
+                    {t("_layout._desktop.drawer-list.rodo-statement")}
+                </ListItemButton>
+
+                <ListItemButton onClick={PrivacyNav.privacyStatement}>
+                    <ListItemIcon>
+                        <Search/>
+                    </ListItemIcon>
+                    {t("_layout._desktop.drawer-list.privacy-statement")}
                 </ListItemButton>
             </List>
         </AppLayout>

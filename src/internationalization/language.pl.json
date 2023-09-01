@@ -30,7 +30,10 @@
         "friends-title": "Przyjaciele",
         "friends": "Przyjaciele",
         "friend-requests": "Zaproszenia do przyjaciół",
-        "search-user": "Wyszukiwanie użytkowników"
+        "search-user": "Wyszukiwanie użytkowników",
+        "rodo-statement": "Postanowienia RODO",
+        "privacy-statement": "Polityka prywatności",
+        "privacy-title": "Prywatność"
       }
     },
 
@@ -46,7 +49,10 @@
         "friends-title": "Przyjaciele",
         "friends": "Przyjaciele",
         "friend-requests": "Zaproszenia do przyjaciół",
-        "search-user": "Wyszukiwanie użytkowników"
+        "search-user": "Wyszukiwanie użytkowników",
+        "rodo-statement": "Postanowienia RODO",
+        "privacy-statement": "Polityka prywatności",
+        "privacy-title": "Prywatność"
       }
     },
     "_responsive": {
