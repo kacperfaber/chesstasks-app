@@ -63,5 +63,18 @@ export const Links = {
 
     friends(screen: MobileFriendsScreenTabs | null): string {
         return Links.Friends.replace(":screen", screen ?? "_");
+    },
+
+    Admin: {
+        ManageUsers: "/admin/manage-users",
+        ManagePuzzles: "/admin/manage-puzzles",
+
+        managePuzzles(): string {
+            return Links.Admin.ManagePuzzles;
+        },
+
+        manageUsers(): string {
+            return Links.Admin.ManageUsers;
+        }
     }
 }
