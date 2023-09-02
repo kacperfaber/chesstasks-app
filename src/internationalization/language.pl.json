@@ -449,11 +449,20 @@
       },
 
       "list-user-tab": {
-
+        "show-filters": "Pokaż filtry",
         "next-page": "Następna strona",
         "previous-page": "Poprzednia strona",
 
         "_comps": {
+          "filter-dialog": {
+            "title": "Filtry",
+            "body": "Zmień filtry wyszukiwania użytkowników",
+
+            "username-like-label": "Nazwa użytkownika zawiera",
+            "email-address-like-label": "Adres email zawiera",
+            "save": "Zapisz"
+          },
+
           "confirm-delete-user-dialog": {
             "title": "Czy napewno chcesz usunąć tego użytkownika?",
             "body": "Tej operacji nie będzie można cofnąć"
