@@ -430,6 +430,26 @@
     }
   },
 
+  "_admin": {
+    "manage-users": {
+      "tabs": {
+        "list-users": "Użytkownicy"
+      },
+
+      "list-user-tab": {
+        "table": {
+          "headers": {
+            "id": "#",
+            "emailAddress": "Adres email",
+            "username": "Nazwa użytkownika",
+            "createdAt": "Utworzono",
+            "actions": "Operacje"
+          }
+        }
+      }
+    }
+  },
+
   "__privacy": {
     "register-rodo-statement": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO.",
     "register-privacy-statement": "Akceptuję Politykę Prywatności i zgadzam się na jej postanowienia.",
