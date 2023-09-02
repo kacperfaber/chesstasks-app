@@ -449,6 +449,10 @@
       },
 
       "list-user-tab": {
+
+        "next-page": "Następna strona",
+        "previous-page": "Poprzednia strona",
+
         "_comps": {
           "confirm-delete-user-dialog": {
             "title": "Czy napewno chcesz usunąć tego użytkownika?",
