@@ -15,10 +15,11 @@
     "friend-request-accept": "Zaakceptuj zaproszenie",
     "friend-request-reject": "Odrzuć zaproszenie",
     "see-friend-profile": "Zobacz profil użytkownika",
-    "close": "Zamknij"
+    "close": "Zamknij",
+    "confirm": "Potwierdź"
   },
   "_layout": {
-    "_mobile": {
+    "_default": {
       "drawer-list": {
         "home": "Strona główna",
         "puzzle-title": "Zadania",
@@ -33,28 +34,16 @@
         "search-user": "Wyszukiwanie użytkowników",
         "rodo-statement": "Postanowienia RODO",
         "privacy-statement": "Polityka prywatności",
-        "privacy-title": "Prywatność"
+        "privacy-title": "Prywatność",
+
+        "_admin": {
+          "title": "Administrator",
+          "manage-user": "Zarządzanie użytkownikami",
+          "manage-puzzle": "Zarządzanie zadaniami"
+        }
       }
     },
 
-    "_desktop": {
-      "drawer-list": {
-        "home": "Strona główna",
-        "puzzle-title": "Zadania",
-        "random-puzzle": "Losowe zadania",
-        "puzzle-by-theme": "Zadania według motywu",
-        "puzzle-search-advanced": "Wyszukiwanie zaawansowane",
-        "history-title": "Historia zadań",
-        "history": "Historia zadań",
-        "friends-title": "Przyjaciele",
-        "friends": "Przyjaciele",
-        "friend-requests": "Zaproszenia do przyjaciół",
-        "search-user": "Wyszukiwanie użytkowników",
-        "rodo-statement": "Postanowienia RODO",
-        "privacy-statement": "Polityka prywatności",
-        "privacy-title": "Prywatność"
-      }
-    },
     "_responsive": {
       "_comps": {
         "current-user-dialog": {
@@ -439,6 +428,63 @@
     "clearance": {
       "name": "Zwolnienie",
       "description": "Posunięcie, często z tempem, które udostępnia pole, linię bądź przekątną do wykorzystania w następnej taktyce."
+    }
+  },
+
+  "_admin": {
+    "manage-users": {
+      "tabs": {
+        "list-users": "Użytkownicy",
+        "create-user": "Utwórz użytkownika"
+      },
+
+      "create-user-tab": {
+        "title": "Utwórz nowego użytkownika",
+        "body": "Administrator może utworzyć nowego użytkownika za pomocą formularza",
+        "username-label": "Nazwa użytkownika",
+        "password-label": "Hasło",
+        "email-label": "Adres email",
+        "skip-verification-label": "Pomiń weryfikacje adresu email",
+        "submit": "Wyślij"
+      },
+
+      "list-user-tab": {
+        "show-filters": "Pokaż filtry",
+        "next-page": "Następna strona",
+        "previous-page": "Poprzednia strona",
+
+        "_comps": {
+          "filter-dialog": {
+            "title": "Filtry",
+            "body": "Zmień filtry wyszukiwania użytkowników",
+
+            "username-like-label": "Nazwa użytkownika zawiera",
+            "email-address-like-label": "Adres email zawiera",
+            "save": "Zapisz"
+          },
+
+          "confirm-delete-user-dialog": {
+            "title": "Czy napewno chcesz usunąć tego użytkownika?",
+            "body": "Tej operacji nie będzie można cofnąć"
+          },
+
+          "user-menu": {
+            "title": "Użytkownik {{u.id}}: {{u.username}}",
+            "body": "Zdecyduj, co chcesz zrobić z tym użytkownikiem",
+            "delete-action": "Usuń użytkownika"
+          }
+        },
+
+        "table": {
+          "headers": {
+            "id": "#",
+            "emailAddress": "Adres email",
+            "username": "Nazwa użytkownika",
+            "createdAt": "Utworzono",
+            "actions": "Operacje"
+          }
+        }
+      }
     }
   },
 

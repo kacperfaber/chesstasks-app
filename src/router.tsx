@@ -23,6 +23,8 @@ import {PlayAdvancedCriteria} from "./ui/routes/play/advanced/playAdvancedCriter
 import {SearchPuzzleAdvanced} from "./ui/routes/puzzle/search/advanced/searchPuzzleAdvanced";
 import {OnlyMobileMenu} from "./ui/routes/onlyMobile/menu/onlyMobileMenu";
 import {ResponsiveFriends} from "./ui/routes/friends/responsive/responsiveFriends";
+import {AdminManageUsers} from "./ui/routes/admin/user/adminManageUsers";
+import {AdminManagePuzzles} from "./ui/routes/admin/puzzle/adminManagePuzzles";
 
 export const Router = createBrowserRouter([
     {
@@ -108,5 +110,15 @@ export const Router = createBrowserRouter([
         path: Links.Friends,
         loader: respFriendsScreenLoader,
         element: <ResponsiveFriends/>
+    },
+
+    {
+        path: Links.Admin.ManageUsers,
+        element: <AdminManageUsers/>
+    },
+
+    {
+        path: Links.Admin.ManagePuzzles,
+        element: <AdminManagePuzzles/>
     }
 ])

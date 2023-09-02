@@ -41,9 +41,27 @@ export class HttpUtils{
         });
     }
 
+    public static deleteWithBodyAsync<T>(url: string, body: any, token: Token | undefined = undefined): Promise<T | undefined> {
+        return new Promise<T | undefined>((resolve, reject) => {
+            fetch(url, {body: JSON.stringify(body), headers: token ? this.tokenHeaders(token) : this.headers(), method: "DELETE"})
+                .then(resp => resp.status != 204 ? resp.json() as T : undefined)
+                .then(resp => resolve(resp))
+                .catch((err) => reject(err));
+        });
+    }
+
     public static putAsync<T>(url: string, body: any, token: Token | undefined = undefined): Promise<T> {
         return new Promise<T>((resolve, reject) => {
             fetch(url, {body: JSON.stringify(body), headers: token ? this.tokenHeaders(token) : this.headers(), method: "PUT"})
+                .then(resp => resp.json() as T)
+                .then(resp => resolve(resp))
+                .catch(() => reject());
+        });
+    }
+
+    public static putWithoutBodyAsync<T>(url: string, token: Token | undefined = undefined): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "PUT"})
                 .then(resp => resp.json() as T)
                 .then(resp => resolve(resp))
                 .catch(() => reject());
@@ -98,6 +116,14 @@ export class HttpUtils{
             fetch(url, {body: JSON.stringify(body), headers: token ? this.tokenHeaders(token) : this.headers(), method: "POST"})
                 .then(resp => resp.json() as T)
                 .then(resp => resolve(resp))
+                .catch(() => reject());
+        });
+    }
+
+    public static postExpectBodyAsync<T>(url: string, body: any, token: Token): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {body: JSON.stringify(body), headers: token ? this.tokenHeaders(token) : this.headers(), method: "POST"})
+                .then(resp => resp.status >= 200 && resp.status <= 299 ? resolve(resp.json() as T) : reject())
                 .catch(() => reject());
         });
     }
