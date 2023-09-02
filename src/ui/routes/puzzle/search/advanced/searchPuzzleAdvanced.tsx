@@ -1,11 +1,12 @@
 import {AppLayout} from "../../../../components/layout/appLayout";
 import {useTranslation} from "react-i18next";
-import {Button, Grid} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Button, Grid, Typography} from "@mui/material";
 import {SearchPuzzleAdvanced_ThemeList} from "./themeList/themeList";
-import {useState} from "react";
+import React, {useState} from "react";
 import {RankingRangeHolder, RankingSlider} from "./rankingSlider";
 import {useNavigate} from "react-router-dom";
 import {Links} from "../../../../../links";
+import {ExpandMore} from "@mui/icons-material";
 
 // TODO: Make this component pretier.
 
@@ -35,7 +36,7 @@ export const SearchPuzzleAdvanced = () => {
         <AppLayout title={t("")} mobile={{selectedNav: "search-advanced", showNav: true}}>
             <Grid container>
                 <Grid item xs={12}>
-                    <RankingSlider holder={rankingHolder} value={{from: 1500, to: 2500}}/>
+                    <RankingSlider holder={rankingHolder}/>
                 </Grid>
 
                 <Grid item xs={12}>
@@ -43,10 +44,17 @@ export const SearchPuzzleAdvanced = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <SearchPuzzleAdvanced_ThemeList
-                        selected={selectedThemes}
-                        select={selectTheme}
-                        unselect={unselectTheme}/>
+                    <Accordion>
+                        <AccordionSummary expandIcon={<ExpandMore/>}>
+                            {t("search-advanced.puzzle-themes")}
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <SearchPuzzleAdvanced_ThemeList
+                                selected={selectedThemes}
+                                select={selectTheme}
+                                unselect={unselectTheme}/>
+                        </AccordionDetails>
+                    </Accordion>
                 </Grid>
             </Grid>
         </AppLayout>

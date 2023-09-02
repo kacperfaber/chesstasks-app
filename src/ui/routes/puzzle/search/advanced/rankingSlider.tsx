@@ -1,5 +1,6 @@
-import {Slider} from "@mui/material";
+import {Box, Slider, Typography} from "@mui/material";
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 export class RankingRangeHolder {
     value: number[];
@@ -29,11 +30,11 @@ export type RankingRange = {
 
 export interface RankingSliderAttrs {
     holder: RankingRangeHolder;
-    value: RankingRange;
 }
 
 export const RankingSlider = ({holder}: RankingSliderAttrs) => {
-    const [val, setVal] = useState<number[]>(holder.getRawValue());
+    const {t} = useTranslation();
+    const [val, setVal] = useState<number[]>([1500, 2500]);
 
     const change = (event: Event, value: number | number[], activeThumb: number) => {
         if (typeof value == "number") return;
@@ -43,7 +44,11 @@ export const RankingSlider = ({holder}: RankingSliderAttrs) => {
 
     return (
         <>
-            <Slider min={300} max={4000} marks step={20} value={val} onChange={change}/>
+            <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
+                <Typography variant={'h5'}>{t("search-advanced.ranking-range")}</Typography>
+                <Typography variant={'body2'} color={'text.secondary'}>{val[0]} - {val[1]}</Typography>
+            </Box>
+            <Slider min={300} max={4500} defaultValue={[1500, 2500]} marks step={20} onChange={change}/>
         </>
     )
 }

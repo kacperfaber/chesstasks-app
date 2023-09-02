@@ -442,6 +442,13 @@
     }
   },
 
+  "search-advanced": {
+    "title": "Wyszukiwanie zaawansowane",
+    "body": "Możesz tu wyszukać zadania według rankingu oraz wybrać dokładnie które motywy chcesz",
+    "ranking-range": "Zakres rankingu",
+    "puzzle-themes": "Motywy zadań"
+  },
+
   "__privacy": {
     "register-rodo-statement": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO.",
     "register-privacy-statement": "Akceptuję Politykę Prywatności i zgadzam się na jej postanowienia.",
