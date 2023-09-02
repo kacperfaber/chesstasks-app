@@ -431,6 +431,12 @@
     }
   },
 
+  "error-element": {
+    "title": "Wystąpił błąd",
+    "body": "Nie można było wyświetlić tej strony...",
+    "go-home": "Strona główna"
+  },
+
   "_admin": {
     "manage-users": {
       "tabs": {
