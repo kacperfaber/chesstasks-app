@@ -22,20 +22,22 @@ export const AdminManageUsers = () => {
                 <Grid item xs={0} xl={1}></Grid>
 
                 <Grid item xs={12} xl={10}>
-                    <Box>
+                    <Box sx={{borderBottom: '1px', borderColor: 'divider'}}>
                         <Tabs value={tab} onChange={onTabChanged}>
                             <Tab label={t("_admin.manage-users.tabs.list-users")} value={"list_users"}></Tab>
                             <Tab label={t("_admin.manage-users.tabs.create-user")} value={"create_user"}></Tab>
                         </Tabs>
                     </Box>
 
-                    {
-                        tab == "list_users" ? <AdminManageUsers_ListUserTab/> : null
-                    }
+                   <Box>
+                       {
+                           tab == "list_users" ? <AdminManageUsers_ListUserTab/> : null
+                       }
 
-                    {
-                        tab == "create_user" ? <CreateUserTab/> : null
-                    }
+                       {
+                           tab == "create_user" ? <CreateUserTab/> : null
+                       }
+                   </Box>
                 </Grid>
             </Grid>
         </AppLayout>
