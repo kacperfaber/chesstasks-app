@@ -18,7 +18,7 @@
     "close": "Zamknij"
   },
   "_layout": {
-    "_mobile": {
+    "_default": {
       "drawer-list": {
         "home": "Strona główna",
         "puzzle-title": "Zadania",
@@ -37,24 +37,6 @@
       }
     },
 
-    "_desktop": {
-      "drawer-list": {
-        "home": "Strona główna",
-        "puzzle-title": "Zadania",
-        "random-puzzle": "Losowe zadania",
-        "puzzle-by-theme": "Zadania według motywu",
-        "puzzle-search-advanced": "Wyszukiwanie zaawansowane",
-        "history-title": "Historia zadań",
-        "history": "Historia zadań",
-        "friends-title": "Przyjaciele",
-        "friends": "Przyjaciele",
-        "friend-requests": "Zaproszenia do przyjaciół",
-        "search-user": "Wyszukiwanie użytkowników",
-        "rodo-statement": "Postanowienia RODO",
-        "privacy-statement": "Polityka prywatności",
-        "privacy-title": "Prywatność"
-      }
-    },
     "_responsive": {
       "_comps": {
         "current-user-dialog": {
