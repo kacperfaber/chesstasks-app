@@ -10,7 +10,7 @@ export const AdminManageUsers_ListUserTab = () => {
         UserAdminService.allUsersFiltered({usernameLike: "", emailLike: ""})
             .then(setUsers)
             .catch(() => alert("Nie mozna pobrac danych adminowskich o uzytkownikach"))
-    });
+    }, []);
 
     return (<ListUserTab_TableComponent data={users ?? []}/>)
 }

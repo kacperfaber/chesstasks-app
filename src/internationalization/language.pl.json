@@ -15,7 +15,8 @@
     "friend-request-accept": "Zaakceptuj zaproszenie",
     "friend-request-reject": "Odrzuć zaproszenie",
     "see-friend-profile": "Zobacz profil użytkownika",
-    "close": "Zamknij"
+    "close": "Zamknij",
+    "confirm": "Potwierdź"
   },
   "_layout": {
     "_default": {
@@ -437,6 +438,19 @@
       },
 
       "list-user-tab": {
+        "_comps": {
+          "confirm-delete-user-dialog": {
+            "title": "Czy napewno chcesz usunąć tego użytkownika?",
+            "body": "Tej operacji nie będzie można cofnąć"
+          },
+
+          "user-menu": {
+            "title": "Użytkownik {{u.id}}: {{u.username}}",
+            "body": "Zdecyduj, co chcesz zrobić z tym użytkownikiem",
+            "delete-action": "Usuń użytkownika"
+          }
+        },
+
         "table": {
           "headers": {
             "id": "#",
