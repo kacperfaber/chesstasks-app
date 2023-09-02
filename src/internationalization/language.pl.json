@@ -498,7 +498,9 @@
     "title": "Wyszukiwanie zaawansowane",
     "body": "Możesz tu wyszukać zadania według rankingu oraz wybrać dokładnie które motywy chcesz",
     "ranking-range": "Zakres rankingu",
-    "puzzle-themes": "Motywy zadań"
+    "puzzle-themes": "Motywy zadań",
+    "select-themes": "Wybierz motywy",
+    "selected-themes": "Wybrałeś {{all}} motywów"
   },
 
   "__privacy": {
