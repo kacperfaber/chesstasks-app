@@ -5,6 +5,7 @@ import {History, Home, People, Search, Style} from "@mui/icons-material";
 import {TransparentListSubHeader} from "../../../base/list/transparentListSubHeader";
 import {Links} from "../../../../links";
 import {PrivacyNav} from "../../../../commons/privacy/privacyNav";
+import {OptionalAdminDrawerSection} from "./optionalAdminDrawerSection";
 
 export function DefaultDrawerList() {
     const {t} = useTranslation();
@@ -79,6 +80,8 @@ export function DefaultDrawerList() {
                 </ListItemIcon>
                 {t("_layout._default.drawer-list.search-user")}
             </ListItemButton>
+
+            <OptionalAdminDrawerSection/>
 
             <TransparentListSubHeader>
                 {t("_layout._default.drawer-list.privacy-title")}

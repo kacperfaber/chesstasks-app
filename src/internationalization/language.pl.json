@@ -33,7 +33,13 @@
         "search-user": "Wyszukiwanie użytkowników",
         "rodo-statement": "Postanowienia RODO",
         "privacy-statement": "Polityka prywatności",
-        "privacy-title": "Prywatność"
+        "privacy-title": "Prywatność",
+
+        "_admin": {
+          "title": "Administrator",
+          "manage-user": "Zarządzanie użytkownikami",
+          "manage-puzzle": "Zarządzanie zadaniami"
+        }
       }
     },
 
