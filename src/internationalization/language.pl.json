@@ -434,7 +434,18 @@
   "_admin": {
     "manage-users": {
       "tabs": {
-        "list-users": "Użytkownicy"
+        "list-users": "Użytkownicy",
+        "create-user": "Utwórz użytkownika"
+      },
+
+      "create-user-tab": {
+        "title": "Utwórz nowego użytkownika",
+        "body": "Administrator może utworzyć nowego użytkownika za pomocą formularza",
+        "username-label": "Nazwa użytkownika",
+        "password-label": "Hasło",
+        "email-label": "Adres email",
+        "skip-verification-label": "Pomiń weryfikacje adresu email",
+        "submit": "Wyślij"
       },
 
       "list-user-tab": {

@@ -3,8 +3,9 @@ import {useState} from "react";
 import {Box, Grid, Tab, Tabs} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import {AdminManageUsers_ListUserTab} from "./tabs/listUsers/listUserTab";
+import {CreateUserTab} from "./tabs/createUser/createUserTab";
 
-export type AdminManageUsersTabs = "list_users";
+export type AdminManageUsersTabs = "list_users" | "create_user";
 
 export const AdminManageUsers = () => {
     const {t} = useTranslation();
@@ -24,11 +25,16 @@ export const AdminManageUsers = () => {
                     <Box>
                         <Tabs value={tab} onChange={onTabChanged}>
                             <Tab label={t("_admin.manage-users.tabs.list-users")} value={"list_users"}></Tab>
+                            <Tab label={t("_admin.manage-users.tabs.create-user")} value={"create_user"}></Tab>
                         </Tabs>
                     </Box>
 
                     {
                         tab == "list_users" ? <AdminManageUsers_ListUserTab/> : null
+                    }
+
+                    {
+                        tab == "create_user" ? <CreateUserTab/> : null
                     }
                 </Grid>
             </Grid>
