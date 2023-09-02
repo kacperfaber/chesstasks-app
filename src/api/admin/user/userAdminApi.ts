@@ -34,6 +34,6 @@ export class UserAdminApi {
 
     public static allUsersFiltered(body: AllUsersFiltered, token: Token,  limit: number = 50, skip: number = 0): Promise<User[]> {
         const url = `${Config.apiUrl}/api/user/as-admin/all/filtered?limit=${limit}&skip=${skip}`;
-        return HttpUtils.postAsync(url, body, token);
+        return HttpUtils.postExpectBodyAsync(url, body, token);
     }
 }

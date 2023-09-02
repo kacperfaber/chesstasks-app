@@ -119,4 +119,12 @@ export class HttpUtils{
                 .catch(() => reject());
         });
     }
+
+    public static postExpectBodyAsync<T>(url: string, body: any, token: Token): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {body: JSON.stringify(body), headers: token ? this.tokenHeaders(token) : this.headers(), method: "POST"})
+                .then(resp => resp.status >= 200 && resp.status <= 299 ? resolve(resp.json() as T) : reject())
+                .catch(() => reject());
+        });
+    }
 }
