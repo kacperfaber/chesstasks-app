@@ -1,8 +1,7 @@
 const TOKEN_KEY: string = "__token";
 
 export type Token = {
-    userId: number;
-    secret: string;
+    token: string;
 }
 
 export class TokenStorage {
@@ -10,7 +9,7 @@ export class TokenStorage {
         window.localStorage.setItem(TOKEN_KEY, JSON.stringify(token));
     }
 
-    public static getToken(): Token | undefined {
+    public static getTokenObj(): Token | undefined {
         const value = window.localStorage.getItem(TOKEN_KEY);
         if (!value) return undefined;
         return JSON.parse(value);

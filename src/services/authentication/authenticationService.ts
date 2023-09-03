@@ -23,7 +23,7 @@ export class AuthenticationService {
 
     public static fetchCurrent(): Promise<User | undefined> {
         return new Promise<User | undefined>((resolve, reject) => {
-            const token = TokenStorage.getToken();
+            const token = TokenStorage.getTokenObj();
 
             if (!token) reject();
 

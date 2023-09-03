@@ -5,10 +5,10 @@ import {PublicUser} from "../../api/user/publicUser";
 
 export class UserService {
     public static search(query: string): Promise<Array<SimpleUser>> {
-        return UserApi.search(query, TokenStorage.getToken()!!);
+        return UserApi.search(query, TokenStorage.getTokenObj()!!);
     }
 
     public static getById(id: number): Promise<PublicUser> {
-        return UserApi.byId(id, TokenStorage.getToken()!!);
+        return UserApi.byId(id, TokenStorage.getTokenObj()!!);
     }
 }

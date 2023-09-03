@@ -20,7 +20,7 @@ export class FriendService {
     }
 
     public static async fetchAllFriends(): Promise<Array<Friendship>> {
-        const friends = await FriendApi.getAllFriends(TokenStorage.getToken() !!);
+        const friends = await FriendApi.getAllFriends(TokenStorage.getTokenObj() !!);
         FriendStore.setAllFriends(friends);
         return friends;
     }
@@ -34,7 +34,7 @@ export class FriendService {
     }
 
     public static async fetchSentRequests(): Promise<Array<FriendRequest>> {
-        const sentRequests = await FriendApi.getSentFriendRequests(TokenStorage.getToken() !!);
+        const sentRequests = await FriendApi.getSentFriendRequests(TokenStorage.getTokenObj() !!);
         FriendStore.setSentRequests(sentRequests);
         return sentRequests;
     }
@@ -48,18 +48,18 @@ export class FriendService {
     }
 
     public static async fetchReceivedRequests(): Promise<Array<FriendRequest>> {
-        const receivedRequests = await FriendApi.getReceivedFriendRequests(TokenStorage.getToken() !!);
+        const receivedRequests = await FriendApi.getReceivedFriendRequests(TokenStorage.getTokenObj() !!);
         FriendStore.setReceivedRequests(receivedRequests);
         return receivedRequests;
     }
 
     public static async deleteFriend(friendshipId: number): Promise<void> {
-        await FriendApi.deleteFriend(friendshipId, TokenStorage.getToken() !!);
+        await FriendApi.deleteFriend(friendshipId, TokenStorage.getTokenObj() !!);
         FriendStore.resetAllFriends();
     }
 
     public static async sendFriendRequest(userId: number): Promise<FriendRequest> {
-        const req = await FriendApi.sendFriendRequest(userId, TokenStorage.getToken() !!);
+        const req = await FriendApi.sendFriendRequest(userId, TokenStorage.getTokenObj() !!);
         FriendStore.resetSentRequests();
         return req;
     }
@@ -67,13 +67,13 @@ export class FriendService {
     public static acceptFriendRequest(senderId: number): Promise<Friendship> {
         FriendStore.resetAllFriends();
         FriendStore.setReceivedRequests(undefined)
-        return FriendApi.acceptFriendRequest(TokenStorage.getToken()!!, senderId)
+        return FriendApi.acceptFriendRequest(TokenStorage.getTokenObj()!!, senderId)
     }
 
     public static rejectFriendRequest(senderId: number): Promise<void> {
         FriendStore.resetAllFriends();
         FriendStore.setReceivedRequests(undefined);
-        return FriendApi.rejectFriendRequest(TokenStorage.getToken()!!, senderId);
+        return FriendApi.rejectFriendRequest(TokenStorage.getTokenObj()!!, senderId);
     }
 
     public static getFriendName(currentUserId: number, friendship: Friendship): string {

@@ -8,7 +8,7 @@ import {TrainingRanking} from "../../api/play/trainingRanking";
 
 export class PlayService {
     public static submitPuzzle(puzzleId: number, success: boolean, moves: string[]): Promise<SubmitResponse> {
-        return PlayApi.submitPuzzle(puzzleId, moves.join(" "), success, TokenStorage.getToken()!!);
+        return PlayApi.submitPuzzle(puzzleId, moves.join(" "), success, TokenStorage.getTokenObj()!!);
     }
 
     public static async getPuzzles(rankingOffset: number | undefined, themeId: number | undefined, database: PuzzleDatabase | undefined): Promise<Array<Puzzle>> {
@@ -20,13 +20,13 @@ export class PlayService {
     }
 
     public static async fetchPuzzles(rankingOffset: number | undefined, themeId: number | undefined, database: PuzzleDatabase | undefined) {
-        const puzzles = await PlayApi.getPuzzles(rankingOffset, themeId, database, TokenStorage.getToken() !!)
+        const puzzles = await PlayApi.getPuzzles(rankingOffset, themeId, database, TokenStorage.getTokenObj() !!)
         PlayStore.setPuzzles(puzzles, {rankingOffset, themeId, database})
         return puzzles;
     }
 
     public static getUserRanking(userId: number): Promise<TrainingRanking> {
-        return PlayApi.getUserRanking(userId, TokenStorage.getToken() !!);
+        return PlayApi.getUserRanking(userId, TokenStorage.getTokenObj() !!);
     }
 
     public static getRandomPuzzleOrNull(): Puzzle | undefined {
@@ -34,7 +34,7 @@ export class PlayService {
     }
 
     public static searchPuzzles(ranking: {from: number, to: number}, themeIds: number[]): Promise<Array<Puzzle>> {
-        return PlayApi.searchPuzzles(ranking, themeIds, TokenStorage.getToken() !!);
+        return PlayApi.searchPuzzles(ranking, themeIds, TokenStorage.getTokenObj() !!);
     }
 
 }

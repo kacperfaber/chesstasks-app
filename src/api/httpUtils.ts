@@ -5,7 +5,7 @@ export class HttpUtils{
     private static tokenHeaders(token: Token): Headers {
         // TODO: Check if authorization header is good, maybe Bearer is needed?
         let headers = new Headers();
-        headers.set("Authorization", JSON.stringify(token));
+        headers.set("Authorization", token.token);
         headers.set("Content-Type", "application/json");
         return headers;
     }

@@ -4,7 +4,7 @@ import {ThemeStore} from "../../store/theme/themeStore";
 
 export class ThemeService {
     public static async fetchAllThemes() {
-        const allThemes = await ThemeApi.getAllThemes(TokenStorage.getToken() !!)
+        const allThemes = await ThemeApi.getAllThemes(TokenStorage.getTokenObj() !!)
         ThemeStore.setThemes(allThemes);
         return allThemes;
     }
