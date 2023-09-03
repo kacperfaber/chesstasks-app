@@ -491,6 +491,23 @@
           }
         }
       }
+    },
+
+    "manage-puzzles": {
+      "tabs": {
+        "manage-puzzles": "Zarządzanie zadaniami"
+      },
+
+      "manage-puzzle": {
+        "_comps": {
+          "search-puzzle-form": {
+            "id-label": "Id zadania",
+            "submit": "Szukaj",
+            "title": "Wyszukaj zadania",
+            "body": "Używając ID tego zadania."
+          }
+        }
+      }
     }
   },
 
