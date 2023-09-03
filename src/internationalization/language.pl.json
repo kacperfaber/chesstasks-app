@@ -499,6 +499,15 @@
       },
 
       "manage-puzzle": {
+        "search-puzzle": "Znaleziono zadanie!",
+        "what-you-want-to-do": "Co chcesz zrobić z tym zadaniem?",
+        "you-want-to-delete": "Chcesz usunąć te zadanie?",
+
+        "not-found": "Nie znaleziono",
+        "try-another-id": "Spróbuj wyszukać inne zadanie",
+
+        "delete-puzzle": "Usuń zadanie",
+
         "_comps": {
           "search-puzzle-form": {
             "id-label": "Id zadania",

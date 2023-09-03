@@ -34,7 +34,7 @@ export const ManagePuzzleTab_SearchPuzzleForm = ({setPuzzle}: ManagePuzzleTab_Se
     }
 
     return (
-        <>
+        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: '10px', flexDirection: 'column'}}>
             <Typography variant={'h5'}>
                 {t("_admin.manage-puzzles.manage-puzzle._comps.search-puzzle-form.title")}
             </Typography>
@@ -43,8 +43,8 @@ export const ManagePuzzleTab_SearchPuzzleForm = ({setPuzzle}: ManagePuzzleTab_Se
                 {t("_admin.manage-puzzles.manage-puzzle._comps.search-puzzle-form.body")}
             </Typography>
 
-            <Box sx={{display: 'flex', justifyContent: 'left', alignItems: 'left', width: '100%'}}>
-                <TextField value={id == undefined ? "" : id}
+            <Box marginTop={'15px'}>
+                <TextField value={id == undefined || isNaN(id) ? "" : id}
                            type={'number'}
                            label={t("_admin.manage-puzzles.manage-puzzle._comps.search-puzzle-form.id-label")}
                            required={true}
@@ -54,6 +54,6 @@ export const ManagePuzzleTab_SearchPuzzleForm = ({setPuzzle}: ManagePuzzleTab_Se
                     {t("_admin.manage-puzzles.manage-puzzle._comps.search-puzzle-form.submit")}
                 </Button>
             </Box>
-        </>
+        </Box>
     )
 }
