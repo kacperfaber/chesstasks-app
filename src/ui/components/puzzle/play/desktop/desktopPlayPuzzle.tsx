@@ -47,8 +47,7 @@ export const DesktopPlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
         PlayService.getUserRanking(userCtx.value.id)
             .then(({ranking}) => setRanking(ranking))
-            .catch(() => {
-            }) // TODO;
+            .catch(() => {}) // TODO;
     }, [submitRes]);
 
     const onGoodMove = (r: PuzzleControllerResult, controller: PuzzleController, cg?: Api) => {

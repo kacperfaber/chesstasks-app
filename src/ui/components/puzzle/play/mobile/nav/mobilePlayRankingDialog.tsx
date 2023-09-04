@@ -21,7 +21,7 @@ export const MobilePlayRankingDialog = ({open, onClose}: {open: boolean, onClose
         AuthenticationService.getCurrentOrNull()
             .then(then)
             .catch(() => {}) // TODO
-    })
+    }, []);
 
     return (
         <Dialog open={open} onClose={onClose}>

@@ -13,13 +13,13 @@ function getRootElement(): HTMLElement {
 }
 
 function getRouterElement(): JSX.Element {
-    return (<React.StrictMode>
+    return (
         <AppContext>
             <AppThemeProvider>
                 <RouterProvider router={Router}></RouterProvider>
             </AppThemeProvider>
         </AppContext>
-    </React.StrictMode>);
+    );
 }
 
 Internationalization.setup()
