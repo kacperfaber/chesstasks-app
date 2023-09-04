@@ -66,8 +66,7 @@ export const ResponsiveAppToolbar = (attrs: ResponsiveAppToolbarAttrs) => {
     useEffect(() => {
         AuthenticationService.getCurrentOrNull()
             .then(userCtx.setValue)
-            .catch(() => {
-            }) // TODO
+            .catch(() => userCtx.setValue(undefined)) // TODO
     }, []);
 
     return (
@@ -83,7 +82,7 @@ export const ResponsiveAppToolbar = (attrs: ResponsiveAppToolbarAttrs) => {
                     <Box sx={{flexGrow: 1}}></Box>
 
                     {
-                        userCtx.value ? <DesktopAppToolbar_UserActions/> : <DesktopAppToolbar_AnonymousActions/>
+                        userCtx.value != undefined ? <DesktopAppToolbar_UserActions/> : <DesktopAppToolbar_AnonymousActions/>
                     }
                 </Toolbar>
             </AppBar>
