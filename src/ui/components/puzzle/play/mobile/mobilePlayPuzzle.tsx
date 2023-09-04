@@ -51,12 +51,12 @@ export const MobilePlayPuzzle = (attrs: PlayPuzzleAttrs) => {
 
     return (
         <>
-            <Grid container style={{height: '100%'}}>
+            <Grid container>
                 <Grid item xs={12}>
                     <PuzzleBoard puzzle={attrs.puzzle} onGoodMove={onGoodMove} onBadMove={onBadMove}/>
                 </Grid>
 
-                <Grid item xs={12} sx={{marginTop: '15px', height: '100%'}}>
+                <Grid item xs={12} sx={{marginTop: '15px'}}>
                     <ResponsivePuzzleFeedback puzzle={attrs.puzzle} feedback={feedback}/>
                 </Grid>
 
