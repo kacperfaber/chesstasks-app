@@ -530,6 +530,22 @@
     }
   },
 
+  "home": {
+    "_comps": {
+      "welcome": {
+        "title": "Witaj {{u.username}}!",
+        "body": "Chcesz zagrać w szachy?😋",
+        "play": "Zagrajmy"
+      },
+
+      "anonymous": {
+        "title": "Cześć nieznajomy!😎",
+        "body": "Aby korzystać z aplikacji, musisz się zalogować",
+        "login-in": "Zaloguj się"
+      }
+    }
+  },
+
   "search-advanced": {
     "title": "Wyszukiwanie zaawansowane",
     "body": "Możesz tu wyszukać zadania według rankingu oraz wybrać dokładnie które motywy chcesz",
