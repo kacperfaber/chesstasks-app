@@ -10,7 +10,11 @@ export function puzzleIdLoader({params}: {params: any}) {
 }
 
 export function playCriteriaLoader({params}: {params: any}) {
-    return {themeId: params.themeId == "undefined" ? undefined : params.themeId, database: params.database == "undefined" ? undefined : params.database};
+    return {
+        themeId: params.themeId == "undefined" ? undefined : params.themeId,
+        database: params.database == "undefined" ? undefined : params.database,
+        startFrom: params.startFrom == "undefined" ? undefined : params.startFrom
+    };
 }
 
 export function advancedCriteriaLoader({params}: {params: any}): AdvancedPlayCriteria {

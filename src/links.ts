@@ -25,7 +25,8 @@ export const Links = {
     PuzzleById: "/puzzle/:puzzleId",
 
     puzzleById(puzzleId: number): string {
-        return Links.PuzzleById.replace(":puzzleId", puzzleId.toString());
+        // TODO: Actually we calls another function, instead of refactor puzzleById in all places.
+        return Links.playSimple({startFrom: puzzleId});
     },
 
     PuzzleHistory: "/puzzle-history",
@@ -34,10 +35,13 @@ export const Links = {
 
     AllThemes: "/themes/all",
 
-    PlaySimple: "/play/database/:database/themeId/:themeId",
+    PlaySimple: "/play/database/:database/themeId/:themeId/startFrom/:startFrom",
 
     playSimple(criteria: SimplePlayCriteria | undefined) {
-        return Links.PlaySimple.replace(":database", criteria?.database ?? "undefined").replace(":themeId", criteria?.themeId?.toString() ?? "undefined")
+        return Links.PlaySimple
+            .replace(":database", criteria?.database ?? "undefined")
+            .replace(":themeId", criteria?.themeId?.toString() ?? "undefined")
+            .replace(":startFrom", criteria?.startFrom?.toString() ?? "undefined")
     },
 
     playSimpleWithoutCriteria() {
