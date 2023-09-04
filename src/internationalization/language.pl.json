@@ -520,6 +520,16 @@
     }
   },
 
+  "play-puzzle-container": {
+    "_comps": {
+      "such-empty": {
+        "title": "Tak pusto...",
+        "body": "Nie znaleziono zadań spełniających podane kryteria.",
+        "go-back": "Wyszukaj ponownie"
+      }
+    }
+  },
+
   "search-advanced": {
     "title": "Wyszukiwanie zaawansowane",
     "body": "Możesz tu wyszukać zadania według rankingu oraz wybrać dokładnie które motywy chcesz",

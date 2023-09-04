@@ -2,6 +2,7 @@ import {PuzzleControllerResult} from "../../../../services/puzzle/puzzleControll
 import {Puzzle} from "../../../../api/puzzles/puzzle";
 import {useEffect, useState} from "react";
 import {NextPuzzleType} from "../feedback/puzzleFeedbackValue";
+import {PlayPuzzleContainer_SuchEmpty} from "./suchEmpty";
 
 export type PlayPuzzleContainerAttrs = {
     onGoodMove?: (p: Puzzle, r: PuzzleControllerResult) => void;
@@ -42,7 +43,7 @@ export const PlayPuzzleContainer = (attrs: PlayPuzzleContainerAttrs) => {
     }, [index]);
 
     useEffect(() => {
-        setCurrentPuzzle(buffer?.[0])
+        setCurrentPuzzle(buffer?.[0]);
     }, [buffer]);
 
     const nextPuzzleRequested = (nextPuzzleType: NextPuzzleType) => {
@@ -52,6 +53,10 @@ export const PlayPuzzleContainer = (attrs: PlayPuzzleContainerAttrs) => {
 
     return (
         <>
+            {
+                buffer?.length == 0 ? <PlayPuzzleContainer_SuchEmpty/> : null
+            }
+
             {
                 currentPuzzle ? attrs.render?.(currentPuzzle, nextPuzzleRequested) : null
             }
