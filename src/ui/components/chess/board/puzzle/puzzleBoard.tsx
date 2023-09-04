@@ -7,6 +7,7 @@ import {useState} from "react";
 import {BoardObj} from "chlss";
 import {PuzzleController, PuzzleControllerResult} from "../../../../../services/puzzle/puzzleController";
 import {ChessService} from "../../../../../services/chess/chessService";
+import {makeBoardViewOnly} from "../../../../../commons/makeBoardViewOnly";
 
 export interface PuzzleBoardAttrs {
     onGoodMove?: (result: PuzzleControllerResult, controller: PuzzleController, api?: Api) => void;
@@ -28,11 +29,14 @@ export const PuzzleBoard = ({puzzle, onBadMove, onGoodMove}: {puzzle: Puzzle} & 
                 const [orig, dest] = UCI.toKeys(result.nextComputerMove)
                 cg?.move(orig, dest);
             }
+
+            if (result.finished) {
+                makeBoardViewOnly(cg);
+            }
         }
 
         else {
-            // TODO: Undo last move, because it's bad and give user another try from this move.
-
+            makeBoardViewOnly(cg);
             onBadMove?.(result, puzzleController, cg);
         }
     };
