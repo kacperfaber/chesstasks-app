@@ -1,9 +1,11 @@
 import {BottomNavigation, BottomNavigationAction} from "@mui/material";
 import {useTranslation} from "react-i18next";
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import {Links} from "../../../../../links";
 import {useNavigate} from "react-router-dom";
 import {Home, More, PlayArrow, Search} from "@mui/icons-material";
+import {CurrentUserContext} from "../../../../contexts/authentication/currentUserContext";
+import {AuthenticationService} from "../../../../../services/authentication/authenticationService";
 
 export type MobileNavigationItemValue = "home" | "menu" | "random-puzzles" | "search-advanced";
 
@@ -15,6 +17,7 @@ export interface MobileNavigationAttrs {
 export const MobileNavigation = ({selected, setSelected}: MobileNavigationAttrs) => {
     const {t} = useTranslation();
     const nav = useNavigate();
+    const userCtx = useContext(CurrentUserContext);
 
     const consumeNewValue = (v: MobileNavigationItemValue) => {
         switch (v) {
@@ -36,12 +39,20 @@ export const MobileNavigation = ({selected, setSelected}: MobileNavigationAttrs)
         }
     }
 
+    useEffect(() => {
+        AuthenticationService.getCurrentOrNull()
+            .then(userCtx.setValue)
+            .catch(() => {}) // TODO
+    }, []);
+
     const onValueChange = (event: React.SyntheticEvent, value: any) => {
         setSelected(value as MobileNavigationItemValue);
         consumeNewValue(value as MobileNavigationItemValue);
     }
 
     // TODO: Mobile - BottomNavigation has no paper, and it looks like bg transparent.
+
+    if (!userCtx.value) return null;
 
     return (
         <BottomNavigation style={{position: 'fixed', width: '100%', bottom: 0}} value={selected}
