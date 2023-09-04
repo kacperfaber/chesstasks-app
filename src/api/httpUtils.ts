@@ -32,6 +32,14 @@ export class HttpUtils{
         });
     }
 
+    public static getAsyncExpectOk<T>(url: string, token: Token | undefined = undefined): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "GET"})
+                .then(resp => resp.status ? resolve(resp.json()) as T : reject())
+                .catch(() => reject());
+        });
+    }
+
     public static deleteAsync<T>(url: string, token: Token | undefined = undefined): Promise<T | undefined> {
         return new Promise<T | undefined>((resolve, reject) => {
             fetch(url, {headers: token ? this.tokenHeaders(token) : this.headers(), method: "DELETE"})

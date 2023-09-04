@@ -11,7 +11,7 @@ export class AuthenticationApi {
 
     public static current(token: Token): Promise<User> {
         const url = `${Config.apiUrl}/api/auth/current`;
-        return HttpUtils.getAsync(url, token);
+        return HttpUtils.getAsyncExpectOk(url, token);
     }
 
     public static revoke(token: Token): Promise<void> {

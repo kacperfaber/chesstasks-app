@@ -82,7 +82,7 @@ export const ResponsiveAppToolbar = (attrs: ResponsiveAppToolbarAttrs) => {
                     <Box sx={{flexGrow: 1}}></Box>
 
                     {
-                        userCtx.value != undefined ? <DesktopAppToolbar_UserActions/> : <DesktopAppToolbar_AnonymousActions/>
+                        userCtx.value ? <DesktopAppToolbar_UserActions/> : <DesktopAppToolbar_AnonymousActions/>
                     }
                 </Toolbar>
             </AppBar>
