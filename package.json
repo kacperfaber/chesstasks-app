@@ -1,6 +1,6 @@
 {
   "name": "chesstasks-app",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "ChessTasks.com Mobile App",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "puzzles"
   ],
   "author": "Kacper Faber",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@capacitor/android": "^5.0.5",
     "@capacitor/core": "^5.0.5",
