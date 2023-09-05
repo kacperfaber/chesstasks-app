@@ -219,6 +219,12 @@
       "body": "Tym ustawieniem zmieniasz, kto widzi twój ranking oraz inne statystyki"
     },
 
+    "visibility": {
+      "me": "Tylko Ja",
+      "only-friends": "Tylko moi przyjaciele",
+      "everyone": "Wszyscy"
+    },
+
     "save": "Zapisz"
   },
 
