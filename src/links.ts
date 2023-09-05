@@ -47,6 +47,7 @@ export const Links = {
     playSimpleWithoutCriteria() {
         return Links.PlaySimple
             .replace(":database", "undefined")
+            .replace(":startFrom","undefined")
             .replace(":themeId", "undefined");
     },
 
