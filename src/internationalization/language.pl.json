@@ -154,7 +154,8 @@
             "username": "Nazwa użytkownika",
             "email": "Adres email",
             "password": "Hasło",
-            "submit": "Następny krok"
+            "submit": "Następny krok",
+            "already-have-verification-code": "Mam już kod potwierdzenia..."
           },
           "confirm-email": {
             "title": "Podaj kod bezpieczeństwa",

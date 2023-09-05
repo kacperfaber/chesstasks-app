@@ -1,7 +1,16 @@
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {RegisterService} from "../../../../../../services/register/registerService";
-import {Avatar, Button, Checkbox, FormControlLabel, TextField, Typography} from "@mui/material";
+import {
+    Avatar,
+    Backdrop,
+    Button,
+    Checkbox,
+    CircularProgress,
+    FormControlLabel,
+    TextField,
+    Typography
+} from "@mui/material";
 import {ResponsiveLogin_FormWrapper} from "../formWrapper";
 import {AccountCircle, Email} from "@mui/icons-material";
 import {PrivacyButton, RodoButton} from "../../../../../components/privacy/privacyButtons";
@@ -29,17 +38,27 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [privacy, setPrivacy] = useState(false);
+    const [backdrop, setBackdrop] = useState(false);
     const [rodo, setRodo] = useState(false);
+    const [err, setErr] = useState(false);
     const {t} = useTranslation();
 
     const submit = () => {
+        setBackdrop(true);
+        setErr(false);
+
         RegisterService.register({username, emailAddress: email, password})
             .then(nextStep)
-            .catch(() => alert("Cannot register")); // TODO: use snackbars
+            .catch(() => setErr(true))
+            .finally(() => setBackdrop(false));
     }
 
     return (
         <ResponsiveLogin_FormWrapper>
+            <Backdrop open={backdrop}>
+                <CircularProgress color={'primary'}/>
+            </Backdrop>
+
             <Avatar>
                 <AccountCircle/>
             </Avatar>
@@ -48,6 +67,7 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
             <Typography variant={'body2'} color={'text.secondary'}>{t("login._responsive.register-tab._comps.input-basic-data.body")}</Typography>
 
             <TextField
+                error={err}
                 sx={{width: '100%'}}
                 label={t("login._responsive.register-tab._comps.input-basic-data.username")}
                 required={true}
@@ -55,6 +75,7 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
                 onChange={(e) => setUsername(e.currentTarget.value)}/>
 
             <TextField
+                error={err}
                 sx={{width: '100%'}}
                 required={true}
                 label={t("login._responsive.register-tab._comps.input-basic-data.email")}
@@ -63,6 +84,7 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
                 onChange={(e) => setEmail(e.currentTarget.value)}/>
 
             <TextField
+                error={err}
                 sx={{width: '100%'}}
                 required={true}
                 label={t("login._responsive.register-tab._comps.input-basic-data.password")}
@@ -73,6 +95,8 @@ export const ResponsiveLogin_InputBasicData = ({nextStep}: {nextStep: () => void
             <ResponsiveLogin_InputBasicDataAgree rodo={rodo} setRodo={setRodo} privacy={privacy} setPrivacy={setPrivacy}/>
 
             <Button disabled={(!privacy) || (!rodo)} variant={'contained'} onClick={submit}>{t("login._responsive.register-tab._comps.input-basic-data.submit")}</Button>
+
+            <Button onClick={nextStep}>{t("login._responsive.register-tab._comps.input-basic-data.already-have-verification-code")}</Button>
         </ResponsiveLogin_FormWrapper>
     )
 }
