@@ -1,18 +1,17 @@
 import {AppBar, Badge, Box, Button, IconButton, MenuList, Toolbar, Typography} from "@mui/material";
 import {useTranslation} from "react-i18next";
-import {AccountCircle, Settings} from "@mui/icons-material";
+import {Menu, AccountCircle, Settings} from "@mui/icons-material";
 import {useNavigate} from "react-router-dom";
 import {DesktopAppToolbar_CurrentUserDialog} from "./currentUserDialog";
 import {useContext, useEffect, useState} from "react";
 import {Links} from "../../../../../links";
 import {CurrentUserContext} from "../../../../contexts/authentication/currentUserContext";
 import {AuthenticationService} from "../../../../../services/authentication/authenticationService";
-import MenuIcon from "@mui/icons-material/menu"
 
 export const MenuButton = (args: {onClick: () => void}) => {
     return (
         <IconButton onClick={args.onClick} edge={'start'} sx={{mr: 2}}>
-            <MenuIcon/>
+            <Menu/>
         </IconButton>
     )
 }
