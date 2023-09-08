@@ -7,6 +7,8 @@ module.exports = (env) => {
         apiKey: env.apiKey
     }
 
+    console.log(`Build production with:\n    $ apiUrl=${config.apiUrl},\n    $ apiKey=<SECRET>`);
+
     return merge(base, {
         mode: 'production',
         devtool: "false",

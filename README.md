@@ -1,5 +1,7 @@
 # ChessTasks.com
  Cross-Platform Application
+<br>
+I wrote with ❤ in React and MUI components.
 
 ## Versions
 
@@ -28,17 +30,28 @@ npm install
 #### Modify run options
 Fill the const 'config' with your API url and set the **API-KEY**.
 ```bash
+# Edit 'config' const to set configuration properties.
 vim webpack.config.dev.js
-```
 
+# Run compilation with configuration properties
+npx webpack --config webpack.config.dev.js --env apiKey= --env apiUrl=
+```
 
 #### Run the app in developer mode
 Will compile the code, and will host the app with serve.
 ```bash
+# Will run compile and serve to localhost.
+# Will be used configuration properties from webpack.config.dev.js
 npm run run-dev
 ```
 
-#### Build the app, 
+## Configuration
+```json5
+{
+  "apiUrl": "URL where API server is running.",
+  "apiKey": "Security key"
+}
+```
 
 ## Author
 
