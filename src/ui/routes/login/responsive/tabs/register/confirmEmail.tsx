@@ -24,9 +24,6 @@ export const ResponsiveLogin_ConfirmEmail = ({nextStep}: { nextStep: () => void 
 
             <Typography variant={'h5'}>{t("login._responsive.register-tab._comps.confirm-email.title")}</Typography>
 
-            <Typography variant={'body2'} color={'text.secondary'}>
-                {t("register.confirm-email.body")}
-            </Typography>
 
             <TextField
                 label={t("login._responsive.register-tab._comps.confirm-email.email")}
