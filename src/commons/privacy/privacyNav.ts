@@ -1,9 +1,13 @@
 export class PrivacyNav {
     public static rodoStatement() {
-        window.location.replace("/rodo.txt");
+        window.location.href = "/rodo.txt";
     }
 
     public static privacyStatement() {
-        window.location.replace("/privacy.txt");
+        window.location.href = "/privacy.txt";
+    }
+
+    public static thirdPartyLicenses() {
+        window.location.href = "/third-party-licenses.txt";
     }
 }

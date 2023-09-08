@@ -1,7 +1,7 @@
 import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
 import {List, ListItemButton, ListItemIcon} from "@mui/material";
-import {History, Home, People, Search, Style} from "@mui/icons-material";
+import {Article, History, Home, People, Search, Style} from "@mui/icons-material";
 import {TransparentListSubHeader} from "../../../base/list/transparentListSubHeader";
 import {Links} from "../../../../links";
 import {PrivacyNav} from "../../../../commons/privacy/privacyNav";
@@ -99,6 +99,13 @@ export function DefaultDrawerList() {
                     <Search/>
                 </ListItemIcon>
                 {t("_layout._default.drawer-list.privacy-statement")}
+            </ListItemButton>
+
+            <ListItemButton onClick={PrivacyNav.thirdPartyLicenses}>
+                <ListItemIcon>
+                    <Article/>
+                </ListItemIcon>
+                {t("_layout._default.drawer-list.third-party-licenses")}
             </ListItemButton>
         </List>
     )
