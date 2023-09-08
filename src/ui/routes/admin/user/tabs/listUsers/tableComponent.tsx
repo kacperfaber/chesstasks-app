@@ -1,8 +1,8 @@
 import {useTranslation} from "react-i18next";
 import {User} from "../../../../../../api/user";
 import {IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
+import {Menu} from "@mui/icons-material";
 import {getDate} from "../../../../../../commons/getDate";
-import MenuIcon from "@mui/icons-material/menu";
 import {ListUserTab_TableComponent_UserMenu, UserMenuAction} from "./userMenu";
 import {useState} from "react";
 import {ConfirmDeleteUserDialog} from "./confirmDeleteUserDialog";
@@ -37,7 +37,7 @@ export const ListUserTab_TableComponentRow = ({showUserMenuFor, item}: {showUser
 
             <TableCell>
                 <IconButton onClick={() => showUserMenuFor(item)}>
-                    <MenuIcon/>
+                    <Menu/>
                 </IconButton>
             </TableCell>
         </TableRow>
