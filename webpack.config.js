@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyPlugin = require("copy-webpack-plugin");
 
 
 module.exports = {
@@ -22,5 +23,15 @@ module.exports = {
                 loader: "ts-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: "third-party-licenses.txt",
+                    to: path.resolve(__dirname, 'www/third-party-licenses.txt')
+                }
+            ]
+        })
+    ]
 };
