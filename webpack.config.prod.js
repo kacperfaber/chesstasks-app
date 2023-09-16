@@ -1,5 +1,6 @@
 const {merge} = require("webpack-merge");
 const base = require("./webpack.config");
+const webpack = require("webpack");
 
 module.exports = (env) => {
     const config = {
@@ -11,7 +12,6 @@ module.exports = (env) => {
 
     return merge(base, {
         mode: 'production',
-        devtool: "false",
         plugins: [
             new webpack.DefinePlugin({
                 "process.env.PROFILE": JSON.stringify("prod"),
