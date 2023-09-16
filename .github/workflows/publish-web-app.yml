@@ -1,0 +1,28 @@
+name: publish-web-app
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  publish-web-app:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build
+      run: npx tsc && npx webpack --config webpack.config.prod.js --env apiUrl ${{ vars.apiUrl }} --env apiKey ${{ secrets.apiKey }}
+
+    - name: Run install script
+      run: ./usr/share/chesstasks-app/install.sh
