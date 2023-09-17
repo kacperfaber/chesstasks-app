@@ -22,7 +22,7 @@ jobs:
       run: npm ci
 
     - name: Build
-      run: npx tsc && npx webpack --config webpack.config.prod.js --env apiUrl ${{ vars.apiUrl }} --env apiKey ${{ secrets.apiKey }}
+      run: npx tsc && npx webpack --config webpack.config.prod.js --env apiUrl=${{ vars.apiUrl }} --env apiKey=${{ secrets.apiKey }}
 
     - name: Run install script
       run: bash /usr/share/chesstasks-app/install.sh
