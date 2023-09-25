@@ -7,7 +7,7 @@ I wrote with ❤ in React and MUI components.
 [![publish-web-app](https://github.com/kacperfaber/chesstasks-app/actions/workflows/publish-web-app.yml/badge.svg)](https://github.com/kacperfaber/chesstasks-app/actions/workflows/publish-web-app.yml)
 
 
-![baner](https://github.com/kacperfaber/chesstasks-app/assets/27860073/e1b44792-6fd4-4aa8-a81b-9f64c56b57b2)
+![baner](assets/banner.png)
 
 
 
