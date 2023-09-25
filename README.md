@@ -3,7 +3,7 @@
 <br>
 I wrote with ❤ in React and MUI components.
 
-[![build](https://github.com/kacperfaber/chesstasks-app/actions/workflows/build.yml/badge.svg)](https://github.com/kacperfaber/chesstasks-app/actions/workflows/build.yml)
+[![build](https://github.com/kacperfaber/chesstasks-app/actions/workflows/build.yml/badge.svg)](https://github.com/kacperfaber/chesstasks-app/actions/workflows/build.yml)[![publish-web-app](https://github.com/kacperfaber/chesstasks-app/actions/workflows/publish-web-app.yml/badge.svg)](https://github.com/kacperfaber/chesstasks-app/actions/workflows/publish-web-app.yml)
 
 ![Uploading baner.png…]()
 
