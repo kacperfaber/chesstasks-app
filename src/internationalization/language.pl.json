@@ -534,6 +534,11 @@
         "title": "Tak pusto...",
         "body": "Nie znaleziono zadań spełniających podane kryteria.",
         "go-back": "Wyszukaj ponownie"
+      },
+
+      "loading": {
+        "title": "Cierpliwości...",
+        "body": "Dopasowanie odpowiedniego zestawu może zająć aż do minuty, przepraszam..."
       }
     }
   },
