@@ -5,6 +5,9 @@ I wrote with ❤ in React and MUI components.
 
 [![build](https://github.com/kacperfaber/chesstasks-app/actions/workflows/build.yml/badge.svg)](https://github.com/kacperfaber/chesstasks-app/actions/workflows/build.yml)
 
+![baner](https://github.com/kacperfaber/chesstasks-app/assets/27860073/e4fcee26-8f06-496f-9948-febdaa762e42)
+
+
 ## Versions
 
 | **#**            |    DATE    | TYPE |
@@ -54,6 +57,7 @@ npm run run-dev
   "apiKey": "Security key"
 }
 ```
+
 
 ## Author
 
