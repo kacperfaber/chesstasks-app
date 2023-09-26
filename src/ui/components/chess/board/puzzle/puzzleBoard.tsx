@@ -55,6 +55,7 @@ export const PuzzleBoard = ({puzzle, onBadMove, onGoodMove}: {puzzle: Puzzle} & 
     const onInit = (cg: Api) => {
         const moveToPush = puzzleController.start();
         const [from, to] = UCI.toKeys(moveToPush);
+        cg.set({orientation: boardObj.getColour() == "white" ? "black" : "white"})
         cg.move(from, to);
     }
 
